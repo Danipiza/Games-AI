@@ -9,6 +9,9 @@ import time
 # GHOSTS AI
 # https://www.youtube.com/watch?v=ataGotQ7ir8&ab_channel=RetroGameMechanicsExplained
 
+# MANUAL
+# https://archive.org/details/Pac-Man_1981_Atari/page/n5/mode/2up
+
 class PacmanGUI:
     
     """
@@ -81,12 +84,14 @@ class PacmanGUI:
         self.agent_dir=1
         self.agent_coins=0   
 
-        # ghosts.
+        # ghosts.        
         self.ghosts_pos=[[0,0] for _ in range(4)]
         self.ghosts_dir=[1,2,0,0]
         self.ghosts_house=[False,True,True,True]
         # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
         self.ghost_inHouse=[[1,3],[2,6],[3,9]]
+        
+        
         
         # maze.
         self.maze           =[] # used for the walls, agent and ghosts positions in the GUI
@@ -148,7 +153,7 @@ class PacmanGUI:
         self.n=len(self.maze)
         self.m=len(self.maze[0])
 
-        self.scatter_targets=[[0,self.m],[0,0],[self.n,0],[self.n,self.m]]
+        self.scatter_targets=[[0,self.m],[0,0],[self.n,self.m],[self.n,0]]
 
         self.end=False
 
@@ -234,8 +239,8 @@ class PacmanGUI:
     """
     def print_matrix(self, matrix):
         
-        n=len(self.matrix)
-        m=len(self.matrix[0])
+        n=len(matrix)
+        m=len(matrix[0])
         for x in range(n):
             for y in range(m):
                 if matrix[x][y]<0: 
@@ -382,7 +387,8 @@ class PacmanGUI:
         self.move_ghost(1)
         self.move_ghost(2)
         self.move_ghost(3)
-
+        
+        
 
         # -------------------------------------------------------------------------------------------------------------------
         # --- STATE ---------------------------------------------------------------------------------------------------------
@@ -390,6 +396,9 @@ class PacmanGUI:
         self.count_state+=1
         
         print("State=", self.count_state, "\tCoins=",self.agent_coins)
+
+        for i in range(4):
+            print(self.ghosts_pos[i][0],self.ghosts_pos[i][1])
         
         if self.count_state==self.state_ticks[self.state]:                     
             if self.state==0: 
@@ -661,6 +670,8 @@ class PacmanGUI:
                                     self.maze[self.ghosts_house[idx][0]][self.ghosts_house[idx][1]]=self.EMPTY
                                     self.maze[self.salida_fants[0]][self.salida_fants[1]]=self.ghosts_colors[idx]
                                     self.ghosts_house[idx]=False
+
+                                    self.ghosts_dir[idx]=0
 
                                     self.ghosts_pos[idx][0]=self.salida_fants[0]
                                     self.ghosts_pos[idx][1]=self.salida_fants[1]
