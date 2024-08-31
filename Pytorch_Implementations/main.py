@@ -8,16 +8,6 @@ import gym
 
 
 """
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-
-CURRENTLY NOT WORKING
-
-----------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------
-"""
-
-"""
 Model free:
 No need anything of how the enviroment works. The agent will figure it out by playing the game.
 
@@ -31,6 +21,7 @@ class DeepQNetwork(nn.Module):
 
     def __init__(self, lr, input_dims, fc1_dims, fc2_dims, n_actions):
         super(DeepQNetwork, self).__init__()
+
         self.input_dims=input_dims
         # convolutional layer 1 = input layer
         self.fc1_dims=fc1_dims
@@ -48,7 +39,7 @@ class DeepQNetwork(nn.Module):
         self.loss=nn.MSELoss()
         self.device=T.device('cuda:0' if T.cuda.is_available() else 'cpu')
         self.to(self.device)
-    
+
     """
     Calculate the q-values of the actions in the given state
 
@@ -60,16 +51,16 @@ class DeepQNetwork(nn.Module):
         actions=self.fc3(x)
 
         return actions
-    
+
     # backpropagation is already in torch library
 
 """
 Agent 
 """
-class Agent():
-
+class Agent:
+    
     def __init__(self, gamma, epsilon, lr, input_dims, batch_size, n_actions,
-                 max_mem_size=100000, eps_end=0.01, eps_dec=5e-4):
+                 max_mem_size=100000, eps_end=0.01, eps_dec=1e-5):
         self.gamma=gamma
         self.epsilon=epsilon
         self.eps_min=eps_end
@@ -79,6 +70,11 @@ class Agent():
         self.mem_size=max_mem_size
         self.batch_size=batch_size
         self.mem_cntr=0
+
+        """NUEVO"""
+        self.iter_cntr=0
+        self.replace_target=100
+        """"""
 
         self.Q_eval=DeepQNetwork(lr=lr, n_actions=n_actions, input_dims=input_dims,
                                  fc1_dims=256, fc2_dims=256)
@@ -105,16 +101,16 @@ class Agent():
     state (object): Observation of the next state.
     done (bool):    A boolean value for if the episode has ended
     """
-    def store_transition(self, action, state, reward, state_, done):
+    def store_transition(self, state, action, reward, state_, terminal):
         # WHERE. first position of the first unoccupied memory 
         index=self.mem_cntr%self.mem_size # rewrite the agent memory, with new ones. Using deque is worst
 
         # STORE.
-        self.state_memory[index]=state
-        self.new_state_memory[index]=state_
-        self.reward_memory[index]=reward
-        self.action_memory[index]=action
-        self.terminal_memory[index]=done
+        self.state_memory[index]     =state.flatten()  # ensure state is 1D
+        self.new_state_memory[index] =state_.flatten()  # ensure state_ is 1D
+        self.reward_memory[index]    =reward
+        self.action_memory[index]    =action
+        self.terminal_memory[index]  =terminal
 
         self.mem_cntr+=1
 
@@ -123,15 +119,21 @@ class Agent():
     
     observation (object): Observation of the actual state.
     """
-    def chose_action(self, observation):
+    def choose_action(self, observation):
         # observation: observation of the current state
-        if np.random.rand()>self.epsilon: # best known action
+        if np.random.random()>self.epsilon:
+            # ensure observation is a numpy array, and reshape to match the input dims
+            if not isinstance(observation, np.ndarray):
+                observation=np.array(observation)
+            
             # pytorch tensor. send the variables we want to perform computation on to our device
-            state=T.tensor([observation]).to(self.Q_eval.device)
+            state=T.tensor(observation, dtype=T.float32).to(self.Q_eval.device)
+            state=state.unsqueeze(0)  # Add batch dimension
+            
             actions=self.Q_eval.forward(state)
             # max values of the actions given from the neural netword
-            action=T.argmax(actions).item() 
-        else: # random action
+            action=T.argmax(actions).item()
+        else:
             action=np.random.choice(self.action_space)
 
         return action
@@ -148,25 +150,27 @@ class Agent():
         self.Q_eval.optimizer.zero_grad()
 
         max_mem=min(self.mem_cntr, self.mem_size)
-        batch=np.random.choice(max_mem, self.batch_size, replace=False)
 
+        batch=np.random.choice(max_mem, self.batch_size, replace=False)
         batch_index=np.arange(self.batch_size, dtype=np.int32)
 
-        state_batch=T.tensor(self.state_memory[batch]).to(self.Q_eval.device)
-        new_state_batch=T.tensor(self.new_state_memory[batch]).to(self.Q_eval.device)
-        reward_batch=T.tensor(self.reward_memory[batch]).to(self.Q_eval.device)
-        terminal_batch=T.tensor(self.terminal_memory[batch]).to(self.Q_eval.device)
+        state_batch     =T.tensor(self.state_memory[batch]).to(self.Q_eval.device)
+        new_state_batch =T.tensor(self.new_state_memory[batch]).to(self.Q_eval.device)        
+        reward_batch    =T.tensor(self.reward_memory[batch]).to(self.Q_eval.device)
+        terminal_batch  =T.tensor(self.terminal_memory[batch]).to(self.Q_eval.device)
 
         action_batch=self.action_memory[batch]
 
+        """
         # Debugging: Check if action_batch contains valid indices
         if not np.all((0 <= action_batch) & (action_batch < self.Q_eval.n_actions)):
             #raise ValueError("Action batch contains invalid indices")
             print(batch_index, action_batch)
+        """
 
         q_eval=self.Q_eval.forward(state_batch)[batch_index, action_batch]
         q_next=self.Q_eval.forward(new_state_batch)
-        q_next[terminal_batch]=0.0
+        q_next[terminal_batch] = 0.0
 
         q_target=reward_batch+self.gamma*T.max(q_next, dim=1)[0]
 
@@ -176,63 +180,46 @@ class Agent():
 
         self.epsilon-=self.eps_dec
         if self.epsilon<self.eps_min: self.epsilon=self.eps_min
-    
-    
 
-
-
-
-class Main():
-
-    """
-    Execute the main loop
-    """
-    def execute(self):
-        # 4 actions in the game
-        """env=gym.make('LunarLander-v2') # input_dims=[8]"""
-        env=gym.make('Taxi-v3')  
-        # epsilon start with fully random actions        
-        agent=Agent(gamma=0.99, epsilon=1.0, batch_size=64, n_actions=env.action_space.n,
-                    eps_end=0.01, input_dims=[500], lr=0.003)
-        # input_dims=Observation Shape
+        self.iter_cntr += 1
+        """self.epsilon = self.epsilon - self.eps_dec \
+            if self.epsilon > self.eps_min else self.eps_min"""
         
-        scores=[]
-        eps_history=[]
-        
-        n_games=500 
-        for i in range(n_games):
-            score=0     # episode score
-            done=False  # termination condition
-            observation, _ =env.reset() 
-
-            while not done:
-                action=agent.chose_action(observation)
-                observation_, reward, done, _, _ = env.step(action)
-                score+=reward 
-                
-                # store in the memory
-                agent.store_transition(observation, action, reward, observation_, done)
-                # learn if the memory is full. 
-                agent.learn()
-
-                # moves to the next state
-                observation=observation_
-
-            scores.append(score)
-            eps_history.append(agent.epsilon)
-
-            # the mean of the last 100 games, to see if the agent is learning
-            avg_score=np.mean(scores[-100:])
-
-            print('episode {} - score {} - average score {} - epsilon {}\n'.format(i, score, avg_score, agent.epsilon))
-            """x=[i+1 for i in range(n_games)]
-            file_name='lunar_lander.png'
-            plot_learning_curve(x, scores, eps_history, file_name) # epsilon
-            plot_learning_curve"""
-            # plotLearning() #gradient
-
-
-
 if __name__=='__main__':
-    main=Main()
-    main.execute()
+    # 4 actions in the game
+    env=gym.make('LunarLander-v2')
+    
+    agent=Agent(gamma=0.99, epsilon=1.0, batch_size=64, n_actions=env.action_space.n,
+                eps_end=0.01, input_dims=[8], lr=0.001)
+    
+    scores=[]
+    eps_history=[]
+    
+    n_games=500    
+    for i in range(n_games):
+        score=0     # episode score
+        done=False  # termination condition
+        observation, _ = env.reset()  
+
+        while not done:
+            action=agent.choose_action(observation)
+            observation_, reward, done, info = env.step(action)[:4] 
+            score+=reward
+
+            # store in the memory
+            agent.store_transition(observation, action, reward, observation_, done)
+            # learn if the memory is full. 
+            agent.learn()
+            # moves to the next state
+            observation=observation_
+
+        scores.append(score)
+        eps_history.append(agent.epsilon)
+
+        # the mean of the last 100 games, to see if the agent is learning
+        avg_score=np.mean(scores[-100:])
+
+        print('episode ', i, 'score %.2f' % score,
+              'average score %.2f' % avg_score,
+              'epsilon %.2f' % agent.epsilon)
+        
