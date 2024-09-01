@@ -12,6 +12,12 @@ import time
 # MANUAL
 # https://archive.org/details/Pac-Man_1981_Atari/page/n5/mode/2up
 
+
+"""
+
+Args:
+    filename (string) : name of the used maze.
+"""
 class PacmanGUI:
     
     """
@@ -23,7 +29,7 @@ class PacmanGUI:
     """
 
 
-    def __init__(self,file_name):
+    def __init__(self, file_name):
         self.file_name=file_name
         
         # -------------------------------------------------------------------------------------------------------------------
@@ -127,9 +133,6 @@ class PacmanGUI:
 
     """
     Reseting the class variables.
-
-    :type self: class    
-    :rtype: None
     """
     def reset(self):
 
@@ -162,9 +165,6 @@ class PacmanGUI:
     """
     Reading the maze from a .txt file. 
     Also search for the positions of the agent and ghosts
-    
-    :type self: class        
-    :rtype: None
     """
     def read_maze(self):  
         tmp=0
@@ -226,16 +226,12 @@ class PacmanGUI:
                     tmp+=1
                     if tmp==5: break
         
-        
-        
-                    
-
+                                
     """
     Printing a matrix giving by parameter.
     
-    :type self: class 
-    :type matrix: int[][]       
-    :rtype: None
+    Args:
+        matrix (int[][]): 2-Dimensional matrix array.
     """
     def print_matrix(self, matrix):
         
@@ -254,12 +250,11 @@ class PacmanGUI:
     Moving the agent.
     eat ghosts or is eaten by a ghost
     
-    return: 1, if the agent eat a coin. 
-            0, otherwise
-    
-    :type self: class 
-    :type mov: string
-    :rtype: int
+    Args:
+        mov (string): action executed by the agent.
+
+    Return: 
+        Coin (int): 1, if the agent eat a coin. 0, otherwise.        
     """
     def move_agent(self, mov):
         x=self.agent_pos[0]
@@ -374,9 +369,6 @@ class PacmanGUI:
     """
     Moving the ghosts.
     Also change the game state
-           
-    :type self: class     
-    :rtype: None
     """
     def move_ghosts(self):
         
@@ -424,10 +416,10 @@ class PacmanGUI:
     eat the player or is eaten by the player.
 
     If the current state is FRIGHTENED, moves one cell in two ticks
-           
-    :type self: class     
-    :type ghost: int
-    :rtype: None
+
+    Args:     
+        ghost (int): index of the ghost.
+    
     """
     def move_ghost(self, ghost):
         
@@ -589,10 +581,12 @@ class PacmanGUI:
     """
     Calculates the distance of two points given by parameters
            
-    :type self: class     
-    :type a: int[]
-    :type b: int[]
-    :rtype: int
+    Args:
+        a (float[][]): first point.
+        b (float[][]): second point.
+    
+    Return: 
+        distance (float): distance between the two points.
     """
     def distance_cells(self, a, b):               
         return math.sqrt((a[0]-b[0])**2+(a[1]-b[1])**2)
@@ -615,8 +609,6 @@ class PacmanGUI:
 
     Close the window for exiting the game.
            
-    :type self: class  
-    :rtype: int
     """
     def execute(self):       
 
@@ -732,10 +724,7 @@ class PacmanGUI:
     
 
     """
-    Printing in the GUI, the actual state of the maze.
-           
-    :type self: class  
-    :rtype: int
+    Printing in the GUI, the actual state of the maze.           
     """
     def GUI_maze(self):
         self.screen.fill((0, 0, 0))  # cleans the screen
@@ -750,9 +739,8 @@ class PacmanGUI:
     """
     Printing in the GUI, a message
            
-    :type self: class     
-    :type t: int
-    :rtype: int
+    Args:
+        t (int): type of message.    
     """
     def GUI_message(self, t):
 
@@ -781,10 +769,9 @@ class PacmanGUI:
     """
     Printing in the GUI, a line
            
-    :type self: class     
-    :type x: int
-    :type row: int[]
-    :rtype: None
+    Args:
+        x (int)      : index of the row.
+        row (int []) : values in the row.
     """
     def GUI_line(self, x, row):
         for y, cell in enumerate(row):
@@ -797,11 +784,13 @@ class PacmanGUI:
     """
     Printing in the GUI, a cell
            
-    :type self: class     
-    :type x: int
-    :type y: int
-    :type cell: int
-    :rtype: image
+    Args:
+        x (int)     : Vertical coordinate.
+        y (int)     : Horizontal coordinate.
+        cell (int)  : cell value.    
+    
+    Return:
+        image (image): image of the cell.
     """
     def GUI_cell(self, x, y, cell):
         
@@ -843,9 +832,8 @@ class PacmanGUI:
     """
     Loading all the game images. And scale all of them to the same size   
            
-    :type self: class     
-    :type size: int
-    :rtype: int
+    Args:
+        size (float): size of each cell in the GUI.    
     """
     def load_images(self, size):
 
@@ -931,6 +919,6 @@ class PacmanGUI:
 
 
 if __name__ == "__main__":    
-    env=PacmanGUI(os.path.join("data", "env.txt"))
+    env=PacmanGUI(os.path.join("data", "enviroments","env1_gui.txt"))
     
     
