@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import numpy as np
 
-
+import gym
 
 
 """
@@ -86,7 +86,7 @@ Args:
 class Agent:
     
     def __init__(self, gamma, epsilon, lr, input_dims, batch_size, num_actions, fc1_dims,fc2_dims,eps_dec,
-                 max_mem_size=100000, eps_end=0.01):
+                 max_mem_size=100000, eps_end=0.01, model_path=None):
         self.gamma=gamma
         self.epsilon=epsilon
         self.eps_min=eps_end
@@ -99,8 +99,12 @@ class Agent:
         self.mem_cntr=0                        
 
         
-        self.model=DeepQNetwork(lr=lr, num_actions=num_actions, input_dims=input_dims,
-                                 fc1_dims=fc1_dims, fc2_dims=fc2_dims)
+        if model_path is not None: # pre-trained model            
+            self.load_model(model_path)  
+            print("Loaded")        
+        else: # new model
+            self.model=DeepQNetwork(lr=lr, num_actions=num_actions, input_dims=input_dims,
+                                    fc1_dims=fc1_dims, fc2_dims=fc2_dims)
         
         # usually used a deque or some kind of collection        
         
@@ -206,3 +210,41 @@ class Agent:
         self.epsilon-=self.eps_dec
         if self.epsilon<self.eps_min: self.epsilon=self.eps_min
 
+    """
+    Save the model in a .pth file.
+
+    Args:
+        name (string): name of the file where the model is going to be saved.
+    """
+    def store_model(self, name):
+        torch.save(self.model, '{}.pth'.format(name))        
+
+    """
+    Load a pretrained model instead if a new one.
+
+    Args:
+        model_path (string): path to the .pth file containing the pre-trained model
+    """
+    def load_model(self, model_path):
+        self.model=torch.load(model_path)  
+    
+    def agent_play_gym(self, env, max_steps=500):       
+              
+        done=False
+        observation, _ = env.reset() 
+
+        score=0
+        while not done: 
+            env.render()     
+                              
+            action=self.choose_action(observation)
+            observation_, reward, done, info = env.step(action)[:4] 
+            score+=reward
+
+            """# store in the memory
+            self.store_transition(observation, action, reward, observation_, done)
+            # learn if the memory is full. 
+            self.learn()"""
+            # moves to the next state
+            observation=observation_   
+        print("Score: {}".format(score))
