@@ -10,6 +10,7 @@ import time
 model_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../AI_Models/pytorch'))
 sys.path.append(model_dir)
 import simple_dqn # type: ignore 
+import dqn # type: ignore 
 
        
 """
@@ -25,6 +26,18 @@ Observation shape:
 """
 
 
+"""
+Sstore the results of the search function.
+
+Args:
+    fc_dim (int)        : Size of the Fully Connected layers.
+    eps_dec (float)     : Decreasing number per iteration of epsilon.
+    lr (float)          : Learning rate.   
+    avg_score (float)   : Average score of the last 100 episodes.
+    done (boolean)      : Finalization variable.
+    time (float)        : Execution time.
+    eps (int)           : Id number of the episode.   
+"""
 def store_result(fc_dim, eps_dec, lr, avg_score, done, time, eps):
     message = 'fc_dim: {}, eps_dec: {}, lr: {:.5f}, avg_score: {:.2f}, done: {}, time: {:.2f}, episodes: {}'.format(
         fc_dim, eps_dec, lr, avg_score, done, time, eps
@@ -37,7 +50,25 @@ def store_result(fc_dim, eps_dec, lr, avg_score, done, time, eps):
         print(f"An error occurred: {e}")
     
 
-    print("a")
+    
+
+
+"""
+Result the average scores of the training session.
+
+Args:
+    avg_score (float)   : Average score of the last 100 episodes.
+    algorithm (string)  : Name of the used algorithm.
+"""
+def store_avg_score(avg_score, algorithm):
+    try:
+        with open("avg_scores_{}.txt".format(algorithm), 'a') as file:
+            file.write(str(avg_score) + '\n')
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    
+
+    
 
 """
 Search for the better hiper-parameters.
@@ -64,12 +95,14 @@ Args:
 def search(fc_dim,eps_dec,lr):
     # 4 actions in the game
     env=gym.make('LunarLander-v2')    
-    agent=simple_dqn.Agent(gamma=0.99, epsilon=1.0, batch_size=64, num_actions=env.action_space.n, 
+    """agent=simple_dqn.Agent(gamma=0.99, epsilon=1.0, batch_size=64, num_actions=env.action_space.n, 
+                        fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=eps_dec,
+                        eps_end=0.01, input_dims=[8], lr=lr)"""    
+    agent=dqn.Agent(gamma=0.99, epsilon=1.0, batch_size=64, num_actions=env.action_space.n, 
                         fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=eps_dec,
                         eps_end=0.01, input_dims=[8], lr=lr)
     
     scores=[]
-    eps_history=[]
     
     start_time=0
     ep_time=0  
@@ -109,7 +142,6 @@ def search(fc_dim,eps_dec,lr):
         
 
         scores.append(score)
-        eps_history.append(agent.epsilon)
 
         # the mean of the last 100 games, to see if the agent is learning
         avg_score=np.mean(scores[-100:])
@@ -125,11 +157,12 @@ def search(fc_dim,eps_dec,lr):
 Training method of the agent.
 
 Args:
-    n_games (int)   : Number of episode in the training session.
-    env (Object)    : Enviroment of the game.
-    agent (Object)  : Agent with the neural network.
+    n_games (int)       : Number of episode in the training session.
+    env (Object)        : Enviroment of the game.
+    agent (Object)      : Agent with the neural network.
+    algorithm (string)  : Type of algorithm used.
 """
-def train(n_games, env, agent):
+def training(n_games, env, agent, algorithm):
     
 
     start_time=0
@@ -146,6 +179,7 @@ def train(n_games, env, agent):
         score=0     # episode score
         done=False  # termination condition
         observation, _ = env.reset()  
+        scores=[]
 
         while not done:
             curr_time=time.time()-ep_time
@@ -164,10 +198,15 @@ def train(n_games, env, agent):
             agent.learn()
             # moves to the next state
             observation=observation_
-        
+        scores.append(score)
+        avg_score=np.mean(scores[-100:])
+
+        store_avg_score(avg_score, algorithm)
         
         print('episode ', i, 'score %.2f' % score,              
               'epsilon %.2f' % agent.epsilon)
+    end_time=time.time()
+    print("Tiempo de ejecucion:", end_time-start_time)
         
 """
 Execute an episode (normally with a trained agent).
@@ -209,12 +248,19 @@ def execute(agent, GUI=False,
 
 if __name__=='__main__':   
     
-    #model=None
-    model='models/pytorch/simple_dqn/model_1.pth'
+    model=None
+    #model='models/pytorch/simple_dqn/model_1.pth'
+    #model='dqn_model_1.pth'
+    
+    target_model=None
+    #target_model='dqn_t_model_1.pth'
+    #target_model='models/pytorch/simple_dqn/target_model_1.pth'
 
     fc_dim=64
     #eps_dec=2e-05
-    lr= 0.00046
+    lr=0.00046
+
+    algorithm="simple_dqn"
 
     # 4 actions in the game
     env=gym.make('LunarLander-v2')    
@@ -222,17 +268,24 @@ if __name__=='__main__':
                         fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=2.5e-6,
                         eps_end=0.01, input_dims=[8], lr=lr,model_path=model)
     
+    
+
+    """agent=dqn.Agent(gamma=0.99, epsilon=.70, batch_size=64, num_actions=env.action_space.n, 
+                        fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=2.5e-6,
+                        eps_end=0.01, input_dims=[8], lr=lr,model_path=model,target_model_path=target_model)"""
+    
     #avg_score: -39.51, done: False, time: 228.27, episodes: 312
 
      
     
     # Training session
     if model is None:
-        train(1500, env, agent)
-        agent.store_model("model_3")
+        training(1500, env, agent, algorithm)
+        agent.store_model("simple_dqn_model")
+        #agent.store_target_model("dqn_t_model")
     
 
     # Evaluation of the training session
-    execute(agent, GUI=True)
+    #execute(agent, GUI=True)
 
                 
