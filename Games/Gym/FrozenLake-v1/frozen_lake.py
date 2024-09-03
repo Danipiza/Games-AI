@@ -9,7 +9,7 @@ import time
 
 model_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../AI_Models/pytorch'))
 sys.path.append(model_dir)
-import simple_dqn # type: ignore 
+import simple_dqn_discrete # type: ignore 
 
        
 """
@@ -63,8 +63,9 @@ Args:
 """
 def search(fc_dim,eps_dec,lr):
     # 4 actions in the game
-    env=gym.make('LunarLander-v2')    
-    agent=simple_dqn.Agent(gamma=0.99, epsilon=1.0, batch_size=64, num_actions=env.action_space.n, 
+    #env=gym.make('Taxi-v3')
+    env=gym.make('FrozenLake-v1')  
+    agent=simple_dqn_discrete.Agent(gamma=0.99, epsilon=1.0, batch_size=64, num_actions=env.action_space.n, 
                         fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=eps_dec,
                         eps_end=0.01, input_dims=[8], lr=lr)
     
@@ -146,17 +147,22 @@ def train(n_games, env, agent):
         score=0     # episode score
         done=False  # termination condition
         observation, _ = env.reset()  
+        observation = agent.one_hot_encode(observation, env.observation_space.n)
 
         while not done:
             curr_time=time.time()-ep_time
-            if curr_time>=5:
+            """if curr_time>=5:
                 curr_time=time.time()-start_time                    
                 print("Exceeded time:", curr_time)
-                break # next episode
+                break # next episode"""
             
             action=agent.choose_action(observation)
             observation_, reward, done, info = env.step(action)[:4] 
-            score+=reward
+            observation_ = agent.one_hot_encode(observation_, env.observation_space.n)
+            if done:
+                if reward==1: reward=100
+                else: reward=-10
+            score+=reward-0.1
 
             # store in the memory
             agent.store_transition(observation, action, reward, observation_, done)
@@ -179,7 +185,7 @@ Args:
                                 or only displaying the final score in the terminal.
 """
 def execute(agent, GUI=False,
-            env_name='LunarLander-v2'):
+            env_name='FrozenLake-v1'): # Taxi-v3
     agent.epsilon=0
 
     env=gym.make(env_name, render_mode='human')    
@@ -209,18 +215,21 @@ def execute(agent, GUI=False,
 
 if __name__=='__main__':   
     
-    #model=None
+    model=None    
     model='models/pytorch/simple_dqn/model_1.pth'
+    
 
-    fc_dim=64
+    fc_dim=16
     #eps_dec=2e-05
-    lr= 0.00046
+    lr= 0.001
 
     # 4 actions in the game
-    env=gym.make('LunarLander-v2')    
-    agent=simple_dqn.Agent(gamma=0.99, epsilon=.70, batch_size=64, num_actions=env.action_space.n, 
-                        fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=2.5e-6,
-                        eps_end=0.01, input_dims=[8], lr=lr,model_path=model)
+    #env=gym.make('Taxi-v3')    
+    env=gym.make('FrozenLake-v1')  
+    
+    agent=simple_dqn_discrete.Agent(gamma=0.99, epsilon=0.5, batch_size=64, num_actions=env.action_space.n, 
+                        fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=5e-5,
+                        eps_end=0.01, input_dims=env.observation_space.n, lr=lr,model_path=model)
     
     #avg_score: -39.51, done: False, time: 228.27, episodes: 312
 
@@ -229,7 +238,7 @@ if __name__=='__main__':
     # Training session
     if model is None:
         train(1500, env, agent)
-        agent.store_model("model_3")
+        agent.store_model("model_2")
     
 
     # Evaluation of the training session

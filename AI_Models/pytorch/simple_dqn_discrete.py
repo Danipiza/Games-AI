@@ -35,8 +35,10 @@ class DeepQNetwork(nn.Module):
         # Output layer size. Number of actions.
         self.num_actions=num_actions
 
-        
-        self.fc1=nn.Linear(*self.input_dims, self.fc1_dims) # first hidden layer
+        # iterative
+        #self.fc1=nn.Linear(*self.input_dims, self.fc1_dims) # first hidden layer
+        # DISCRETE
+        self.fc1=nn.Linear(self.input_dims, self.fc1_dims) # first hidden layer
         self.fc2=nn.Linear(self.fc1_dims, self.fc2_dims)    # second hidden layer        
         self.fc3=nn.Linear(self.fc2_dims, self.num_actions) # output layer
         
@@ -61,7 +63,7 @@ class DeepQNetwork(nn.Module):
     Returns:
         actions(List[int]): the values of each action in the actual state.
     """
-    def forward(self, state):        
+    def forward(self, state):
         x=F.relu(self.fc1(state))
         x=F.relu(self.fc2(x))
         actions=self.fc3(x)
@@ -108,8 +110,12 @@ class Agent:
         
         # usually used a deque or some kind of collection        
         
-        self.state_memory=np.zeros((self.mem_size, *input_dims), dtype=np.float32)      # current state        
-        self.new_state_memory=np.zeros((self.mem_size, *input_dims), dtype=np.float32)  # next state    
+        # iterative
+        #self.state_memory=np.zeros((self.mem_size, *input_dims), dtype=np.float32)      # current state        
+        #self.new_state_memory=np.zeros((self.mem_size, *input_dims), dtype=np.float32)  # next state    
+        # DISCRETE
+        self.state_memory=np.zeros((self.mem_size, input_dims), dtype=np.float32)      # current state        
+        self.new_state_memory=np.zeros((self.mem_size, input_dims), dtype=np.float32)  # next state    
         self.action_memory=np.zeros(self.mem_size, dtype=np.int32)   # action memory        
         self.reward_memory=np.zeros(self.mem_size, dtype=np.float32) # reward memory         
         self.terminal_memory=np.zeros(self.mem_size, dtype=np.bool_) # terminal memory.
@@ -130,8 +136,12 @@ class Agent:
         index=self.mem_cntr%self.mem_size # rewrite the agent memory, with new ones. Using deque is worst
 
         # STORE.
-        self.state_memory[index]     =state.flatten()  # ensure state is 1D
-        self.new_state_memory[index] =state_.flatten()  # ensure state_ is 1D
+        # iterative
+        #self.state_memory[index]     =state.flatten()  # ensure state is 1D
+        #self.new_state_memory[index] =state_.flatten()  # ensure state_ is 1D
+        # DISCRETE
+        self.state_memory[index]     =state 
+        self.new_state_memory[index] =state_
         self.reward_memory[index]    =reward
         self.action_memory[index]    =action
         self.terminal_memory[index]  =terminal
@@ -151,9 +161,9 @@ class Agent:
         
         # observation: observation of the current state
         if np.random.random()>self.epsilon:
-            # ensure observation is a numpy array, and reshape to match the input dims
+            """# ensure observation is a numpy array, and reshape to match the input dims
             if not isinstance(observation, np.ndarray):
-                observation=np.array(observation)
+                observation=np.array(observation)"""
             
             # pytorch tensor. send the variables we want to perform computation on to our device
             state=torch.tensor(observation, dtype=torch.float32).to(self.model.device)
@@ -165,6 +175,7 @@ class Agent:
             action=torch.argmax(actions).item()
         else: action=np.random.choice(self.action_space)
 
+        
         return action
 
     """
@@ -189,13 +200,6 @@ class Agent:
         terminal_batch  =torch.tensor(self.terminal_memory[batch]).to(self.model.device)
 
         action_batch=self.action_memory[batch]
-
-        """
-        # Debugging: Check if action_batch contains valid indices
-        if not np.all((0 <= action_batch) & (action_batch < self.model.num_actions)):
-            #raise ValueError("Action batch contains invalid indices")
-            print(batch_index, action_batch)
-        """
 
         model=self.model.forward(state_batch)[batch_index, action_batch]
         q_next=self.model.forward(new_state_batch)
@@ -228,10 +232,18 @@ class Agent:
     def load_model(self, model_path):
         self.model=torch.load(model_path)  
     
+    """
+    Execute a game rendering the actions in a GUI.
+
+    Args:
+        env (Object)    : enviroment.
+        max_steps (int) : maximum number of steps to render.
+    """
     def agent_play_gym(self, env, max_steps=500):       
               
         done=False
         observation, _ = env.reset() 
+        observation = self.one_hot_encode(observation, env.observation_space.n)
 
         score=0
         while not done: 
@@ -239,6 +251,7 @@ class Agent:
                               
             action=self.choose_action(observation)
             observation_, reward, done, info = env.step(action)[:4] 
+            observation_ = self.one_hot_encode(observation_, env.observation_space.n)
             score+=reward
 
             """# store in the memory
@@ -248,3 +261,19 @@ class Agent:
             # moves to the next state
             observation=observation_   
         print("Score: {}".format(score))
+    
+    """
+    One-Hot Encoding: The state is a discrete integer. 
+    The one_hot_encode function converts this integer into a one-hot encoded vector 
+        to make it compatible with the neural network.
+
+    Args: 
+        state (int)      : integer representing the state
+        state_size (int) : size of the enviroment (matrix).
+    """
+    def one_hot_encode(self, state, state_size):
+        one_hot=np.zeros(state_size)        
+        one_hot[state]=1
+        return one_hot
+    
+    
