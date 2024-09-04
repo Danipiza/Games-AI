@@ -249,15 +249,15 @@ def execute(agent, GUI=False,
 if __name__=='__main__':   
     
     model=None
-    #model='models/pytorch/simple_dqn/model_1.pth'
-    #model='dqn_model_1.pth'
+    model='models/pytorch/simple_dqn/model_1.pth'
+    #model='models/pytorch/dqn/dqn_model_1.pth'
     
     target_model=None
     #target_model='dqn_t_model_1.pth'
-    #target_model='models/pytorch/simple_dqn/target_model_1.pth'
+    #target_model='models/pytorch/dqn/dqn_t_model_1.pth'
 
     fc_dim=64
-    #eps_dec=2e-05
+    eps_dec=2.5e-6
     lr=0.00046
 
     algorithm="simple_dqn"
@@ -286,6 +286,6 @@ if __name__=='__main__':
     
 
     # Evaluation of the training session
-    #execute(agent, GUI=True)
+    execute(agent, GUI=True)
 
                 

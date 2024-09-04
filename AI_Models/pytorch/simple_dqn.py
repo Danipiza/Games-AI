@@ -73,15 +73,15 @@ class DeepQNetwork(nn.Module):
 """
 
 Args:
-    gamma (float)       : discount factor.
-    epsilon (float)     : exploration-exploitation. 
-    lr (float)          : learning rate.    
-    eps_dec (float)     : decreasing number per iteration of epsilon.
-    eps_end (float)     : minimum value for epsilon.
-    max_mem_size (int)  : maximum number of stored states.
-    input_dims (int)    : number of input variables.
-    batch_size (int)    : number of samples used in one iteration.
-    num_actions (int)   : number of actions.                      
+    gamma (float)       : Discount factor.
+    epsilon (float)     : Exploration-exploitation. 
+    lr (float)          : Learning rate.    
+    eps_dec (float)     : Decreasing number per iteration of epsilon.
+    eps_end (float)     : Minimum value for epsilon.
+    max_mem_size (int)  : Maximum number of stored states.
+    input_dims (int)    : Number of input variables.
+    batch_size (int)    : Number of samples used in one iteration.
+    num_actions (int)   : Number of actions.                      
 """
 class Agent:
     
