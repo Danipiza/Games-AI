@@ -1,0 +1,233 @@
+root@DESKTOP-QUMTRDM:/mnt/c/Users/Usuario/Desktop/GITHUB/Games-AI/Games/Gym/CartPole-v1# python3 cart_pole.py
+/mnt/c/Users/Usuario/Desktop/GITHUB/Games-AI/Games/Gym/CartPole-v1/ppo.py:314: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  state=T.tensor([observation], dtype=T.float).to(self.actor.device)
+/usr/local/lib/python3.9/dist-packages/gym/utils/passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+-- SAVING MODELS --
+Episode 0 score 13.0 avg score 13.0 time_steps 13 learning_steps 0
+-- SAVING MODELS --
+Episode 1 score 15.0 avg score 14.0 time_steps 28 learning_steps 1
+Episode 2 score 13.0 avg score 13.7 time_steps 41 learning_steps 2
+Episode 3 score 11.0 avg score 13.0 time_steps 52 learning_steps 2
+Episode 4 score 15.0 avg score 13.4 time_steps 67 learning_steps 3
+Episode 5 score 12.0 avg score 13.2 time_steps 79 learning_steps 3
+Episode 6 score 13.0 avg score 13.1 time_steps 92 learning_steps 4
+Episode 7 score 12.0 avg score 13.0 time_steps 104 learning_steps 5
+Episode 8 score 13.0 avg score 13.0 time_steps 117 learning_steps 5
+Episode 9 score 12.0 avg score 12.9 time_steps 129 learning_steps 6
+Episode 10 score 11.0 avg score 12.7 time_steps 140 learning_steps 7
+Episode 11 score 12.0 avg score 12.7 time_steps 152 learning_steps 7
+Episode 12 score 13.0 avg score 12.7 time_steps 165 learning_steps 8
+Episode 13 score 10.0 avg score 12.5 time_steps 175 learning_steps 8
+Episode 14 score 11.0 avg score 12.4 time_steps 186 learning_steps 9
+Episode 15 score 9.0 avg score 12.2 time_steps 195 learning_steps 9
+Episode 16 score 13.0 avg score 12.2 time_steps 208 learning_steps 10
+Episode 17 score 10.0 avg score 12.1 time_steps 218 learning_steps 10
+Episode 18 score 14.0 avg score 12.2 time_steps 232 learning_steps 11
+Episode 19 score 9.0 avg score 12.1 time_steps 241 learning_steps 12
+Episode 20 score 10.0 avg score 12.0 time_steps 251 learning_steps 12
+Episode 21 score 18.0 avg score 12.2 time_steps 269 learning_steps 13
+Episode 22 score 11.0 avg score 12.2 time_steps 280 learning_steps 14
+Episode 23 score 9.0 avg score 12.0 time_steps 289 learning_steps 14
+Episode 24 score 10.0 avg score 12.0 time_steps 299 learning_steps 14
+Episode 25 score 15.0 avg score 12.1 time_steps 314 learning_steps 15
+Episode 26 score 19.0 avg score 12.3 time_steps 333 learning_steps 16
+Episode 27 score 15.0 avg score 12.4 time_steps 348 learning_steps 17
+Episode 28 score 22.0 avg score 12.8 time_steps 370 learning_steps 18
+Episode 29 score 23.0 avg score 13.1 time_steps 393 learning_steps 19
+Episode 30 score 13.0 avg score 13.1 time_steps 406 learning_steps 20
+Episode 31 score 28.0 avg score 13.6 time_steps 434 learning_steps 21
+Episode 32 score 19.0 avg score 13.7 time_steps 453 learning_steps 22
+Episode 33 score 17.0 avg score 13.8 time_steps 470 learning_steps 23
+Episode 34 score 15.0 avg score 13.9 time_steps 485 learning_steps 24
+-- SAVING MODELS --
+Episode 35 score 20.0 avg score 14.0 time_steps 505 learning_steps 25
+-- SAVING MODELS --
+Episode 36 score 41.0 avg score 14.8 time_steps 546 learning_steps 27
+-- SAVING MODELS --
+Episode 37 score 45.0 avg score 15.6 time_steps 591 learning_steps 29
+Episode 38 score 11.0 avg score 15.4 time_steps 602 learning_steps 30
+Episode 39 score 10.0 avg score 15.3 time_steps 612 learning_steps 30
+-- SAVING MODELS --
+Episode 40 score 33.0 avg score 15.7 time_steps 645 learning_steps 32
+-- SAVING MODELS --
+Episode 41 score 22.0 avg score 15.9 time_steps 667 learning_steps 33
+Episode 42 score 12.0 avg score 15.8 time_steps 679 learning_steps 33
+-- SAVING MODELS --
+Episode 43 score 37.0 avg score 16.3 time_steps 716 learning_steps 35
+-- SAVING MODELS --
+Episode 44 score 32.0 avg score 16.6 time_steps 748 learning_steps 37
+Episode 45 score 16.0 avg score 16.6 time_steps 764 learning_steps 38
+Episode 46 score 13.0 avg score 16.5 time_steps 777 learning_steps 38
+-- SAVING MODELS --
+Episode 47 score 50.0 avg score 17.2 time_steps 827 learning_steps 41
+-- SAVING MODELS --
+Episode 48 score 46.0 avg score 17.8 time_steps 873 learning_steps 43
+-- SAVING MODELS --
+Episode 49 score 111.0 avg score 19.7 time_steps 984 learning_steps 49
+-- SAVING MODELS --
+Episode 50 score 57.0 avg score 20.4 time_steps 1041 learning_steps 52
+-- SAVING MODELS --
+Episode 51 score 25.0 avg score 20.5 time_steps 1066 learning_steps 53
+-- SAVING MODELS --
+Episode 52 score 33.0 avg score 20.7 time_steps 1099 learning_steps 54
+-- SAVING MODELS --
+Episode 53 score 23.0 avg score 20.8 time_steps 1122 learning_steps 56
+-- SAVING MODELS --
+Episode 54 score 53.0 avg score 21.4 time_steps 1175 learning_steps 58
+-- SAVING MODELS --
+Episode 55 score 35.0 avg score 21.6 time_steps 1210 learning_steps 60
+-- SAVING MODELS --
+Episode 56 score 27.0 avg score 21.7 time_steps 1237 learning_steps 61
+-- SAVING MODELS --
+Episode 57 score 38.0 avg score 22.0 time_steps 1275 learning_steps 63
+-- SAVING MODELS --
+Episode 58 score 82.0 avg score 23.0 time_steps 1357 learning_steps 67
+-- SAVING MODELS --
+Episode 59 score 47.0 avg score 23.4 time_steps 1404 learning_steps 70
+-- SAVING MODELS --
+Episode 60 score 66.0 avg score 24.1 time_steps 1470 learning_steps 73
+-- SAVING MODELS --
+Episode 61 score 50.0 avg score 24.5 time_steps 1520 learning_steps 76
+-- SAVING MODELS --
+Episode 62 score 78.0 avg score 25.4 time_steps 1598 learning_steps 79
+-- SAVING MODELS --
+Episode 63 score 77.0 avg score 26.2 time_steps 1675 learning_steps 83
+-- SAVING MODELS --
+Episode 64 score 42.0 avg score 26.4 time_steps 1717 learning_steps 85
+-- SAVING MODELS --
+Episode 65 score 55.0 avg score 26.8 time_steps 1772 learning_steps 88
+-- SAVING MODELS --
+Episode 66 score 53.0 avg score 27.2 time_steps 1825 learning_steps 91
+-- SAVING MODELS --
+Episode 67 score 84.0 avg score 28.1 time_steps 1909 learning_steps 95
+-- SAVING MODELS --
+Episode 68 score 73.0 avg score 28.7 time_steps 1982 learning_steps 99
+-- SAVING MODELS --
+Episode 69 score 73.0 avg score 29.4 time_steps 2055 learning_steps 102
+-- SAVING MODELS --
+Episode 70 score 72.0 avg score 30.0 time_steps 2127 learning_steps 106
+-- SAVING MODELS --
+Episode 71 score 61.0 avg score 30.4 time_steps 2188 learning_steps 109
+-- SAVING MODELS --
+Episode 72 score 107.0 avg score 31.4 time_steps 2295 learning_steps 114
+-- SAVING MODELS --
+Episode 73 score 34.0 avg score 31.5 time_steps 2329 learning_steps 116
+-- SAVING MODELS --
+Episode 74 score 185.0 avg score 33.5 time_steps 2514 learning_steps 125
+-- SAVING MODELS --
+Episode 75 score 47.0 avg score 33.7 time_steps 2561 learning_steps 128
+-- SAVING MODELS --
+Episode 76 score 44.0 avg score 33.8 time_steps 2605 learning_steps 130
+Episode 77 score 28.0 avg score 33.8 time_steps 2633 learning_steps 131
+Episode 78 score 37.0 avg score 33.8 time_steps 2670 learning_steps 133
+-- SAVING MODELS --
+Episode 79 score 84.0 avg score 34.4 time_steps 2754 learning_steps 137
+-- SAVING MODELS --
+Episode 80 score 121.0 avg score 35.5 time_steps 2875 learning_steps 143
+-- SAVING MODELS --
+Episode 81 score 89.0 avg score 36.1 time_steps 2964 learning_steps 148
+-- SAVING MODELS --
+Episode 82 score 188.0 avg score 38.0 time_steps 3152 learning_steps 157
+-- SAVING MODELS --
+Episode 83 score 74.0 avg score 38.4 time_steps 3226 learning_steps 161
+-- SAVING MODELS --
+Episode 84 score 96.0 avg score 39.1 time_steps 3322 learning_steps 166
+-- SAVING MODELS --
+Episode 85 score 307.0 avg score 42.2 time_steps 3629 learning_steps 181
+-- SAVING MODELS --
+Episode 86 score 60.0 avg score 42.4 time_steps 3689 learning_steps 184
+-- SAVING MODELS --
+Episode 87 score 218.0 avg score 44.4 time_steps 3907 learning_steps 195
+-- SAVING MODELS --
+Episode 88 score 61.0 avg score 44.6 time_steps 3968 learning_steps 198
+-- SAVING MODELS --
+Episode 89 score 89.0 avg score 45.1 time_steps 4057 learning_steps 202
+-- SAVING MODELS --
+Episode 90 score 258.0 avg score 47.4 time_steps 4315 learning_steps 215
+-- SAVING MODELS --
+Episode 91 score 199.0 avg score 49.1 time_steps 4514 learning_steps 225
+-- SAVING MODELS --
+Episode 92 score 236.0 avg score 51.1 time_steps 4750 learning_steps 237
+-- SAVING MODELS --
+Episode 93 score 170.0 avg score 52.3 time_steps 4920 learning_steps 246
+-- SAVING MODELS --
+Episode 94 score 129.0 avg score 53.1 time_steps 5049 learning_steps 252
+-- SAVING MODELS --
+Episode 95 score 253.0 avg score 55.2 time_steps 5302 learning_steps 265
+-- SAVING MODELS --
+Episode 96 score 222.0 avg score 56.9 time_steps 5524 learning_steps 276
+-- SAVING MODELS --
+Episode 97 score 139.0 avg score 57.8 time_steps 5663 learning_steps 283
+-- SAVING MODELS --
+Episode 98 score 219.0 avg score 59.4 time_steps 5882 learning_steps 294
+-- SAVING MODELS --
+Episode 99 score 232.0 avg score 61.1 time_steps 6114 learning_steps 305
+-- SAVING MODELS --
+Episode 100 score 583.0 avg score 66.8 time_steps 6697 learning_steps 334
+-- SAVING MODELS --
+Episode 101 score 111.0 avg score 67.8 time_steps 6808 learning_steps 340
+-- SAVING MODELS --
+Episode 102 score 111.0 avg score 68.8 time_steps 6919 learning_steps 345
+-- SAVING MODELS --
+Episode 103 score 97.0 avg score 69.6 time_steps 7016 learning_steps 350
+-- SAVING MODELS --
+Episode 104 score 121.0 avg score 70.7 time_steps 7137 learning_steps 356
+-- SAVING MODELS --
+Episode 105 score 125.0 avg score 71.8 time_steps 7262 learning_steps 363
+-- SAVING MODELS --
+Episode 106 score 212.0 avg score 73.8 time_steps 7474 learning_steps 373
+-- SAVING MODELS --
+Episode 107 score 240.0 avg score 76.1 time_steps 7714 learning_steps 385
+-- SAVING MODELS --
+Episode 108 score 1002.0 avg score 86.0 time_steps 8716 learning_steps 435
+-- SAVING MODELS --
+Episode 109 score 96.0 avg score 86.8 time_steps 8812 learning_steps 440
+-- SAVING MODELS --
+Episode 110 score 44.0 avg score 87.2 time_steps 8856 learning_steps 442
+-- SAVING MODELS --
+Episode 111 score 53.0 avg score 87.6 time_steps 8909 learning_steps 445
+-- SAVING MODELS --
+Episode 112 score 33.0 avg score 87.8 time_steps 8942 learning_steps 447
+-- SAVING MODELS --
+Episode 113 score 72.0 avg score 88.4 time_steps 9014 learning_steps 450
+-- SAVING MODELS --
+Episode 114 score 136.0 avg score 89.6 time_steps 9150 learning_steps 457
+-- SAVING MODELS --
+Episode 115 score 346.0 avg score 93.0 time_steps 9496 learning_steps 474
+-- SAVING MODELS --
+Episode 116 score 342.0 avg score 96.3 time_steps 9838 learning_steps 491
+-- SAVING MODELS --
+Episode 117 score 178.0 avg score 98.0 time_steps 10016 learning_steps 500
+-- SAVING MODELS --
+Episode 118 score 952.0 avg score 107.4 time_steps 10968 learning_steps 548
+-- SAVING MODELS --
+Episode 119 score 392.0 avg score 111.2 time_steps 11360 learning_steps 568
+-- SAVING MODELS --
+Episode 120 score 662.0 avg score 117.7 time_steps 12022 learning_steps 601
+-- SAVING MODELS --
+Episode 121 score 443.0 avg score 122.0 time_steps 12465 learning_steps 623
+-- SAVING MODELS --
+Episode 122 score 521.0 avg score 127.1 time_steps 12986 learning_steps 649
+-- SAVING MODELS --
+Episode 123 score 814.0 avg score 135.1 time_steps 13800 learning_steps 690
+-- SAVING MODELS --
+Episode 124 score 388.0 avg score 138.9 time_steps 14188 learning_steps 709
+-- SAVING MODELS --
+Episode 125 score 466.0 avg score 143.4 time_steps 14654 learning_steps 732
+-- SAVING MODELS --
+Episode 126 score 427.0 avg score 147.5 time_steps 15081 learning_steps 754
+-- SAVING MODELS --
+Episode 127 score 917.0 avg score 156.5 time_steps 15998 learning_steps 799
+-- SAVING MODELS --
+Episode 128 score 462.0 avg score 160.9 time_steps 16460 learning_steps 823
+-- SAVING MODELS --
+Episode 129 score 1316.0 avg score 173.8 time_steps 17776 learning_steps 888
+-- SAVING MODELS --
+Episode 130 score 1250.0 avg score 186.2 time_steps 19026 learning_steps 951
+-- SAVING MODELS --
+Episode 131 score 569.0 avg score 191.6 time_steps 19595 learning_steps 979
+-- SAVING MODELS --
+Episode 132 score 304.0 avg score 194.5 time_steps 19899 learning_steps 994
+-- SAVING MODELS --
+Episode 133 score 87759.0 avg score 1071.9 time_steps 107658 learning_steps 5382

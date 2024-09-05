@@ -44,6 +44,6 @@ episodes=1500   # Número de episodios.
 
 ![astro_config](https://github.com/Danipiza/Games-AI/tree/main/Games/Gym/LunarLander-v2/analysis/simple_vs_target_dq.webp)
 
-###Ejemplo de ejecución
+### Ejemplo de ejecución
 
 ![exec](https://github.com/Danipiza/Games-AI/tree/main/Games/Gym/LunarLander-v2/executions/dqn_exec_exemple.gif)
