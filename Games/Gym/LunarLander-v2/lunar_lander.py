@@ -27,7 +27,7 @@ Observation shape:
 
 
 """
-Sstore the results of the search function.
+Store the results of the search function.
 
 Args:
     fc_dim (int)        : Size of the Fully Connected layers.
@@ -249,7 +249,7 @@ def execute(agent, GUI=False,
 if __name__=='__main__':   
     
     model=None
-    model='models/pytorch/simple_dqn/model_1.pth'
+    #model='models/pytorch/simple_dqn/model_1.pth'
     #model='models/pytorch/dqn/dqn_model_1.pth'
     
     target_model=None

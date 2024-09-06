@@ -106,12 +106,17 @@ Args:
 """
 class ActorNetwork(nn.Module):
 
-    def __init__(self, n_actions, input_dims, alpha,
-                 fc1_dims=256, fc2_dims=256, model_dir='models'):
+    def __init__(self, n_actions, input_dims, alpha, 
+                 fc1_dims=256, fc2_dims=256, model_path=None, idx=0):
         super(ActorNetwork, self).__init__()
 
+        
+        self.idx=idx
         # create the path file to store the agent model.
-        self.model_file=os.path.join(model_dir, 'actor_pytorch_ppo')
+        if model_path is None:         
+            self.model_path=os.path.join('models', 'actor_pytorch_{}_ppo'.format(self.idx))
+        else: 
+            self.model_path=model_path
 
         """
         # THIS MODEL WORKS WORSE THAN THE SEQUENTIAL MODEL
@@ -176,8 +181,8 @@ class ActorNetwork(nn.Module):
 
     
     # BOOKKEEPING FUNCTIONS. SAVE and LOAD the model.
-    def save_model(self): T.save(self.state_dict(), self.model_file)
-    def load_checkpoint(self): self.load_state_dict(T.load(self.model_file))
+    def save_model(self): T.save(self.state_dict(), self.model_path)
+    def load_model(self): self.load_state_dict(T.load(self.model_path, weights_only=True)) # removing FutureWarning
 
 
 """
@@ -194,12 +199,16 @@ Args:
 class CriticNetwork(nn.Module):
 
     # NEARLY IDENTICAL TO THE AGENT NETWORK.
-    def __init__(self, input_dims, alpha, fc1_dims=256, fc2_dims=256,
-            model_dir='models'):
+    def __init__(self, input_dims, alpha, 
+                 fc1_dims=256, fc2_dims=256, model_path=None, idx=0):
         super(CriticNetwork, self).__init__()
 
-        self.model_file=os.path.join(model_dir, 'critic_pytorch_ppo')
+        self.idx=idx
 
+        # create the path file to store the agent model.
+        if model_path==None:            
+            self.model_path=os.path.join('models', 'critic_pytorch_{}_ppo'.format(self.idx))
+        else: self.model_path=model_path
         
         # same network as the Actor. 
         #   but the output layer is single valued and 
@@ -241,8 +250,8 @@ class CriticNetwork(nn.Module):
 
    
     # BOOKKEEPING FUNCTIONS. SAVE and LOAD the model.
-    def save_model(self): T.save(self.state_dict(), self.model_file)
-    def load_checkpoint(self): self.load_state_dict(T.load(self.model_file))
+    def save_model(self): T.save(self.state_dict(), self.model_path)
+    def load_model(self): self.load_state_dict(T.load(self.model_path, weights_only=True)) # removing FutureWarning
 
 
 
@@ -264,18 +273,31 @@ Args:
     n_epochs  (int)     : Number of epochs.
 """
 class Agent:
+    
     def __init__(self, n_actions, input_dims, gamma=0.99, alpha=0.0003, gae_lambda=0.95,
-            policy_clip=0.2, batch_size=64, n_epochs=10):
+            policy_clip=0.2, batch_size=64, n_epochs=10,
+            agent_path=None, critic_path=None, idx=0):
         
+        
+        
+
+
         self.gamma       =gamma
         self.policy_clip =policy_clip
         self.n_epochs    =n_epochs
         self.gae_lambda  =gae_lambda
 
-        self.actor  =ActorNetwork(n_actions, input_dims, alpha)
-        self.critic =CriticNetwork(input_dims, alpha)
+        self.actor  =ActorNetwork(n_actions, input_dims, alpha, idx=idx)
+        self.critic =CriticNetwork(input_dims, alpha, idx=idx)
         self.memory =PPOMemory(batch_size)
+
+        if  agent_path is not None and \
+            critic_path is not None:
+            self.load_models()
     
+    def prueba(self):
+        print("ENTRAAA \n\n\n\n")
+
     """
     Handles the interface between the Agent and the Memory buffer.
 
@@ -441,6 +463,6 @@ class Agent:
     Interface function between the agent and the load_model() functions of the networks.
     """
     def load_models(self):
-        print('-- LOADING MODELS --')
-        self.actor.save_model()
-        self.critic.save_model()
+        print('-- LOADING MODELS --\n')
+        self.actor.load_model()
+        self.critic.load_model()
