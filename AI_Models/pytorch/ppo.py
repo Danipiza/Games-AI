@@ -117,7 +117,7 @@ class ActorNetwork(nn.Module):
             self.model_path=os.path.join('models', 'actor_pytorch_{}_ppo'.format(self.idx))
         else: 
             self.model_path=model_path
-
+        print("Agent model path:",self.model_path)
         """
         # THIS MODEL WORKS WORSE THAN THE SEQUENTIAL MODEL
 
@@ -209,6 +209,7 @@ class CriticNetwork(nn.Module):
         if model_path==None:            
             self.model_path=os.path.join('models', 'critic_pytorch_{}_ppo'.format(self.idx))
         else: self.model_path=model_path
+        
         
         # same network as the Actor. 
         #   but the output layer is single valued and 
@@ -455,9 +456,11 @@ class Agent:
     Interface function between the Agent and the save_model() functions of the networks
     """
     def save_models(self):
-        print('-- SAVING MODELS --')
-        self.actor.save_model()
+        print('-- SAVING MODELS --')        
         self.critic.save_model()
+        self.actor.save_model()
+
+        
 
     """
     Interface function between the agent and the load_model() functions of the networks.

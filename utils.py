@@ -86,9 +86,11 @@ def print_2Dplot(episodes, input_files, names, colors):
     # size 
     plt.figure(figsize=(10, 6))
 
+    
+
     # add functions
     for i in range(len(names)):
-        plt.plot(x_values, y_values[i], label=names[i], color=colors[i]) 
+        plt.plot(x_values, y_values[i][:episodes], label=names[i], color=colors[i]) 
     
 
     # labels   
@@ -183,7 +185,50 @@ def load_best_score(best_score_path):
     return ret
 
 
+# ------------------------------------------------------------------------------------ 
+# -- FILES --------------------------------------------------------------------------- 
 
+def extract_avg_score(input_filename, output_filename, avg_name):
+    avg_scores=[]
+    idx=-1
+    
+    try:
+        with open(input_filename, 'r') as infile:
+            count=0
+            for line in infile:                
+                parts=line.split()
+                for part in parts:
+                    if part==avg_name:
+                        break
+                    count+=1
+                break
+            idx=count+1
+            
+            
+            for line in infile:
+                aux=0
+
+                parts=line.split()
+                if parts[0]=='Time': aux=2
+                if parts[3]=='SAVING': continue
+                
+                # Ensure there are enough parts in the line
+                if len(parts)>=idx:   
+                    print(parts)                 
+                    avg_scores.append(float(parts[idx+aux]))
+                                            
+        
+        with open(output_filename, 'w') as outfile:
+            for x in avg_scores:
+                outfile.write(f"{x}\n")
+
+    except FileNotFoundError:
+        print(f"File not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def flatten_matrix(matrix):
+    return [x for row in matrix for x in row]
 
 
 # ------------------------------------------------------------------------------------ 
@@ -192,9 +237,12 @@ def load_best_score(best_score_path):
 if __name__=='__main__': 
     #execute_mean()
 
-    episodes=1500
-    names=['simple_dqn','dqn']
+    
+    """extract_avg_score('ppo_results.txt', 'ppo_scores.txt', 'avg_score')"""
+
+    episodes=500
+    names=['simple_dqn','dqn', 'ppo']
     input_files=['avg_scores_{}_means.txt'.format(x) for x in names]    
-    colors=['red','blue']
+    colors=['red','blue', 'green']
 
     print_2Dplot(episodes, input_files, names, colors)
