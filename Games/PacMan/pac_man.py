@@ -19,10 +19,12 @@ class Pacman:
     "left"  or "a": LEFT
     """
 
-    def __init__(self,file_name):
+    def __init__(self,file_name,GUI=False):
         self.file_name=file_name
         self.version=int(file_name[-7]) 
         self.win_condition=132 if self.version==1 else 21
+
+        self.PRINT=GUI
         
         # -------------------------------------------------------------------------------------------------------------------
         # --- CONSTANTS -----------------------------------------------------------------------------------------------------
@@ -41,7 +43,9 @@ class Pacman:
         self.UP     ='up'
         self.RIGHT  ='right'        
         self.DOWN   ='down' 
-        self.LEFT   ='left'       
+        self.LEFT   ='left' 
+        
+            
         
 
         self.actions=[self.UP,self.RIGHT, self.DOWN, self.LEFT]
@@ -116,7 +120,7 @@ class Pacman:
 
 
 
-    def step(self, accion):                
+    def step(self, accion):
         eat=self.move_agent(self.actions[accion])
         self.move_ghosts()
         
@@ -156,9 +160,10 @@ class Pacman:
         if accion==1: a="E"
         elif accion==2: a="S"
         elif accion==3: a="W"
-        print("{}\tTick={}  \tState={}  \tCoins={}  \t{}\tAgent= {}\tGhost= {}".format(a,self.exec_tick, 
-                                                                                                 self.count_state, self.agent_coins,aux,
-                                                                                                 self.agent_pos, self.ghosts_pos[0]))
+        """print("{}\tTick={}  \tState={}  \tCoins={}  \t{}\tAgent= {}\tGhost= {}"
+              .format(a,self.exec_tick, 
+                      self.count_state, self.agent_coins,aux,
+                      self.agent_pos, self.ghosts_pos[0]))"""
         
         
 
@@ -173,7 +178,7 @@ class Pacman:
 
         state.append(self.agent_pos[0])
         state.append(self.agent_pos[1])
-        #state.append(self.agent_coins) # not useful
+        
         for i in range(self.n_ghosts):
             state.append(self.ghosts_pos[i][0])
             state.append(self.ghosts_pos[i][1])
@@ -184,7 +189,7 @@ class Pacman:
     """
     Reseting the class variables.
     """
-    def reset(self,init,positions,coins,states,dirs):
+    def reset(self,init,positions=None,coins=None,states=None,dirs=None):
 
         self.exec_tick=0
 
@@ -212,6 +217,12 @@ class Pacman:
         self.read_maze()
         self.n=len(self.maze)
         self.m=len(self.maze[0])
+
+        self.num_actions=4  
+        self.input_dims=self.n*self.m
+        self.input_dims+=2 # agent
+        #for self.ghosts_pos
+        self.input_dims+=2
 
         if self.version==1:
             self.scatter_targets=[[0,self.m],[0,0],[self.n,self.m],[self.n,0]]
@@ -454,17 +465,17 @@ class Pacman:
         if self.count_state==self.state_ticks[self.state]:                     
             if self.state==0: 
                 self.state=1
-                print("New state: SCATTER",end="")
+                if self.PRINT: print("New state: SCATTER",end="")
             else: 
                 self.state=0
-                print("New state: CHASE",end="")
+                if self.PRINT: print("New state: CHASE",end="")
 
             for i in range(self.n_ghosts):
                 if not self.ghosts_house[i]:
                     self.ghosts_dir[i]+=2
                     self.ghosts_dir[i]%=4
             
-            print("\nTurn 180º all ghosts")
+            if self.PRINT: print("\nTurn 180º all ghosts")
 
             # reset
             self.count_state=0
@@ -667,6 +678,10 @@ class Pacman:
         if self.version==0: return (x==5 or x==9)
         else: return x==4
 
-  
-    
+    def render(self):
+        """Compute the render frames as specified by render_mode attribute 
+        during initialization of the environment"""
+
+
+        
     
