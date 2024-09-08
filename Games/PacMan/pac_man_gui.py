@@ -164,7 +164,7 @@ class Pacman:
 
     
 
-    def execute_GUI(self):
+    def init_GUI(self):
         # screen config
         self.cell_size=30
         self.height=self.n*self.cell_size
@@ -184,7 +184,7 @@ class Pacman:
         self.ghosts_imgs=[]
         self.load_images(self.cell_size)
 
-        self.execute()
+        
     
     # TODO. ADD OTHER ALGORITHMS
     def execute_trainning(self, agent, n_games, 
@@ -248,7 +248,7 @@ class Pacman:
         
 
         # Evaluation of the training session       
-        #execute(env, agent, algorithm,GUI=True)
+        #execute_GUI(env, agent, algorithm,GUI=True)
 
     
     
@@ -1235,7 +1235,8 @@ class Pacman:
     :type self: class  
     :rtype: int
     """
-    def execute(self):       
+    def execute_GUI(self):       
+        self.init_GUI()
 
         #self.print_maze()
          
@@ -1345,6 +1346,111 @@ class Pacman:
 
             self.reset()
     
+    def execute_model(self, agent):
+        self.init_GUI()
+
+        #self.print_maze()
+         
+        mov=None
+        observation=self.reset()  
+
+        
+            
+        while not self.end:            
+            
+            # -------------------------------------------------------------------------------------------------------------------
+            # --- MOVE ----------------------------------------------------------------------------------------------------------
+            
+            # event = key pressed
+            
+            """for event in pygame.event.get():
+                if event.type==pygame.QUIT: # ends the execution.
+                    pygame.quit()
+                    sys.exit()"""
+                
+                    
+                    # run an iteration if the key pressed is binded 
+                    
+            
+            mov=agent.choose_action(observation) 
+            self.agent_dir=mov
+            mov=self.actions[self.agent_dir]
+            
+            print(mov, self.agent_pos)
+            self.move_agent_GUI(mov)
+            
+            # check for end condition
+            if self.agent_coins==self.win_condition: self.end=True
+            
+            if self.end!=True:  # no end condition, continues
+                
+                self.move_ghosts_GUI()
+                
+                # a ghost leaves the house if is his time
+                if len(self.ghost_inHouse)!=0 and self.exec_tick==self.ghost_inHouse[0][1]:
+                    idx=self.ghost_inHouse.pop(0)[0]
+
+                    self.maze[self.ghosts_house[idx][0]][self.ghosts_house[idx][1]]=self.EMPTY
+                    self.maze[self.salida_fants[0]][self.salida_fants[1]]=self.ghosts_colors[idx]
+                    self.ghosts_house[idx]=False
+
+                    self.ghosts_pos[idx][0]=self.salida_fants[0]
+                    self.ghosts_pos[idx][1]=self.salida_fants[1]
+                
+                # update ghost positions (from lower to higher priority)
+                i=self.n_ghosts-1
+                while i>=0:
+                    self.maze[self.ghosts_pos[i][0]][self.ghosts_pos[i][1]]=self.ghosts_colors[i]
+                    i-=1
+                # update agent position
+                if self.end!=True:
+                    self.maze[self.agent_pos[0]][self.agent_pos[1]]=self.AGENT
+                        
+            # -------------------------------------------------------------------------------------------------------------------
+            # --- MAZE ----------------------------------------------------------------------------------------------------------           
+
+            observation=self.get_state()
+            time.sleep(0.5)
+            # paint the maze
+            self.GUI_maze()
+
+        # -------------------------------------------------------------------------------------------------------------------
+        # --- END MESSAGE ---------------------------------------------------------------------------------------------------  
+
+    
+        if self.agent_coins==self.win_condition:   # win condition
+            print("\nYOU WIN!!!\n")
+            for _ in range(3):
+                self.GUI_message(1)
+                pygame.display.flip()
+
+                time.sleep(1)
+
+                self.GUI_maze()
+                pygame.display.flip()
+
+                time.sleep(0.33)
+                
+        else:                       # lose condition
+            print("\nGAME OVER\n")
+
+            for _ in range(3):
+                self.GUI_message(0)
+                pygame.display.flip()
+
+                time.sleep(1)
+
+                self.GUI_maze()
+                pygame.display.flip()
+
+                time.sleep(0.33)
+                
+
+
+        pygame.display.flip()
+                
+
+        
 
     def execute_dataset(self, actions_data):       
 
@@ -1660,7 +1766,7 @@ def info():
     print('╠═══════════════════════╦══════════════════════════════════════════════════════════════════╣')
     print('║ 0: Exit.              ║ Exit the execution.                                              ║')          
     print('║ 1: Play the game      ║ Start the game. With the keyboard you control PacMan.            ║')
-    print('║ 2: Load model         ║ Load a pre-trained model and render a game controled by AI.      ║')
+    print('║ 2: Execute model      ║ Load a pre-trained model and render a game controled by AI.      ║')
     print('║ 3: Train a NEW model. ║ Create a new model and start the training session.               ║')
     print('║ 4: Train a model.     ║ Load a pre-trained model to continue with the trainning session. ║')
     print('║ 5: Info.              ║ Display this info.                                               ║')
@@ -1789,7 +1895,13 @@ def menu_parameters():
 def load_models():
     """"""
 
+def error_model_message():
+    print('\nImportant!. The trained models in this repository were ',end="") 
+    print('executed in Linux. If you are executing this file ',end="")
+    print('from other OS, and choosing these models, is going to throw RunTimeError.\n')
+
 if __name__=="__main__":    
+    
     
     # ------------------------------------------------------------------------------
     # -- MODE ----------------------------------------------------------------------
@@ -1803,8 +1915,9 @@ if __name__=="__main__":
     env_n=-1
     while env_n==-1: env_n=menu_env()
         
-    
-    if mode==1: env_path='data/enviroments/GUI/{}_env.txt'.format(env_n)
+    # GUI
+    if mode==1 or mode==2: env_path='data/enviroments/GUI/{}_env.txt'.format(env_n)
+    # OTHERs
     else: env_path='data/enviroments/{}_env.txt'.format(env_n)
     
     
@@ -1846,18 +1959,19 @@ if __name__=="__main__":
         target_model=None
 
         # TODO
-        index=4
-        n_games=2500
+        index=6
+        n_games=2000
         model_path='data/models/pytorch/dqn/{}_model'.format(index)
         target_model_path='data/models/pytorch/dqn/{}_tmodel'.format(index)
         
         
         if mode==2 or mode==4: 
+            error_model_message()
             """"""
             # TODO
-            load_models(algorithms[algorithm_idx])
-            model='data/models/pytorch/dqn/dqn_model_2'
-            target_model='data/models/pytorch/dqn/dqn_t_model_2'
+            #load_models(algorithms[algorithm_idx])
+            model='data/models/pytorch/dqn/3_model.pth'
+            target_model='data/models/pytorch/dqn/3_tmodel.pth'
         
     
 
@@ -1867,6 +1981,11 @@ if __name__=="__main__":
         
         if mode==2:
             """EXECUTE ONE EPISODE"""
+            agent.epsilon=0
+
+            env.init_GUI()
+            env.execute_model(agent)
+
         else:
             env.execute_trainning(agent, n_games, model_path, target_model_path)
     
