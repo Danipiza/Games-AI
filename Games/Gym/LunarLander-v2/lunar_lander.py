@@ -197,6 +197,7 @@ def training(n_games, env, agent, algorithm):
             observation_, reward, done, info = env.step(action)[:4] 
             score+=reward
 
+            
             # store in the memory
             agent.store_transition(observation, action, reward, observation_, done)
             # learn if the memory is full. 
@@ -252,28 +253,28 @@ def execute(agent, GUI=False,
 def dqn_exec(env):
     model=None
     #model='models/pytorch/simple_dqn/model_1.pth'
-    #model='models/pytorch/dqn/dqn_model_1.pth'
+    model='models/pytorch/dqn/dqn_model_1.pth'
     
     target_model=None
     #target_model='dqn_t_model_1.pth'
-    #target_model='models/pytorch/dqn/dqn_t_model_1.pth'
+    target_model='models/pytorch/dqn/dqn_t_model_1.pth'
 
     fc_dim=64
     eps_dec=2.5e-6
     lr=0.00046
 
-    algorithm="simple_dqn"
+    algorithm="dqn"
 
     # 4 actions in the game    
-    agent=simple_dqn.Agent(gamma=0.99, epsilon=.70, batch_size=64, num_actions=env.action_space.n, 
+    """agent=simple_dqn.Agent(gamma=0.99, epsilon=.70, batch_size=64, num_actions=env.action_space.n, 
                         fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=2.5e-6,
-                        eps_end=0.01, input_dims=[8], lr=lr,model_path=model)
+                        eps_end=0.01, input_dims=[8], lr=lr,model_path=model)"""
     
     
 
-    """agent=dqn.Agent(gamma=0.99, epsilon=.70, batch_size=64, num_actions=env.action_space.n, 
+    agent=dqn.Agent(gamma=0.99, epsilon=.70, batch_size=64, num_actions=env.action_space.n, 
                         fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=2.5e-6,
-                        eps_end=0.01, input_dims=[8], lr=lr,model_path=model,target_model_path=target_model)"""
+                        eps_end=0.01, input_dims=[8], lr=lr,model_path=model,target_model_path=target_model)
     
     #avg_score: -39.51, done: False, time: 228.27, episodes: 312
 
@@ -297,7 +298,7 @@ def ppo_exec(env):
     critic_path=None
     #critic_path='models/critic_pytorch_{}_ppo'.format(idx)
 
-    idx=1
+    idx=2
     if agent_path==None or critic_path==None:
         print("ACTUAL INDEX FOR STORING A MODEL {}\n".format(idx))
 

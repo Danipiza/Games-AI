@@ -11,13 +11,13 @@ root_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.append(root_dir)
 import utils
 
-"""model_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../../AI_Models/pytorch'))
+model_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../../AI_Models/pytorch'))
 sys.path.append(model_dir)
 import simple_dqn # type: ignore 
 import dqn # type: ignore 
-import ppo # type: ignore """
+import ppo # type: ignore 
 
-import dqn # type: ignore 
+#import dqn # type: ignore 
 import pac_man
 
 def training(n_games, env, agent, algorithm):
@@ -128,9 +128,9 @@ def dqn_exec(env):
     
     # Training session
     if model is None:
-        training(1000, env, agent, algorithm)
+        training(1500, env, agent, algorithm)
         agent.store_model("dqn_model_2")
-        agent.store_target_model("dqn_t_model_1")
+        agent.store_target_model("dqn_t_model_2")
     
 
     # Evaluation of the training session

@@ -5,6 +5,21 @@ import random
 import math
 import time
 
+import gym
+
+root_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+sys.path.append(root_dir)
+import utils
+
+model_dir=os.path.abspath(os.path.join(os.path.dirname(__file__), '../../AI_Models/pytorch'))
+sys.path.append(model_dir)
+import simple_dqn # type: ignore 
+import dqn # type: ignore 
+import ppo # type: ignore 
+
+
+
+
 
 # GHOSTS AI
 # https://www.youtube.com/watch?v=ataGotQ7ir8&ab_channel=RetroGameMechanicsExplained
@@ -18,24 +33,32 @@ import time
 Args:
     filename (string) : name of the used maze.
 """
-class PacmanGUI:
+class Pacman:
     
-    """
+    
+
+    '''
     MOVEMENTS KEYS:
-    "up"    or "w": UP
-    "right" or "d": RIGHT
-    "down"  or "s": DOWN
-    "left"  or "a": LEFT
-    """
+    - "up"    or "w": UP
+    - "right" or "d": RIGHT
+    - "down"  or "s": DOWN
+    - "left"  or "a": LEFT
+    '''
 
 
-    def __init__(self,file_name):
+    def __init__(self, file_name, version):        
         self.file_name=file_name
-        self.version=int(file_name[-9])
-        self.win_condition=132 if self.version==1 else 21
+        self.version=version
+
+        # number of coins in the maze.
+        self.win_condition=0
+        if   self.version==1: self.win_condition=132
+        elif self.version==2: self.win_condition=21
+
         
-        # -------------------------------------------------------------------------------------------------------------------
-        # --- CONSTANTS -----------------------------------------------------------------------------------------------------
+        
+        # ---------------------------------------------------------------------------
+        # --- CONSTANTS -------------------------------------------------------------
         
         self.EMPTY  =0
         self.WALL   =1
@@ -46,12 +69,15 @@ class PacmanGUI:
         self.PINK   =6
         self.BLUE   =7
         self.ORANGE =8
-
+        
         # actions.
+        self.num_actions=4        
         self.UP     ='up'
         self.LEFT   ='left'
         self.DOWN   ='down'        
         self.RIGHT  ='right'
+        
+        self.actions=[self.UP,self.RIGHT, self.DOWN, self.LEFT]
 
         # directions. 
         # 0: UP 
@@ -62,67 +88,83 @@ class PacmanGUI:
         self.mY=[0,1,0,-1]
                 
         
-        self.ghosts_colors  =[]
-        self.state_ticks    =[]
-        if self.version==1:
-            self.ghosts_colors  =[5,6,7,8]
-            self.state_ticks    =[60,30,30]
-        else:
-            self.ghosts_colors  =[5]
-            self.state_ticks    =[20,10,10]
+        self.n_ghosts=0
+        if   self.version==1: self.n_ghosts=4
+        elif self.version==2: self.n_ghosts=1
 
-        # -------------------------------------------------------------------------------------------------------------------       
-        # --- VARIABLES -----------------------------------------------------------------------------------------------------
+        self.ghosts_colors   =[]
+        self.state_ticks     =[]
+        self.scatter_targets =[]
         
-        # state.
+        
+        
+        
+
+        # ---------------------------------------------------------------------------
+        # --- VARIABLES -------------------------------------------------------------
+        
+        # --- state -----------------------------------------------------------------
         # 0: CHASE          (chase certain targets)
             # RED:      target = agent position 
-            # PINK:     target = agent position + 4 cells in the agent direction (up is an exeption, also add 4 to the left)
+            # PINK:     target = agent position + 4 cells in the agent direction 
+            #               (up is an exeption, also add 4 to the left)
             # BLUE:     target = tmp + vector from red ghost to tmp.       
             #   where 
-            #       tmp = agent position + 2 cells in the agent direction (up is an exeption, also add 2 to the left)                     
-            # ORANGE:   target = if distante to agent > 8 -> agent. otherwise -> his scatter point
+            #       tmp = agent position + 2 cells in the agent direction 
+            #               (up is an exeption, also add 2 to the left)                     
+            # ORANGE:   target = agent if distante to agent > 8 
+            #                          otherwise: scatter point 
         # 1: SCATTER        (chase scatter point. borders of the maze)
-        # 2: FRIGHTENED     (runaway from the aget)
+        # 2: FRIGHTENED     (runaway from the agent)       
+                 
         self.state=1
-        
-        self.scatter_targets=[]
 
         # number of ticks in the execution.
         self.exec_tick=0
         # number of ticks in the actual state.
         self.count_state=0
 
-        # agent.
+        # --- agent -----------------------------------------------------------------        
         self.agent_pos=None
         self.agent_dir=1
         self.agent_coins=0   
 
-        # ghosts.
-        self.n_ghosts=4 if self.version==1 else 1
+
+        # --- ghosts ----------------------------------------------------------------       
+               
+        
         self.ghosts_pos=[[0,0] for _ in range(self.n_ghosts)]
         if self.version==1:
             self.ghosts_dir=[1,2,0,0]
             self.ghosts_house=[False,True,True,True]
             # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
             self.ghost_inHouse=[[1,3],[2,6],[3,9]]
-        else:
+        elif self.version==2:
             self.ghosts_dir=[3]
             self.ghosts_house=[False]
             # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
             self.ghost_inHouse=[]
         
-        # maze.
-        self.maze           =[] # used for the walls, agent and ghosts positions in the GUI
-        self.coins_matrix   =[] # used for the coins in the GUI         
-        self.n=0                # number of rows
-        self.m=0                # number of coloumns
+
+                
+        # --- maze ------------------------------------------------------------------
+        # used for the walls, agent and ghosts positions (GUI)
+        self.maze         =[] 
+        # used for the coins in the GUI and the execution of AI algorithms
+        self.coins_matrix =[]          
+        self.n=0 # number of rows
+        self.m=0 # number of coloumns
 
         # finalization variable
         self.end=False
 
         self.reset()
+
+        self.input_dims=(self.n*self.m)+(2)+(2*self.n_ghosts)
+
     
+
+    def execute_GUI(self):
         # screen config
         self.cell_size=30
         self.height=self.n*self.cell_size
@@ -142,53 +184,82 @@ class PacmanGUI:
         self.ghosts_imgs=[]
         self.load_images(self.cell_size)
 
-        #self.execute()
-        dateset=[1, 1, 0, 1, 1, 0, 1, 2, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 1, 3, 1, 3, 1, 3, 2, 2, 1, 3, 0, 1, 3, 1, 2, 2, 3, 1, 1, 3, 3, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 2, 2, 2, 1, 3, 1, 3, 1, 2, 2, 0, 0, 2, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 2, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 2, 3, 1, 3, 1, 3, 1, 3, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 2, 2, 2, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 3, 1, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 3, 1, 3, 1, 2, 2, 0, 2, 2, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 0, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 0, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 1, 3, 1, 3, 1, 3, 2, 2, 2, 2, 2, 1, 3, 1, 3, 1, 2, 0, 0, 0, 0, 0]
-        self.execute_dataset(dateset)
-
-    """
-    Reseting the class variables.
-
-    :type self: class    
-    :rtype: None
-    """
-    def reset(self):
-
-        self.exec_tick=0
-
-        self.state=1
-        self.count_state=0
+        self.execute()
+    
+    # TODO. ADD OTHER ALGORITHMS
+    def execute_trainning(self, agent, n_games, 
+                          model_path, target_model_path):        
         
-        self.agent_pos=None
-        self.agent_dir=1
-        self.agent_coins=0   
+        self.dqn_exec(agent,n_games,
+                      model_path, target_model_path,)
 
-        self.ghosts_pos=[[0,0] for _ in range(self.n_ghosts)]
-        if self.version==1:
-            self.ghosts_dir=[1,2,0,0]
-            self.ghosts_house=[False,True,True,True]
-            # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
-            self.ghost_inHouse=[[1,3],[2,6],[3,9]]
-        else:
-            self.ghosts_dir=[3]
-            self.ghosts_house=[False]
-            # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
-            self.ghost_inHouse=[]
+    def dqn_exec(self, agent, n_games,
+                 model_path, target_model_path):
+                
+        """start_time=0
+        ep_time=0  
+        curr_time=0 """   
+
+
+        start_time=time.time()            
+        for i in range(n_games):
+            """ep_time=time.time()"""
+
+            score=0     # episode score
+            done=False  # termination condition
+            observation = self.reset()                  
+            scores=[]
+            
+            while not done:
+                """curr_time=time.time()-ep_time
+                if curr_time>=5:
+                    curr_time=time.time()-start_time                    
+                    print("Exceeded time:", curr_time)
+                    break # next episode"""
+                
+                action=agent.choose_action(observation)
+                observation_, reward, done = self.step(action)
+                
+                
+                score+=reward
+
+                # store in the memory
+                agent.store_transition(observation, action, reward, observation_, done)
+                # learn if the memory is full. 
+                agent.learn()
+                # moves to the next state
+                observation=observation_
+            scores.append(score)
+            """avg_score=np.mean(scores[-100:])
+
+            utils.store_avg_score(avg_score, algorithm) """
+            
+            print('episode ', i, 'score %.2f' % score, 
+                  'epsilon %.2f' % agent.epsilon)
+            
+        end_time=time.time()
+        print("Tiempo de ejecucion:", end_time-start_time)  
         
-        self.maze=[]
-        self.coins_matrix=[]
-        self.read_maze()
-        self.n=len(self.maze)
-        self.m=len(self.maze[0])
+        
+        
 
-        if self.version==1:
-            self.scatter_targets=[[0,self.m],[0,0],[self.n,self.m],[self.n,0]]
-        else:  self.scatter_targets=[[0,4]]
+        agent.store_model(model_path)
+        agent.store_target_model(target_model_path)
+        
 
-        self.end=False
+        # Evaluation of the training session       
+        #execute(env, agent, algorithm,GUI=True)
 
-      
+    
+    
+    
+    def render(self):
+        """Compute the render frames as specified by render_mode attribute 
+        during initialization of the environment"""    
 
+
+
+    
     """
     Reading the maze from a .txt file. 
     Also search for the positions of the agent and ghosts
@@ -198,6 +269,7 @@ class PacmanGUI:
     """
     def read_maze(self):  
         tmp=0
+
 
         # -------------------------------------------------------------------------------------------------------------------
         # --- READING -------------------------------------------------------------------------------------------------------
@@ -255,10 +327,141 @@ class PacmanGUI:
                     self.ghosts_house[3]=[x,y]
                     tmp+=1
                     if tmp==5: break
+      
+
+    """
+    Reseting the class variables.
+
+    :type self: class    
+    :rtype: None
+    """
+    def reset(self):
+        self.state=1
+
+        # number of ticks in the execution.
+        self.exec_tick=0
+        # number of ticks in the actual state.
+        self.count_state=0
+
+        # agent.
+        self.agent_pos=None
+        self.agent_dir=1
+        self.agent_coins=0
+
         
         
         
-                    
+
+        self.ghosts_pos=[[0,0] for _ in range(self.n_ghosts)]
+        if self.version==1:
+            self.ghosts_dir=[1,2,0,0]
+            self.ghosts_house=[False,True,True,True]
+            # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
+            self.ghost_inHouse=[[1,3],[2,6],[3,9]]
+        elif self.version==2:
+            self.ghosts_dir=[3]
+            self.ghosts_house=[False]
+            # queue, for the leaving order. 0th: ghost id. 1th: home leaving tick
+            self.ghost_inHouse=[]
+        
+
+
+        self.maze=[]
+        self.coins_matrix=[]
+        self.read_maze()
+        self.n=len(self.maze)
+        self.m=len(self.maze[0])
+
+        
+
+        if self.version==1:
+            self.ghosts_colors   =[5,6,7,8]
+            self.state_ticks     =[60,30,30]
+            self.scatter_targets =[[0,self.m],[0,0],
+                                   [self.n,self.m],[self.n,0]]
+        elif self.version==2:
+            self.ghosts_colors   =[5]
+            self.state_ticks     =[20,10,10]
+            self.scatter_targets =[[0,4]]
+
+        self.end=False
+
+        return self.get_state()
+
+
+    def get_state(self):
+        """"""
+        state=[]
+
+        for row in self.coins_matrix:
+            state.extend(row)
+
+        state.append(self.agent_pos[0])
+        state.append(self.agent_pos[1])
+        
+        for i in range(self.n_ghosts):
+            state.append(self.ghosts_pos[i][0])
+            state.append(self.ghosts_pos[i][1])
+
+        return state
+
+    def step(self, action):
+        """"""               
+        eat=self.move_agent(self.actions[action])
+        self.move_ghosts()
+
+        if len(self.ghost_inHouse)!=0 and self.exec_tick==self.ghost_inHouse[0][1]:
+            idx=self.ghost_inHouse.pop(0)[0]
+            
+            self.ghosts_house[idx]=False
+            self.ghosts_pos[idx][0]=self.salida_fants[0]
+            self.ghosts_pos[idx][1]=self.salida_fants[1]
+        
+        next_state=self.get_state()
+
+        aux=""
+        
+        
+        reward=-1           # move without eating
+
+        if eat==1:          # power        
+            reward=5        
+            aux="POWER"
+        elif eat==2:        # coin
+            reward=10      
+            aux="COIN"
+        elif eat==3:        # portal
+            reward=20      
+            aux="PORTAL"
+        elif eat==4:        # ghost
+            reward=100     
+            aux="GHOST"
+        elif eat==5:        # has been eaten by a ghost
+            reward=-100    
+            aux="PIERDE"
+        
+        # has been eaten by a ghost
+        if self.end==True:
+            if self.agent_coins!=self.win_condition: 
+                reward=-100
+                aux="PIERDE"
+            else:                 
+                reward=1000
+                aux="GANA"
+        
+        """a="N"
+        if action==1: a="E"
+        elif action==2: a="S"
+        elif action==3: a="W"
+        print("{}\tTick={}  \tState={}  \tCoins={}  \t{}\tAgent= {}\tGhost= {}"
+              .format(a,self.exec_tick, 
+                      self.count_state, self.agent_coins,aux,
+                      self.agent_pos, self.ghosts_pos[0]))"""
+        
+        
+
+        
+        return next_state, reward, self.end           
 
     """
     Printing a matrix giving by parameter.
@@ -277,9 +480,7 @@ class PacmanGUI:
                     print(-1, end=" ")
                 else: print(matrix[x][y], end=" ")
             print()
-
-    
-
+   
     """
     Moving the agent.
     eat ghosts or is eaten by a ghost
@@ -291,11 +492,11 @@ class PacmanGUI:
     :type mov: string
     :rtype: int
     """
-    def move_agent(self, mov):
+    def move_agent_GUI(self, mov):
         x=self.agent_pos[0]
         y=self.agent_pos[1] 
         
-        coin=0
+        ret=0
         
         # increases the execution ticks
         self.exec_tick+=1
@@ -309,12 +510,13 @@ class PacmanGUI:
             if x>0 and self.maze[x-1][y]>=0:                # dest position != wall
                 if self.coins_matrix[x-1][y]==self.COIN:    # COIN. adds a coin
                     self.coins_matrix[x-1][y]=0
-                    coin=1
+                    ret=2
                 elif self.coins_matrix[x-1][y]==self.POWER: # POWER. change the game state to FRIGHTENED
                     self.coins_matrix[x-1][y]=0
                     self.state=2
                     self.count_state=0
-                    
+                    ret=1
+
                     # change the directions of the ghosts
                     for i in range(self.n_ghosts):                        
                         if not self.ghosts_house[i]:
@@ -328,11 +530,14 @@ class PacmanGUI:
             if x<len(self.maze)-1 and self.maze[x+1][y]>=0: # dest position != wall
                 if self.coins_matrix[x+1][y]==self.COIN:    # COIN. adds a coin
                     self.coins_matrix[x+1][y]=0
-                    coin=1
+                    ret=2
+
                 elif self.coins_matrix[x+1][y]==self.POWER: # POWER. change the game state to FRIGHTENED
                     self.coins_matrix[x+1][y]=0
                     self.state=2
                     self.count_state=0
+                    ret=1
+                    
                     for i in range(self.n_ghosts):
                         if not self.ghosts_house[i]:
                             self.ghosts_dir[i]+=2
@@ -345,12 +550,14 @@ class PacmanGUI:
             if y>0 and self.maze[x][y-1]>=0:                # dest position != wall
                 if self.coins_matrix[x][y-1]==self.COIN:    # COIN. adds a coin
                     self.coins_matrix[x][y-1]=0
-                    coin=1
+                    ret=2
+
                 elif self.coins_matrix[x][y-1]==self.POWER: # POWER. change the game state to FRIGHTENED
                     self.coins_matrix[x][y-1]=0
                     self.state=2
                     self.count_state=0
-                    
+                    ret=1
+
                     # change the directions of the ghosts
                     for i in range(self.n_ghosts):                        
                         if not self.ghosts_house[i]:
@@ -363,16 +570,20 @@ class PacmanGUI:
             elif y==0 and self.portal_gates(x):           # "portal"                                 
                 self.maze[x][y]=self.EMPTY
                 y=self.m-1
+                ret=3
 
         elif mov==self.RIGHT:
             if y<self.m-1 and self.maze[x][y+1]>=0:         # dest position != wall
                 if self.coins_matrix[x][y+1]==self.COIN:    # COIN. adds a coin
                     self.coins_matrix[x][y+1]=0
-                    coin=1
+                    ret=2
+
                 elif self.coins_matrix[x][y+1]==self.POWER: # POWER. change the game state to FRIGHTENED
                     self.coins_matrix[x][y+1]=0
                     self.state=2
                     self.count_state=0
+                    ret=1
+
                     for i in range(self.n_ghosts):
                         if not self.ghosts_house[i]:
                             self.ghosts_dir[i]+=2
@@ -384,6 +595,7 @@ class PacmanGUI:
             elif y==self.m-1 and self.portal_gates(x):    # "portal"                             
                 self.maze[x][y]=self.EMPTY
                 y=0
+                ret=3
         
         # -------------------------------------------------------------------------------------------------------------------
         # --- EAT/LOSE ------------------------------------------------------------------------------------------------------
@@ -396,6 +608,8 @@ class PacmanGUI:
             
             tmp=1
             for i in eaten:
+                ret=4
+
                 # move the eaten ghost to the house cell.
                 self.ghosts_pos[i][0]=self.salida_fants[0]+2
                 self.ghosts_pos[i][1]=self.salida_fants[1]
@@ -409,6 +623,8 @@ class PacmanGUI:
         else:               # lose.
             for i in range(self.n_ghosts):
                 if self.ghosts_pos[i][0]==x and self.ghosts_pos[i][1]==y: 
+                    ret=5
+                    
                     self.end=True
                     self.maze[self.agent_pos[0]][self.agent_pos[1]]=self.EMPTY
 
@@ -416,29 +632,177 @@ class PacmanGUI:
         if self.end!=True:
             self.maze[x][y]=self.AGENT
             self.agent_pos=[x,y]
-            self.agent_coins+=coin
+            if ret==2: self.agent_coins+=1
             
-        return coin
+        return ret
 
-
-    def portal_gates(self, x):
-        if self.version==0: return (x==5 or x==9)
-        else: return x==4
 
     """
-    Moving the ghosts.
+    TODO Documentation
+    NOT TERMINAL. FOR AI ALGORITHM
+    """
+    def move_agent(self, mov):
+        x=self.agent_pos[0]
+        y=self.agent_pos[1] 
+        
+        ret=0
+        
+        # increases the execution ticks
+        self.exec_tick+=1
+
+        # -------------------------------------------------------------------------------------------------------------------
+        # --- MOVE ----------------------------------------------------------------------------------------------------------
+
+        # POWER is only reachable by up and down actions
+
+        if mov==self.UP:
+            if x>0 and self.maze[x-1][y]!=1:                # dest position != wall
+                if self.coins_matrix[x-1][y]==self.COIN:    # COIN. adds a coin
+                    self.coins_matrix[x-1][y]=0
+                    ret=2
+                elif self.coins_matrix[x-1][y]==self.POWER: # POWER. change the game state to FRIGHTENED
+                    self.coins_matrix[x-1][y]=0
+                    self.state=2
+                    self.count_state=0
+                    ret=1
+
+                    # change the directions of the ghosts
+                    for i in range(self.n_ghosts):                        
+                        if not self.ghosts_house[i]:
+                            self.ghosts_dir[i]+=2
+                            self.ghosts_dir[i]%=4                        
+                
+                self.maze[x][y]=self.EMPTY
+                x-=1
+
+        elif mov==self.DOWN:
+            if x<len(self.maze)-1 and self.maze[x+1][y]!=1: # dest position != wall
+                if self.coins_matrix[x+1][y]==self.COIN:    # COIN. adds a coin
+                    self.coins_matrix[x+1][y]=0
+                    ret=2
+
+                elif self.coins_matrix[x+1][y]==self.POWER: # POWER. change the game state to FRIGHTENED
+                    self.coins_matrix[x+1][y]=0
+                    self.state=2
+                    self.count_state=0
+                    ret=1
+                    
+                    for i in range(self.n_ghosts):
+                        if not self.ghosts_house[i]:
+                            self.ghosts_dir[i]+=2
+                            self.ghosts_dir[i]%=4
+                
+                self.maze[x][y]=self.EMPTY
+                x+=1
+
+        elif mov==self.LEFT:
+            if y>0 and self.maze[x][y-1]!=1:                # dest position != wall
+                if self.coins_matrix[x][y-1]==self.COIN:    # COIN. adds a coin
+                    self.coins_matrix[x][y-1]=0
+                    ret=2
+
+                elif self.coins_matrix[x][y-1]==self.POWER: # POWER. change the game state to FRIGHTENED
+                    self.coins_matrix[x][y-1]=0
+                    self.state=2
+                    self.count_state=0
+                    ret=1
+
+                    # change the directions of the ghosts
+                    for i in range(self.n_ghosts):                        
+                        if not self.ghosts_house[i]:
+                            self.ghosts_dir[i]+=2
+                            self.ghosts_dir[i]%=4 
+                
+                self.maze[x][y]=self.EMPTY
+                y-=1
+                
+            elif y==0 and self.portal_gates(x):           # "portal"                                 
+                self.maze[x][y]=self.EMPTY
+                y=self.m-1
+                ret=3
+
+        elif mov==self.RIGHT:
+            if y<self.m-1 and self.maze[x][y+1]!=1:         # dest position != wall
+                if self.coins_matrix[x][y+1]==self.COIN:    # COIN. adds a coin
+                    self.coins_matrix[x][y+1]=0
+                    ret=2
+
+                elif self.coins_matrix[x][y+1]==self.POWER: # POWER. change the game state to FRIGHTENED
+                    self.coins_matrix[x][y+1]=0
+                    self.state=2
+                    self.count_state=0
+                    ret=1
+
+                    for i in range(self.n_ghosts):
+                        if not self.ghosts_house[i]:
+                            self.ghosts_dir[i]+=2
+                            self.ghosts_dir[i]%=4
+                
+                self.maze[x][y]=self.EMPTY
+                y+=1
+                
+            elif y==self.m-1 and self.portal_gates(x):    # "portal"                             
+                self.maze[x][y]=self.EMPTY
+                y=0
+                ret=3
+        
+        # -------------------------------------------------------------------------------------------------------------------
+        # --- EAT/LOSE ------------------------------------------------------------------------------------------------------
+
+        if self.state==2:   # eat.
+            eaten=[]
+            for i in range(self.n_ghosts):
+                if self.ghosts_pos[i][0]==x and self.ghosts_pos[i][1]==y:
+                    eaten.append(i)
+            
+            tmp=1
+            for i in eaten:
+                ret=4
+
+                # move the eaten ghost to the house cell.
+                self.ghosts_pos[i][0]=self.salida_fants[0]+2
+                self.ghosts_pos[i][1]=self.salida_fants[1]
+
+                # add to the queue of ghosts in house
+                # they leave in 3 ticks intervals
+                self.ghost_inHouse.append([i,self.exec_tick+(3*tmp)])
+                self.ghosts_house[i]=[self.ghosts_pos[i][0],self.ghosts_pos[i][1]]
+
+                tmp+=1
+        else:               # lose.
+            for i in range(self.n_ghosts):
+                if self.ghosts_pos[i][0]==x and self.ghosts_pos[i][1]==y: 
+                    ret=5
+                    
+                    self.end=True
+                    self.maze[self.agent_pos[0]][self.agent_pos[1]]=self.EMPTY
+
+        # if the player hasnt lose, he moves 
+        if self.end!=True:
+            self.maze[x][y]=self.AGENT
+            self.agent_pos=[x,y]
+            if ret==2: self.agent_coins+=1
+            
+        return ret
+
+    def portal_gates(self, x):
+        if self.version==1: return (x==5 or x==9)
+        elif self.version==2: return x==4
+
+    """ TODO BETTER IMPLEMENTAION (NOT TWO FUNCTIONS FOR GUI AND TERMINAL)
+    Moving the ghosts. GUI.
     Also change the game state
            
     :type self: class     
     :rtype: None
     """
-    def move_ghosts(self):
+    def move_ghosts_GUI(self):
         
         # -------------------------------------------------------------------------------------------------------------------
         # --- MOVE ----------------------------------------------------------------------------------------------------------
 
         for i in range(self.n_ghosts):
-            self.move_ghost(i) 
+            self.move_ghost_GUI(i) 
         
 
         # -------------------------------------------------------------------------------------------------------------------
@@ -446,29 +810,29 @@ class PacmanGUI:
 
         self.count_state+=1
         
-        print("State=", self.count_state, "\tCoins=",self.agent_coins)
+        #print("State=", self.count_state, "\tCoins=",self.agent_coins)
         
         if self.count_state==self.state_ticks[self.state]:                     
             if self.state==0: 
                 self.state=1
-                print("New state: SCATTER",end="")
+                #print("New state: SCATTER",end="")
             else: 
                 self.state=0
-                print("New state: CHASE",end="")
+                #print("New state: CHASE",end="")
 
             for i in range(self.n_ghosts):
                 if not self.ghosts_house[i]:
                     self.ghosts_dir[i]+=2
                     self.ghosts_dir[i]%=4
             
-            print("\nTurn 180º all ghosts")
+            #print("\nTurn 180º all ghosts")
 
             # reset
             self.count_state=0
 
 
-    """
-    Moving a ghost. (if the ghost is in the house, he doesnt moves)
+    """ TODO BETTER IMPLEMENTAION (NOT TWO FUNCTIONS FOR GUI AND TERMINAL)
+    Moving a ghost. (if the ghost is in the house, he doesnt moves) GUI
     eat the player or is eaten by the player.
 
     If the current state is FRIGHTENED, moves one cell in two ticks
@@ -477,7 +841,7 @@ class PacmanGUI:
     :type ghost: int
     :rtype: None
     """
-    def move_ghost(self, ghost):
+    def move_ghost_GUI(self, ghost):
         
         x=0
         y=0
@@ -587,6 +951,8 @@ class PacmanGUI:
                     tmp_y=0
                     dir_idx=0
                     tmp=0
+
+                    
                     for k in range(4):
                         tmp_x=x+self.mX[k]
                         tmp_y=y+self.mY[k]
@@ -633,7 +999,210 @@ class PacmanGUI:
                 self.ghosts_pos[ghost][0]=x
                 self.ghosts_pos[ghost][1]=y
                 self.maze[x][y]=color
+
+    """ TODO BETTER IMPLEMENTAION (NOT TWO FUNCTIONS FOR GUI AND TERMINAL)
+    
+    TERMINAL 
+    """
+    def move_ghosts(self):
         
+        # -------------------------------------------------------------------------------------------------------------------
+        # --- MOVE ----------------------------------------------------------------------------------------------------------
+
+        for i in range(self.n_ghosts):
+            self.move_ghost(i) 
+        
+
+        # -------------------------------------------------------------------------------------------------------------------
+        # --- STATE ---------------------------------------------------------------------------------------------------------
+
+        self.count_state+=1
+        
+        #print("State=", self.count_state, "\tCoins=",self.agent_coins)
+        
+        if self.count_state==self.state_ticks[self.state]:                     
+            if self.state==0: 
+                self.state=1
+                #print("New state: SCATTER",end="")
+            else: 
+                self.state=0
+                #print("New state: CHASE",end="")
+
+            for i in range(self.n_ghosts):
+                if not self.ghosts_house[i]:
+                    self.ghosts_dir[i]+=2
+                    self.ghosts_dir[i]%=4
+            
+            #print("\nTurn 180º all ghosts")
+
+            # reset
+            self.count_state=0
+
+
+    """ TODO BETTER IMPLEMENTAION (NOT TWO FUNCTIONS FOR GUI AND TERMINAL)
+
+    TERMINAL
+    """
+    def move_ghost(self, ghost):
+        
+        x=0
+        y=0
+        dir=0
+
+        color=self.RED
+        if ghost==1: color=self.PINK
+        elif ghost==2: color=self.BLUE
+        elif ghost==3: color=self.ORANGE
+
+        aux_x=0
+        aux_y=0
+        
+        
+        if not self.ghosts_house[ghost] and (not(self.state==2 and self.count_state%2==0)):
+            
+            dir=self.ghosts_dir[ghost]
+            x=self.ghosts_pos[ghost][0]
+            y=self.ghosts_pos[ghost][1]
+
+            if dir==0 or dir==2: aux_y=1
+            else: aux_x=1
+            
+            self.maze[x][y]=self.EMPTY
+
+            
+
+            # intersection, moves in the same direction.
+            if self.maze[x+aux_x][y+aux_y]==1 and self.maze[x-aux_x][y-aux_y]==1:
+                if dir==0: x-=1
+                elif dir==1: y+=1
+                elif dir==2: x+=1
+                else: y-=1
+
+            else: 
+                if self.state==2: # FRIGHTENED. moves randomly in the intersection
+                    
+                    # the oposite direction is not taken into account
+
+                    opcs=[]
+                    for k in range(4):
+                        tmp_x=x+self.mX[k]
+                        tmp_y=y+self.mY[k]
+                        
+                        # wall or oposite actual dir
+                        if k==((dir+2)%4) or self.maze[tmp_x][tmp_y]==1: continue 
+                        else: opcs.append(k)
+
+                    # random.
+                    opc=random.randint(0,len(opcs)-1)
+
+                    x+=self.mX[opcs[opc]]
+                    y+=self.mY[opcs[opc]]
+                    self.ghosts_dir[ghost]=opcs[opc]
+
+
+                else:
+
+                    target=[0,0]
+
+                    # CHASE (in the constructor is the information of how each ghost choose a target)
+                    if self.state==0: 
+
+                        if ghost==0:                                # RED. 
+                            target[0]=self.agent_pos[0]
+                            target[1]=self.agent_pos[1]
+                        elif ghost==1:                              # PINK
+                            target[0]=self.agent_pos[0]
+                            target[1]=self.agent_pos[1]
+
+                            if self.agent_dir==0: 
+                                target[0]-=4
+                                target[1]-=4
+                            elif self.agent_dir==1: target[1]+=4
+                            elif self.agent_dir==2: target[0]+=4
+                            else: target[1]-=4
+                            
+                        elif ghost==2:                              # BLUE
+                            tmp=[0,0]
+                            tmp[0]=self.agent_pos[0]
+                            tmp[1]=self.agent_pos[1]
+
+                            if self.agent_dir==0: 
+                                tmp[0]-=2
+                                tmp[1]-=2
+                            elif self.agent_dir==1: tmp[1]+=2
+                            elif self.agent_dir==2: tmp[0]+=2
+                            else: tmp[1]-=2
+
+                            dif_x=tmp[0]-self.ghosts_pos[0][0]
+                            dif_y=tmp[1]-self.ghosts_pos[0][1]
+                            target[0]=tmp[0]+dif_x
+                            target[1]=tmp[1]+dif_y
+                        
+                        elif ghost==3:                              # ORANGE
+                            dist_manhattan=abs(self.agent_pos[0]-self.ghosts_pos[3][0])
+                            dist_manhattan+=abs(self.agent_pos[1]-self.ghosts_pos[3][1])
+
+                            if dist_manhattan<8: target=self.scatter_targets[3]
+                            else: target=self.agent_pos
+
+                    # SCATTER
+                    else: target=self.scatter_targets[ghost]
+                        
+                    dist=float("inf")
+                    tmp_x=0
+                    tmp_y=0
+                    dir_idx=0
+                    tmp=0
+
+                    
+                    for k in range(4):
+                        tmp_x=x+self.mX[k]
+                        tmp_y=y+self.mY[k]
+
+                        # wall or oposite actual dir
+                        if k==((dir+2)%4) or self.maze[tmp_x][tmp_y]==1: continue 
+                        else: tmp=self.distance_cells(target,[tmp_x, tmp_y])
+                        
+                        if dist>tmp:
+                            dist=tmp
+                            dir_idx=k
+                    
+                    self.ghosts_dir[ghost]=dir_idx
+                    
+                    x+=self.mX[dir_idx]
+                    y+=self.mY[dir_idx]
+            
+            # "portals"
+            if y==self.m and self.portal_gates(x): y=0
+            if y==-1 and self.portal_gates(x): y=self.m-1
+            
+            
+            
+            # collides with the agent
+            if self.agent_pos[0]==x and self.agent_pos[1]==y:
+                
+                # FRIGHTENED. is eaten
+                if self.state==2:       
+
+                    self.maze[x][y]=self.EMPTY                   
+
+                    self.ghosts_pos[ghost][0]=self.salida_fants[0]+2
+                    self.ghosts_pos[ghost][1]=self.salida_fants[1]
+
+                    self.ghost_inHouse.append([ghost,self.exec_tick+3])
+                    self.ghosts_house[ghost]=[self.ghosts_pos[ghost][0],self.ghosts_pos[ghost][1]]
+                # OTHERWIESE. eats the player
+                else: 
+                    self.ghosts_pos[ghost][0]=x
+                    self.ghosts_pos[ghost][1]=y
+                    self.maze[x][y]=color
+                    self.end=True     
+            else:
+                self.ghosts_pos[ghost][0]=x
+                self.ghosts_pos[ghost][1]=y
+                self.maze[x][y]=color
+
+
     """
     Calculates the distance of two points given by parameters
            
@@ -645,9 +1214,9 @@ class PacmanGUI:
     def distance_cells(self, a, b):               
         return math.sqrt((a[0]-b[0])**2+(a[1]-b[1])**2)
 
-    # --------------------------------------------------------------------------------
-    # --- GUI ------------------------------------------------------------------------
-    # --------------------------------------------------------------------------------
+    
+
+
 
     """
     Main loop.
@@ -703,13 +1272,13 @@ class PacmanGUI:
                         # run an iteration if the key pressed is binded 
                         if mov!=None:             
                                             
-                            self.move_agent(mov)
+                            self.move_agent_GUI(mov)
                             # check for end condition
                             if self.agent_coins==self.win_condition: self.end=True
                             
                             if self.end!=True:  # no end condition, continues
                                 
-                                self.move_ghosts()
+                                self.move_ghosts_GUI()
                                 
                                 # a ghost leaves the house if is his time
                                 if len(self.ghost_inHouse)!=0 and self.exec_tick==self.ghost_inHouse[0][1]:
@@ -805,7 +1374,7 @@ class PacmanGUI:
                 mov=self.LEFT                  
                 self.agent_dir=3
                             
-            self.move_agent(mov)
+            self.move_agent_GUI(mov)
             # check for end condition
             if self.agent_coins==self.win_condition: self.end=True
             
@@ -877,7 +1446,9 @@ class PacmanGUI:
         pygame.display.flip()
                     
 
-            
+    # --------------------------------------------------------------------------------
+    # --- GUI ------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------        
     
 
     """
@@ -1079,7 +1650,230 @@ class PacmanGUI:
             self.message_imgs.append(tmp)
 
 
-if __name__ == "__main__":    
-    env=PacmanGUI(os.path.join("data", "enviroments","env2_gui.txt"))
+"""
+https://en.wikipedia.org/wiki/List_of_Unicode_characters
+"""
+def info():
+    """"""
+    print('\n╔══════════════════════════════════════════════════════════════════════════════════════════╗')
+    print('╠═ INFO:                                                                                   ║')    
+    print('╠═══════════════════════╦══════════════════════════════════════════════════════════════════╣')
+    print('║ 0: Exit.              ║ Exit the execution.                                              ║')          
+    print('║ 1: Play the game      ║ Start the game. With the keyboard you control PacMan.            ║')
+    print('║ 2: Load model         ║ Load a pre-trained model and render a game controled by AI.      ║')
+    print('║ 3: Train a NEW model. ║ Create a new model and start the training session.               ║')
+    print('║ 4: Train a model.     ║ Load a pre-trained model to continue with the trainning session. ║')
+    print('║ 5: Info.              ║ Display this info.                                               ║')
+    print('╚═══════════════════════╩══════════════════════════════════════════════════════════════════╝')
+    print()
+
+"""
+https://en.wikipedia.org/wiki/List_of_Unicode_characters
+"""
+def menu_mode():
+    print('\n┌────────────────────┐')
+    print('├─       MENU       ─┤')    
+    print('├────────────────────┤')
+    print('│ 0: Exit            │')          
+    print('│ 1: Play            │')
+    print('│ 2: Load model      │')
+    print('│ 3: Train NEW model │')
+    print('│ 4: Train model     │')
+    print('│ 5: Info            │')
+    print('└────────────────────┘')
+
+
+    try:
+        choice=int(input('Enter your choice: '))
+        if choice==0: print("Exiting...")          
+        elif choice<0 or choice>5:
+            print("Invalid choice. Please try again.")
+            return -1
+    except ValueError:
+        print('Please enter a valid mode number [0-5].')
+
+    if choice==5: info()
+    
+    return choice
+
+  
+
+def menu_env():
+    print('\n┌──────────────────────────────────────────────────┐')
+    print('├─ ENVIROMENTS                                     │')    
+    print('├──────────────────────────────────────────────────┤')
+    print('│ 0: Exit.                                         │')          
+    print('│ 1: env1. Number of ghosts = 4. Maze size = 16x21 │')          
+    print('│ 2: env2  Number of ghosts = 1. Maze size = 9x9   │')        
+    print('└──────────────────────────────────────────────────┘')
+
+    try:
+        choice=int(input('Enter your choice: '))
+        if choice==0: print('Exiting...')        
+        elif choice<0 or choice>2:
+            print('Invalid choice. Please try again.')
+            return -1        
+
+    except ValueError:
+        print('Please enter a valid enviroment number [0-2].')
+    
+    return choice
+
+def menu_algorithms():
+    print('\n┌─────────────────────────┐')
+    print('├─ ALGORITHMS             │')    
+    print('├─────────────────────────┤')
+    print('│ 0: Exit.                │')          
+    print('│ 1: DQN (Replay memory)  │')          
+    print('│ 2: DQN (Target network) │')          
+    print('│ 3: PPO                  │')          
+    print('└─────────────────────────┘')
+
+    try:
+        choice=int(input('Enter your choice: '))
+        if choice==0: print('Exiting...')        
+        elif choice<0 or choice>3:
+            print('Invalid choice. Please try again.')
+            return -1        
+
+    except ValueError:
+        print('Please enter a valid enviroment number [0-2].')
+    
+    return choice
+
+# TODO dynamic updates. 
+def menu_models():
+    print('\n┌──────────────────────────────────────────────────┐')
+    print('├─ MODELS                                          │')    
+    print('├──────────────────────────────────────────────────┤')
+    print('│ 0: Exit.                                         │')          
+    print('│ 1: env1. Number of ghosts = 4. Maze size = 16x21 │')          
+    print('│ 2: env2  Number of ghosts = 1. Maze size = 9x9   │')        
+    print('└──────────────────────────────────────────────────┘')
+
+
+
+
+def menu_parameters():
+    fc_dims, epsilon, eps_dec, lr=-1,-1,-1,-1
+
+    print('\n┌──────────────────────────────────────────────────')
+    print('├─ PARAMETERS')    
+    print('├──────────────────────────────────────────────────')           
+    
+    while fc_dims<1:
+        try:
+            fc_dims=int(input('│ Full Connect layes dimension (int [1-inf]) = '))
+        except ValueError:
+            print('│ Please enter a valid a number.')
+    while epsilon<0 or epsilon>1:
+        try:
+            epsilon=float(input('│ Epsilon       (float [0-1])                = '))
+        except ValueError:
+            print('│ Please enter a valid a number.')
+    while eps_dec<0 or eps_dec>1:
+        try:
+            eps_dec=float(input('│ Epsilon decay (float [0-1])                = '))
+        except ValueError:
+            print('│ Please enter a valid a number.')
+    while lr<0 or lr>1:
+        try:
+            lr=float(input('│ Learning Rate (float [0-1])                = '))    
+        except ValueError:
+            print('│ Please enter a valid a number.')        
+    print('└──────────────────────────────────────────────────')
+
+    return fc_dim, eps_dec, eps_dec, lr
+
+# TODO
+def load_models():
+    """"""
+
+if __name__=="__main__":    
+    
+    # ------------------------------------------------------------------------------
+    # -- MODE ----------------------------------------------------------------------
+    
+    mode=-1
+    while mode==-1 or mode==5: mode=menu_mode()        
+    
+    # ------------------------------------------------------------------------------
+    # -- ENVIROMENT ----------------------------------------------------------------
+    
+    env_n=-1
+    while env_n==-1: env_n=menu_env()
+        
+    
+    if mode==1: env_path='data/enviroments/GUI/{}_env.txt'.format(env_n)
+    else: env_path='data/enviroments/{}_env.txt'.format(env_n)
+    
+    
+
+    # ------------------------------------------------------------------------------
+    # -- EXECUTE -------------------------------------------------------------------
+    
+    env=Pacman(env_path, env_n)
+
+    
+    # PLAY
+    if mode==1: env.execute_GUI()
+    elif mode!=5:   
+        
+        # --------------------------------------------------------------------------
+        # -- ALGORITHM -------------------------------------------------------------
+        print("CURRENTLY ONLY FOR DQN ALGORITHM")
+
+        algorithm_idx=0        
+        algorithms=['SimpleDQN', 'DQN', 'PPO']
+        """while algorithm_idx==-1: algorithm_idx=menu_algorithms()
+        
+        
+        fc_dims, epsilon, eps_dec, lr=-1,-1,-1,-1
+        if mode==3: fc_dims, epsilon, eps_dec, lr=menu_parameters()"""
+
+        
+
+
+        agent=None
+        fc_dim=64
+        
+        epsilon=1
+        if mode==2: epsilon=0
+        lr=2e-4      
+        eps_dec=2.5e-5
+
+        model=None
+        target_model=None
+
+        # TODO
+        index=4
+        n_games=2500
+        model_path='data/models/pytorch/dqn/{}_model'.format(index)
+        target_model_path='data/models/pytorch/dqn/{}_tmodel'.format(index)
+        
+        
+        if mode==2 or mode==4: 
+            """"""
+            # TODO
+            load_models(algorithms[algorithm_idx])
+            model='data/models/pytorch/dqn/dqn_model_2'
+            target_model='data/models/pytorch/dqn/dqn_t_model_2'
+        
+    
+
+        agent=dqn.Agent(gamma=0.99, epsilon=epsilon, batch_size=64, num_actions=env.num_actions, 
+                        fc1_dims=fc_dim,fc2_dims=fc_dim, eps_dec=eps_dec,
+                        eps_end=0.01, input_dims=[env.input_dims], lr=lr,model_path=model,target_model_path=target_model)
+        
+        if mode==2:
+            """EXECUTE ONE EPISODE"""
+        else:
+            env.execute_trainning(agent, n_games, model_path, target_model_path)
+    
+    
+
+        
+
+    
     
     
