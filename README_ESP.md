@@ -18,32 +18,71 @@ Este algoritmo es una extensión de Q-learning que utiliza una red neuronal para
 - Target Neural Network (Red neuronal de destino): en lugar de utilizar la función _forward()_ dos veces en cada iteración de un episodio, el siguiente estado utiliza otra red neuronal para mejorar el rendimiento del algoritmo.
 
 
-## From scratch 
+## Desde cero
 Esta implementación utiliza una cola en lugar de _replay memory_. La red neuronal se crea desde cero. Aquí está el [CÓDIGO](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/from_scratch/simple_dqn.py). Actualmente solo funciona para la implementación de PacMan creada también desde cero.
 
 ## [PyTorch](https://github.com/pytorch/pytorch) 
-Al utilizar esta biblioteca el código es más limpio, sencillo y obtiene un mejor rendimiento. Los entornos para los siguientes algoritmos se obtienen de la biblioteca [gym](https://www.gymlibrary.dev/). Se crean dos implementaciones, para entrada iterable y entrada discreta.
+Al utilizar esta biblioteca el código es más limpio, sencillo y obtiene un mejor rendimiento. 
 
 ### Replay memory. [CÓDIGO](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/simple_dqn.py)
+
 ### Target neural network. [CÓDIGO](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/dqn.py)
 
 <hr>
 
-### Diferencias de usar target network y no usar
+# PPO
+La optimización de políticas próximas (PPO en inglés) mejora los métodos de gradiente de políticas anteriores (de la ejecución) al optimizar las políticas de una manera más estable y eficiente. Conceptos clave:
 
-Los siguientes parámetros se utilizan en ambas implementaciones para medir el valor de aptitud (_fitness_) promedio de los 
-últimos 100 episodios. También se mide el tiempo de ejecución.
-```
+- **Métodos de gradiente de políticas.** Se basa en métodos de gradiente de políticas, donde el objetivo es mejorar la política (una función que asigna estados a acciones) ajustando directamente los parámetros de una red neuronal.
+- **Función de objetivo recortado:** La principal innovación en PPO es su objetivo recortado que limita cuánto se actualiza la política en cada paso. Esto garantiza que la política no cambie demasiado drásticamente, lo que puede provocar inestabilidad o un rendimiento deficiente.
+- **Objetivo sustituto:** PPO maximiza una función objetivo sustituto, asegurando que las actualizaciones estén restringidas dentro de un rango razonable, a menudo utilizando un mecanismo de recorte para limitar el cambio en la relación de probabilidad entre políticas antiguas y nuevas.
+
+Este algoritmo utiliza dos redes neuronales y una memoria.
+- **Actor: Red neuronal.** Responsable de aprender y mejorar la política, determina las acciones que el agente debe realizar dado un estado.
+- **Crítico: Red neuronal.** Evalúa el valor de un estado. El resultado es un valor único que estima la recompensa esperada de ese estado.    
+- **Memoria PPO**: Almacenamiento y gestión de los datos necesarios para el entrenamiento.
+
+## From scratch (TODO)
+<br>
+
+## [PyTorch](https://github.com/pytorch/pytorch) 
+Here is the [CODE](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/ppo.py)
+
+### Estudio de los Algoritmos.
+
+Los entornos para los siguientes algoritmos se obtienen de la biblioteca [gym](https://www.gymlibrary.dev/). Se crean dos implementaciones, para entrada iterable y entrada discreta.
+
+
+Los siguientes parámetros son los que se han utilizado para medir la media de los valores _fitness_ the las últimos 100 episodios. Tambíen se mide el tiempo de ejecución.
+```Python
+episodes=1500   # Número de episodios Number of episodes.
+batch_size=64   # Número de veces que se ejecuta un estado por iteración.
+
+' DQN '
 gamma=0.99      # Factor de descuento.
 lr=4.6e-4       # Tasa de aprendizaje.
 epsilon=0.70    # Exploración-explotación.
 eps_dec=2.5e-6  # Valor de decremento del valor epsilon entre cada episodio.
-fc_dim=64       # Tamaño de las capas totalmente conectadas.
-episodes=1500   # Número de episodios.
+fc_dims=64      # Tamaño de las capas totalmente conectadas.
+
+
+' PPO '
+gamma=0.99      # Factor de descuento. Cálculo de ventajas.
+gae_lambda=0.95 # Lambda. Estimación de ventaja generalizada (GAE en inglés), que ayuda a calcular la ventaja en PPO.
+alpha=0.0003    # Tasa de aprendizaje.
+policy_clip=0.2 # Recortar la proporción entre las probabilidades de políticas nuevas y antiguas para estabilizar la capacitación.
+fc_dims=256     # Tamaño de las capas totalmente conectadas.
+
+n_epochs=4      # Número de epochs.
+N=20            # Númeroused to execute learn() for every 'N' actions taken
 ```
 
-![astro_config](https://github.com/Danipiza/Games-AI/tree/main/Games/Gym/LunarLander-v2/analysis/simple_vs_target_dq.webp)
+<div align="center">
+  <img src="https://github.com/Danipiza/Games-AI/blob/main/Games/Gym/LunarLander-v2/analysis/simpledqn_dqn_ppo.webp" alt="Example Image" width="600">
+</div>
 
 ### Ejemplo de ejecución
 
-![exec](https://github.com/Danipiza/Games-AI/tree/main/Games/Gym/LunarLander-v2/executions/dqn_exec_exemple.gif)
+<div align="center">
+  <img src="https://github.com/Danipiza/Games-AI/blob/main/Games/Gym/LunarLander-v2/executions/dqn_exec_exemple.gif" alt="Example Image" width="600">
+</div>

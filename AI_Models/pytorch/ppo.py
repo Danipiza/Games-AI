@@ -14,7 +14,7 @@ Storing and managing the data necessary for training a
     Proximal Policy Optimization (PPO) algorithm.
 
 Args:
-    batch_size (int) : 
+    batch_size (int) : Number of times the state is executed per iteration.
 """
 class PPOMemory:
     def __init__(self, batch_size):

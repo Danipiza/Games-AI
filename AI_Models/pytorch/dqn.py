@@ -140,13 +140,19 @@ class Agent:
     def store_transition(self, state, action, reward, state_, terminal):
         # WHERE. first position of the first unoccupied memory 
         index=self.mem_cntr%self.mem_size # rewrite the agent memory, with new ones. Using deque is worst
-
+        
         # STORE.
-        self.state_memory[index]     =state.flatten()  # ensure state is 1D
-        self.new_state_memory[index] =state_.flatten()  # ensure state_ is 1D
+        self.state_memory[index]     =state#.flatten()  # ensure state is 1D
+        self.new_state_memory[index] =state_#.flatten()  # ensure state_ is 1D
         self.reward_memory[index]    =reward
         self.action_memory[index]    =action
         self.terminal_memory[index]  =terminal
+        
+        if len(self.state_memory[index])>1: 
+            self.state_memory[index]=self.state_memory[index].flatten()
+
+        if len(self.new_state_memory[index])>1: 
+            self.new_state_memory[index]=self.new_state_memory[index].flatten()
 
         self.mem_cntr+=1
 

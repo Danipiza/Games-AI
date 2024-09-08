@@ -1,0 +1,1624 @@
+Episode 0 score -155.2 avg_score -155.2 time_steps 111 learning_steps 5
+-- SAVING MODELS --
+Episode 1 score 21.1 avg_score -67.0 time_steps 184 learning_steps 9
+Episode 2 score -205.9 avg_score -113.3 time_steps 246 learning_steps 12
+Episode 3 score -88.1 avg_score -107.0 time_steps 311 learning_steps 15
+Episode 4 score -406.8 avg_score -167.0 time_steps 431 learning_steps 21
+Episode 5 score -55.9 avg_score -148.5 time_steps 511 learning_steps 25
+Episode 6 score -15.0 avg_score -129.4 time_steps 600 learning_steps 30
+Episode 7 score -446.3 avg_score -169.0 time_steps 678 learning_steps 33
+Episode 8 score -282.1 avg_score -181.6 time_steps 775 learning_steps 38
+Episode 9 score -266.4 avg_score -190.1 time_steps 896 learning_steps 44
+Episode 10 score -157.5 avg_score -187.1 time_steps 992 learning_steps 49
+Episode 11 score -134.4 avg_score -182.7 time_steps 1082 learning_steps 54
+Episode 12 score -100.5 avg_score -176.4 time_steps 1310 learning_steps 65
+Episode 13 score -215.9 avg_score -179.2 time_steps 1427 learning_steps 71
+Episode 14 score -157.7 avg_score -177.8 time_steps 1519 learning_steps 75
+Episode 15 score -92.6 avg_score -172.5 time_steps 1591 learning_steps 79
+Episode 16 score -172.1 avg_score -172.4 time_steps 1740 learning_steps 87
+Episode 17 score -199.9 avg_score -174.0 time_steps 1860 learning_steps 93
+Episode 18 score -387.5 avg_score -185.2 time_steps 1954 learning_steps 97
+Episode 19 score -104.1 avg_score -181.1 time_steps 2045 learning_steps 102
+Episode 20 score -403.7 avg_score -191.7 time_steps 2213 learning_steps 110
+Episode 21 score -211.9 avg_score -192.7 time_steps 2445 learning_steps 122
+Episode 22 score -409.8 avg_score -202.1 time_steps 2605 learning_steps 130
+Episode 23 score -281.9 avg_score -205.4 time_steps 2738 learning_steps 136
+Episode 24 score -408.6 avg_score -213.6 time_steps 2911 learning_steps 145
+Episode 25 score -387.7 avg_score -220.3 time_steps 3176 learning_steps 158
+Episode 26 score -484.4 avg_score -230.0 time_steps 3588 learning_steps 179
+Episode 27 score -91.2 avg_score -225.1 time_steps 3749 learning_steps 187
+Episode 28 score -235.4 avg_score -225.4 time_steps 3891 learning_steps 194
+Episode 29 score 259.3 avg_score -209.3 time_steps 4454 learning_steps 222
+Episode 30 score -46.6 avg_score -204.0 time_steps 4578 learning_steps 228
+Episode 31 score -120.1 avg_score -201.4 time_steps 4677 learning_steps 233
+Episode 32 score -25.7 avg_score -196.1 time_steps 4787 learning_steps 239
+Episode 33 score -100.6 avg_score -193.3 time_steps 4890 learning_steps 244
+Episode 34 score -113.9 avg_score -191.0 time_steps 4958 learning_steps 247
+Episode 35 score -7.1 avg_score -185.9 time_steps 5055 learning_steps 252
+Episode 36 score -81.9 avg_score -183.1 time_steps 5170 learning_steps 258
+Episode 37 score -202.2 avg_score -183.6 time_steps 5258 learning_steps 262
+Episode 38 score -50.7 avg_score -180.2 time_steps 5570 learning_steps 278
+Episode 39 score -436.1 avg_score -186.6 time_steps 5983 learning_steps 299
+Episode 40 score -107.7 avg_score -184.7 time_steps 6138 learning_steps 306
+Episode 41 score 26.1 avg_score -179.6 time_steps 6241 learning_steps 312
+Episode 42 score -179.6 avg_score -179.6 time_steps 6393 learning_steps 319
+Episode 43 score -19.1 avg_score -176.0 time_steps 6513 learning_steps 325
+Episode 44 score -26.0 avg_score -172.7 time_steps 6587 learning_steps 329
+Episode 45 score -45.1 avg_score -169.9 time_steps 6723 learning_steps 336
+Episode 46 score 12.3 avg_score -166.0 time_steps 6945 learning_steps 347
+Episode 47 score -272.0 avg_score -168.2 time_steps 7273 learning_steps 363
+Episode 48 score 47.7 avg_score -163.8 time_steps 7384 learning_steps 369
+Episode 49 score 9.3 avg_score -160.3 time_steps 7697 learning_steps 384
+Episode 50 score -45.9 avg_score -158.1 time_steps 8029 learning_steps 401
+Episode 51 score -67.6 avg_score -156.4 time_steps 8173 learning_steps 408
+Episode 52 score 25.8 avg_score -152.9 time_steps 8360 learning_steps 418
+Episode 53 score 0.4 avg_score -150.1 time_steps 8567 learning_steps 428
+Episode 54 score 266.1 avg_score -142.5 time_steps 9021 learning_steps 451
+Episode 55 score -92.7 avg_score -141.6 time_steps 9112 learning_steps 455
+Episode 56 score 46.0 avg_score -138.3 time_steps 9376 learning_steps 468
+Time exceeded   Episode 57 score -38.2 avg_score -136.6 time_steps 10860 learning_steps 543
+Episode 58 score 182.9 avg_score -131.2 time_steps 12355 learning_steps 617
+Episode 59 score -56.9 avg_score -130.0 time_steps 12466 learning_steps 623
+Episode 60 score -197.7 avg_score -131.1 time_steps 13633 learning_steps 681
+Episode 61 score -93.6 avg_score -130.5 time_steps 14021 learning_steps 701
+Episode 62 score -31.4 avg_score -128.9 time_steps 14229 learning_steps 711
+Episode 63 score 181.0 avg_score -124.0 time_steps 14780 learning_steps 739
+Episode 64 score -184.8 avg_score -125.0 time_steps 15831 learning_steps 791
+Episode 65 score -61.2 avg_score -124.0 time_steps 16432 learning_steps 821
+Episode 66 score 64.2 avg_score -121.2 time_steps 17320 learning_steps 866
+Episode 67 score -125.6 avg_score -121.3 time_steps 18362 learning_steps 918
+Episode 68 score -89.3 avg_score -120.8 time_steps 18548 learning_steps 927
+Episode 69 score 112.7 avg_score -117.5 time_steps 19293 learning_steps 964
+Episode 70 score -128.0 avg_score -117.6 time_steps 19430 learning_steps 971
+Episode 71 score -88.3 avg_score -117.2 time_steps 20033 learning_steps 1001
+Episode 72 score 71.1 avg_score -114.6 time_steps 20901 learning_steps 1045
+Episode 73 score -141.8 avg_score -115.0 time_steps 21065 learning_steps 1053
+Episode 74 score -62.4 avg_score -114.3 time_steps 21306 learning_steps 1065
+Episode 75 score 162.8 avg_score -110.7 time_steps 22484 learning_steps 1124
+Episode 76 score -58.1 avg_score -110.0 time_steps 22756 learning_steps 1137
+Episode 77 score -208.4 avg_score -111.2 time_steps 22958 learning_steps 1147
+Episode 78 score -93.7 avg_score -111.0 time_steps 23819 learning_steps 1190
+Episode 79 score -114.4 avg_score -111.0 time_steps 24240 learning_steps 1212
+Episode 80 score 212.0 avg_score -107.1 time_steps 25055 learning_steps 1252
+Episode 81 score -135.4 avg_score -107.4 time_steps 26214 learning_steps 1310
+Episode 82 score 137.8 avg_score -104.5 time_steps 27085 learning_steps 1354
+Time exceeded   Episode 83 score -71.5 avg_score -104.1 time_steps 28486 learning_steps 1424
+Episode 84 score -194.1 avg_score -105.1 time_steps 29714 learning_steps 1485
+Episode 85 score -97.4 avg_score -105.0 time_steps 29933 learning_steps 1496
+Episode 86 score -126.9 avg_score -105.3 time_steps 30133 learning_steps 1506
+Episode 87 score -167.2 avg_score -106.0 time_steps 30293 learning_steps 1514
+Episode 88 score -260.5 avg_score -107.7 time_steps 30425 learning_steps 1521
+Episode 89 score -199.6 avg_score -108.7 time_steps 30549 learning_steps 1527
+Episode 90 score -155.3 avg_score -109.3 time_steps 30709 learning_steps 1535
+Episode 91 score -123.7 avg_score -109.4 time_steps 30873 learning_steps 1543
+Episode 92 score -59.2 avg_score -108.9 time_steps 31260 learning_steps 1563
+Episode 93 score 72.8 avg_score -106.9 time_steps 32497 learning_steps 1624
+Episode 94 score -203.0 avg_score -107.9 time_steps 33590 learning_steps 1679
+Time exceeded   Episode 95 score -131.6 avg_score -108.2 time_steps 35180 learning_steps 1759
+Time exceeded   Episode 96 score -64.0 avg_score -107.7 time_steps 36760 learning_steps 1838
+Time exceeded   Episode 97 score -54.6 avg_score -107.2 time_steps 38200 learning_steps 1910
+Time exceeded   Episode 98 score -134.7 avg_score -107.5 time_steps 39760 learning_steps 1988
+Episode 99 score -192.4 avg_score -108.3 time_steps 41105 learning_steps 2055
+Episode 100 score -126.7 avg_score -108.0 time_steps 41498 learning_steps 2074
+Episode 101 score -19.6 avg_score -108.4 time_steps 42553 learning_steps 2127
+Episode 102 score -248.5 avg_score -108.9 time_steps 43742 learning_steps 2187
+Episode 103 score -269.5 avg_score -110.7 time_steps 45345 learning_steps 2267
+Time exceeded   Episode 104 score -130.5 avg_score -107.9 time_steps 46967 learning_steps 2348
+Episode 105 score -144.0 avg_score -108.8 time_steps 47274 learning_steps 2363
+Time exceeded   Episode 106 score -193.5 avg_score -110.6 time_steps 48860 learning_steps 2443
+Episode 107 score -11.4 avg_score -106.2 time_steps 50514 learning_steps 2525
+Time exceeded   Episode 108 score -192.7 avg_score -105.3 time_steps 52218 learning_steps 2610
+Time exceeded   Episode 109 score -181.7 avg_score -104.5 time_steps 53845 learning_steps 2692
+Time exceeded   Episode 110 score -163.8 avg_score -104.6 time_steps 55463 learning_steps 2773
+Episode 111 score -121.8 avg_score -104.4 time_steps 55967 learning_steps 2798
+Time exceeded   Episode 112 score -28.9 avg_score -103.7 time_steps 57700 learning_steps 2885
+Episode 113 score -1.4 avg_score -101.6 time_steps 59204 learning_steps 2960
+Time exceeded   Episode 114 score -194.6 avg_score -101.9 time_steps 60900 learning_steps 3045
+Episode 115 score 59.2 avg_score -100.4 time_steps 61843 learning_steps 3092
+Episode 116 score 7.4 avg_score -98.6 time_steps 63461 learning_steps 3173
+Episode 117 score 64.5 avg_score -96.0 time_steps 64631 learning_steps 3231
+Episode 118 score 74.7 avg_score -91.4 time_steps 65790 learning_steps 3289
+Episode 119 score 95.6 avg_score -89.4 time_steps 66616 learning_steps 3330
+Episode 120 score 172.1 avg_score -83.6 time_steps 67430 learning_steps 3371
+Episode 121 score -138.3 avg_score -82.9 time_steps 67784 learning_steps 3389
+Episode 122 score 221.9 avg_score -76.6 time_steps 68284 learning_steps 3414
+Episode 123 score 208.1 avg_score -71.7 time_steps 68755 learning_steps 3437
+-- SAVING MODELS --
+Episode 124 score 195.4 avg_score -65.6 time_steps 69274 learning_steps 3463
+-- SAVING MODELS --
+Episode 125 score 238.1 avg_score -59.4 time_steps 69796 learning_steps 3489
+-- SAVING MODELS --
+Episode 126 score 162.4 avg_score -52.9 time_steps 70398 learning_steps 3519
+-- SAVING MODELS --
+Episode 127 score 220.7 avg_score -49.8 time_steps 71034 learning_steps 3551
+-- SAVING MODELS --
+Episode 128 score 213.0 avg_score -45.3 time_steps 71714 learning_steps 3585
+Episode 129 score 56.0 avg_score -47.3 time_steps 72635 learning_steps 3631
+Episode 130 score -83.6 avg_score -47.7 time_steps 72867 learning_steps 3643
+Episode 131 score -101.2 avg_score -47.5 time_steps 73208 learning_steps 3660
+Episode 132 score 147.0 avg_score -45.8 time_steps 73750 learning_steps 3687
+-- SAVING MODELS --
+Episode 133 score 126.4 avg_score -43.5 time_steps 74415 learning_steps 3720
+-- SAVING MODELS --
+Episode 134 score 217.8 avg_score -40.2 time_steps 74861 learning_steps 3743
+-- SAVING MODELS --
+Episode 135 score 191.0 avg_score -38.2 time_steps 75359 learning_steps 3767
+Time exceeded   -- SAVING MODELS --
+Episode 136 score 66.7 avg_score -36.7 time_steps 77240 learning_steps 3862
+-- SAVING MODELS --
+Episode 137 score 145.8 avg_score -33.2 time_steps 77791 learning_steps 3889
+-- SAVING MODELS --
+Episode 138 score 199.4 avg_score -30.7 time_steps 78430 learning_steps 3921
+-- SAVING MODELS --
+Episode 139 score 271.2 avg_score -23.7 time_steps 78820 learning_steps 3941
+-- SAVING MODELS --
+Episode 140 score -74.2 avg_score -23.3 time_steps 79246 learning_steps 3962
+Episode 141 score -108.6 avg_score -24.7 time_steps 79796 learning_steps 3989
+-- SAVING MODELS --
+Episode 142 score 62.6 avg_score -22.3 time_steps 81038 learning_steps 4051
+-- SAVING MODELS --
+Episode 143 score 47.2 avg_score -21.6 time_steps 82553 learning_steps 4127
+Episode 144 score -198.4 avg_score -23.3 time_steps 83799 learning_steps 4189
+Time exceeded   Episode 145 score -212.4 avg_score -25.0 time_steps 85542 learning_steps 4277
+Time exceeded   Episode 146 score -152.9 avg_score -26.6 time_steps 87260 learning_steps 4363
+Time exceeded   Episode 147 score -217.0 avg_score -26.1 time_steps 88980 learning_steps 4449
+Time exceeded   Episode 148 score -98.1 avg_score -27.6 time_steps 90620 learning_steps 4531
+Episode 149 score -23.4 avg_score -27.9 time_steps 92204 learning_steps 4610
+Time exceeded   Episode 150 score -236.5 avg_score -29.8 time_steps 94000 learning_steps 4700
+Time exceeded   Episode 151 score -228.1 avg_score -31.4 time_steps 95700 learning_steps 4785
+Time exceeded   Episode 152 score -10.4 avg_score -31.7 time_steps 97130 learning_steps 4856
+Episode 153 score 160.2 avg_score -30.2 time_steps 98649 learning_steps 4932
+Time exceeded   Episode 154 score 82.9 avg_score -32.0 time_steps 100440 learning_steps 5022
+Time exceeded   Episode 155 score -142.8 avg_score -32.5 time_steps 102027 learning_steps 5101
+Episode 156 score 92.3 avg_score -32.0 time_steps 103213 learning_steps 5160
+Time exceeded   Episode 157 score 25.2 avg_score -31.4 time_steps 104860 learning_steps 5243
+Episode 158 score -274.9 avg_score -36.0 time_steps 106415 learning_steps 5320
+Time exceeded   Episode 159 score -236.0 avg_score -37.8 time_steps 108040 learning_steps 5402
+Episode 160 score -325.1 avg_score -39.0 time_steps 109458 learning_steps 5472
+Episode 161 score -241.6 avg_score -40.5 time_steps 110831 learning_steps 5541
+Episode 162 score -101.8 avg_score -41.2 time_steps 111065 learning_steps 5553
+Episode 163 score -119.9 avg_score -44.2 time_steps 111267 learning_steps 5563
+Episode 164 score -114.9 avg_score -43.5 time_steps 111420 learning_steps 5571
+Episode 165 score -139.4 avg_score -44.3 time_steps 111684 learning_steps 5584
+Episode 166 score -184.2 avg_score -46.8 time_steps 112082 learning_steps 5604
+Episode 167 score -119.2 avg_score -46.7 time_steps 112299 learning_steps 5614
+Episode 168 score -183.3 avg_score -47.7 time_steps 113041 learning_steps 5652
+Time exceeded   Episode 169 score -161.2 avg_score -50.4 time_steps 114604 learning_steps 5730
+Time exceeded   Episode 170 score -211.8 avg_score -51.2 time_steps 116140 learning_steps 5807
+Episode 171 score -229.4 avg_score -52.7 time_steps 116992 learning_steps 5849
+Time exceeded   Episode 172 score -224.6 avg_score -55.6 time_steps 118380 learning_steps 5919
+Time exceeded   Episode 173 score -216.0 avg_score -56.4 time_steps 119880 learning_steps 5994
+Time exceeded   Episode 174 score -221.0 avg_score -57.9 time_steps 121440 learning_steps 6072
+Time exceeded   Episode 175 score -191.9 avg_score -61.5 time_steps 122940 learning_steps 6147
+Time exceeded   Episode 176 score -207.8 avg_score -63.0 time_steps 124520 learning_steps 6226
+Time exceeded   Episode 177 score -198.0 avg_score -62.9 time_steps 126100 learning_steps 6305
+Episode 178 score -94.7 avg_score -62.9 time_steps 126400 learning_steps 6320
+Episode 179 score 54.4 avg_score -61.2 time_steps 127427 learning_steps 6371
+Episode 180 score -70.8 avg_score -64.0 time_steps 127580 learning_steps 6379
+Episode 181 score 94.4 avg_score -61.7 time_steps 128666 learning_steps 6433
+Episode 182 score 132.7 avg_score -61.8 time_steps 129411 learning_steps 6470
+Time exceeded   Episode 183 score 3.1 avg_score -61.0 time_steps 131131 learning_steps 6556
+Episode 184 score -118.5 avg_score -60.3 time_steps 131303 learning_steps 6565
+Episode 185 score -252.4 avg_score -61.8 time_steps 132694 learning_steps 6634
+Time exceeded   Episode 186 score -143.2 avg_score -62.0 time_steps 134323 learning_steps 6716
+Episode 187 score 37.3 avg_score -60.0 time_steps 135749 learning_steps 6787
+Episode 188 score -191.0 avg_score -59.3 time_steps 137158 learning_steps 6857
+Time exceeded   Episode 189 score -105.9 avg_score -58.3 time_steps 138800 learning_steps 6940
+Time exceeded   Episode 190 score -134.3 avg_score -58.1 time_steps 140377 learning_steps 7018
+Episode 191 score 95.1 avg_score -55.9 time_steps 141612 learning_steps 7080
+Episode 192 score -102.0 avg_score -56.4 time_steps 141826 learning_steps 7091
+Time exceeded   Episode 193 score -116.0 avg_score -58.2 time_steps 143453 learning_steps 7172
+Time exceeded   Episode 194 score -66.4 avg_score -56.9 time_steps 145040 learning_steps 7252
+Episode 195 score -15.4 avg_score -55.7 time_steps 146610 learning_steps 7330
+Time exceeded   Episode 196 score -21.0 avg_score -55.3 time_steps 148240 learning_steps 7412
+Episode 197 score -146.9 avg_score -56.2 time_steps 148950 learning_steps 7447
+Episode 198 score -50.2 avg_score -55.4 time_steps 149510 learning_steps 7475
+Episode 199 score 164.9 avg_score -51.8 time_steps 150431 learning_steps 7521
+Episode 200 score -83.1 avg_score -51.4 time_steps 150952 learning_steps 7547
+Episode 201 score -155.2 avg_score -52.7 time_steps 151653 learning_steps 7582
+Episode 202 score -195.9 avg_score -52.2 time_steps 152508 learning_steps 7625
+Time exceeded   Episode 203 score -146.8 avg_score -51.0 time_steps 154060 learning_steps 7703
+Time exceeded   Episode 204 score -181.6 avg_score -51.5 time_steps 155620 learning_steps 7781
+Time exceeded   Episode 205 score -210.4 avg_score -52.1 time_steps 157257 learning_steps 7862
+Time exceeded   Episode 206 score -208.0 avg_score -52.3 time_steps 158903 learning_steps 7945
+Episode 207 score -235.4 avg_score -54.5 time_steps 159859 learning_steps 7992
+Episode 208 score -167.3 avg_score -54.3 time_steps 160569 learning_steps 8028
+Episode 209 score -150.4 avg_score -53.9 time_steps 160977 learning_steps 8048
+Episode 210 score 71.9 avg_score -51.6 time_steps 161704 learning_steps 8085
+Episode 211 score -81.2 avg_score -51.2 time_steps 161887 learning_steps 8094
+Episode 212 score -137.3 avg_score -52.3 time_steps 162368 learning_steps 8118
+Episode 213 score -111.7 avg_score -53.4 time_steps 162904 learning_steps 8145
+Episode 214 score -147.4 avg_score -52.9 time_steps 163507 learning_steps 8175
+Episode 215 score -106.1 avg_score -54.6 time_steps 163720 learning_steps 8186
+Episode 216 score -137.4 avg_score -56.0 time_steps 163960 learning_steps 8198
+Episode 217 score -135.7 avg_score -58.0 time_steps 164424 learning_steps 8221
+Episode 218 score -126.2 avg_score -60.0 time_steps 164775 learning_steps 8238
+Episode 219 score 100.5 avg_score -60.0 time_steps 165691 learning_steps 8284
+Time exceeded   Episode 220 score -242.5 avg_score -64.1 time_steps 167318 learning_steps 8365
+Episode 221 score -107.4 avg_score -63.8 time_steps 167488 learning_steps 8374
+Episode 222 score -135.0 avg_score -67.4 time_steps 167612 learning_steps 8380
+Episode 223 score -117.1 avg_score -70.6 time_steps 167982 learning_steps 8399
+Time exceeded   Episode 224 score -238.3 avg_score -75.0 time_steps 169660 learning_steps 8483
+Time exceeded   Episode 225 score -194.9 avg_score -79.3 time_steps 171500 learning_steps 8575
+Episode 226 score -104.5 avg_score -82.0 time_steps 171670 learning_steps 8583
+Episode 227 score 45.0 avg_score -83.7 time_steps 172924 learning_steps 8646
+Episode 228 score 50.3 avg_score -85.3 time_steps 174101 learning_steps 8705
+Time exceeded   Episode 229 score -188.3 avg_score -87.8 time_steps 175845 learning_steps 8792
+Time exceeded   Episode 230 score -166.7 avg_score -88.6 time_steps 177660 learning_steps 8883
+Time exceeded   Episode 231 score -49.3 avg_score -88.1 time_steps 179321 learning_steps 8966
+Time exceeded   Episode 232 score -194.7 avg_score -91.5 time_steps 181120 learning_steps 9056
+Episode 233 score -227.2 avg_score -95.0 time_steps 181958 learning_steps 9097
+Episode 234 score -114.9 avg_score -98.4 time_steps 182209 learning_steps 9110
+Episode 235 score -139.9 avg_score -101.7 time_steps 182427 learning_steps 9121
+Episode 236 score 84.3 avg_score -101.5 time_steps 183210 learning_steps 9160
+Episode 237 score -134.3 avg_score -104.3 time_steps 183374 learning_steps 9168
+Episode 238 score -141.6 avg_score -107.7 time_steps 183831 learning_steps 9191
+Episode 239 score -125.3 avg_score -111.7 time_steps 184375 learning_steps 9218
+Episode 240 score -159.9 avg_score -112.5 time_steps 184656 learning_steps 9232
+Episode 241 score -106.8 avg_score -112.5 time_steps 185018 learning_steps 9250
+Episode 242 score -130.3 avg_score -114.5 time_steps 185288 learning_steps 9264
+Episode 243 score -240.8 avg_score -117.3 time_steps 186357 learning_steps 9317
+Episode 244 score 164.0 avg_score -113.7 time_steps 187573 learning_steps 9378
+Episode 245 score -75.9 avg_score -112.3 time_steps 188130 learning_steps 9406
+Episode 246 score 82.2 avg_score -110.0 time_steps 188962 learning_steps 9448
+Time exceeded   Episode 247 score 7.3 avg_score -107.7 time_steps 190780 learning_steps 9539
+Episode 248 score 31.8 avg_score -106.4 time_steps 191807 learning_steps 9590
+Time exceeded   Episode 249 score -65.4 avg_score -106.9 time_steps 193560 learning_steps 9678
+Episode 250 score 94.7 avg_score -103.6 time_steps 194904 learning_steps 9745
+Episode 251 score -117.4 avg_score -102.5 time_steps 195875 learning_steps 9793
+Episode 252 score -11.7 avg_score -102.5 time_steps 197295 learning_steps 9864
+Episode 253 score -105.5 avg_score -105.1 time_steps 197834 learning_steps 9891
+Episode 254 score -86.9 avg_score -106.8 time_steps 198121 learning_steps 9906
+Episode 255 score -124.0 avg_score -106.6 time_steps 198269 learning_steps 9913
+Episode 256 score -276.1 avg_score -110.3 time_steps 199451 learning_steps 9972
+Episode 257 score -98.2 avg_score -111.5 time_steps 199590 learning_steps 9979
+Episode 258 score -151.8 avg_score -110.3 time_steps 200374 learning_steps 10018
+Episode 259 score -115.4 avg_score -109.1 time_steps 200594 learning_steps 10029
+Episode 260 score -109.7 avg_score -107.0 time_steps 200769 learning_steps 10038
+Episode 261 score -194.0 avg_score -106.5 time_steps 201436 learning_steps 10071
+Episode 262 score -98.6 avg_score -106.4 time_steps 201666 learning_steps 10083
+Episode 263 score 162.9 avg_score -103.6 time_steps 202295 learning_steps 10114
+Episode 264 score 126.1 avg_score -101.2 time_steps 202908 learning_steps 10145
+Episode 265 score -112.7 avg_score -100.9 time_steps 203084 learning_steps 10154
+Episode 266 score 181.2 avg_score -97.3 time_steps 203578 learning_steps 10178
+Episode 267 score -75.0 avg_score -96.8 time_steps 203778 learning_steps 10188
+Episode 268 score -94.6 avg_score -96.0 time_steps 203932 learning_steps 10196
+Episode 269 score 112.5 avg_score -93.2 time_steps 204479 learning_steps 10223
+Episode 270 score -73.3 avg_score -91.8 time_steps 204708 learning_steps 10235
+Episode 271 score 170.4 avg_score -87.8 time_steps 205757 learning_steps 10287
+Time exceeded   Episode 272 score 27.9 avg_score -85.3 time_steps 207420 learning_steps 10371
+Time exceeded   Episode 273 score 89.8 avg_score -82.3 time_steps 209240 learning_steps 10462
+Episode 274 score 166.8 avg_score -78.4 time_steps 210297 learning_steps 10514
+Episode 275 score 168.5 avg_score -74.8 time_steps 210834 learning_steps 10541
+Episode 276 score 159.9 avg_score -71.1 time_steps 211342 learning_steps 10567
+Episode 277 score 220.4 avg_score -66.9 time_steps 211974 learning_steps 10598
+Episode 278 score 100.9 avg_score -65.0 time_steps 212485 learning_steps 10624
+Episode 279 score -69.8 avg_score -66.2 time_steps 212702 learning_steps 10635
+Episode 280 score 221.2 avg_score -63.3 time_steps 213173 learning_steps 10658
+Episode 281 score 219.7 avg_score -62.0 time_steps 213675 learning_steps 10683
+Episode 282 score 235.8 avg_score -61.0 time_steps 214142 learning_steps 10707
+Episode 283 score -41.8 avg_score -61.4 time_steps 214483 learning_steps 10724
+Time exceeded   Episode 284 score 36.8 avg_score -59.9 time_steps 216160 learning_steps 10808
+Episode 285 score -82.1 avg_score -58.2 time_steps 216339 learning_steps 10816
+Episode 286 score 233.1 avg_score -54.4 time_steps 216698 learning_steps 10834
+Episode 287 score 245.1 avg_score -52.3 time_steps 217059 learning_steps 10852
+Episode 288 score -85.2 avg_score -51.3 time_steps 217246 learning_steps 10862
+Episode 289 score -56.8 avg_score -50.8 time_steps 217432 learning_steps 10871
+Episode 290 score -84.5 avg_score -50.3 time_steps 217672 learning_steps 10883
+Episode 291 score 211.3 avg_score -49.1 time_steps 218147 learning_steps 10907
+Episode 292 score 227.4 avg_score -45.8 time_steps 218523 learning_steps 10926
+Episode 293 score -152.9 avg_score -46.2 time_steps 218761 learning_steps 10938
+Episode 294 score -79.3 avg_score -46.3 time_steps 219011 learning_steps 10950
+Episode 295 score 176.3 avg_score -44.4 time_steps 219386 learning_steps 10969
+Episode 296 score -139.2 avg_score -45.6 time_steps 219616 learning_steps 10980
+Episode 297 score 129.6 avg_score -42.8 time_steps 220034 learning_steps 11001
+Episode 298 score -76.8 avg_score -43.1 time_steps 220406 learning_steps 11020
+Episode 299 score -97.4 avg_score -45.7 time_steps 220892 learning_steps 11044
+Episode 300 score 97.7 avg_score -43.9 time_steps 221647 learning_steps 11082
+Episode 301 score 199.9 avg_score -40.4 time_steps 222220 learning_steps 11111
+Episode 302 score 131.2 avg_score -37.1 time_steps 222921 learning_steps 11146
+Episode 303 score 82.6 avg_score -34.8 time_steps 224397 learning_steps 11219
+Episode 304 score -286.4 avg_score -35.9 time_steps 225448 learning_steps 11272
+Episode 305 score 44.3 avg_score -33.3 time_steps 226460 learning_steps 11323
+Episode 306 score -144.3 avg_score -32.7 time_steps 227096 learning_steps 11354
+Episode 307 score 81.3 avg_score -29.5 time_steps 228327 learning_steps 11416
+Episode 308 score 59.6 avg_score -27.2 time_steps 229873 learning_steps 11493
+Episode 309 score 70.6 avg_score -25.0 time_steps 231120 learning_steps 11556
+Episode 310 score 58.7 avg_score -25.2 time_steps 232480 learning_steps 11624
+Episode 311 score -99.3 avg_score -25.3 time_steps 232686 learning_steps 11634
+Episode 312 score -152.1 avg_score -25.5 time_steps 233009 learning_steps 11650
+Episode 313 score 176.7 avg_score -22.6 time_steps 234063 learning_steps 11703
+Episode 314 score -186.8 avg_score -23.0 time_steps 234504 learning_steps 11725
+Time exceeded   Episode 315 score -52.9 avg_score -22.5 time_steps 236080 learning_steps 11804
+-- SAVING MODELS --
+Episode 316 score 165.3 avg_score -19.4 time_steps 237276 learning_steps 11863
+Time exceeded   -- SAVING MODELS --
+Episode 317 score 5.3 avg_score -18.0 time_steps 238940 learning_steps 11947
+-- SAVING MODELS --
+Episode 318 score 135.6 avg_score -15.4 time_steps 239804 learning_steps 11990
+Episode 319 score 62.4 avg_score -15.8 time_steps 240625 learning_steps 12031
+-- SAVING MODELS --
+Episode 320 score 104.1 avg_score -12.3 time_steps 242004 learning_steps 12100
+-- SAVING MODELS --
+Episode 321 score -88.0 avg_score -12.1 time_steps 242663 learning_steps 12133
+-- SAVING MODELS --
+Episode 322 score 185.2 avg_score -8.9 time_steps 243281 learning_steps 12164
+-- SAVING MODELS --
+Episode 323 score 239.1 avg_score -5.4 time_steps 243823 learning_steps 12191
+-- SAVING MODELS --
+Episode 324 score -58.3 avg_score -3.6 time_steps 244025 learning_steps 12201
+-- SAVING MODELS --
+Episode 325 score -69.1 avg_score -2.3 time_steps 244177 learning_steps 12208
+-- SAVING MODELS --
+Episode 326 score -76.7 avg_score -2.0 time_steps 244343 learning_steps 12217
+Episode 327 score -110.5 avg_score -3.6 time_steps 244538 learning_steps 12226
+Episode 328 score -63.8 avg_score -4.7 time_steps 244705 learning_steps 12235
+-- SAVING MODELS --
+Episode 329 score 191.2 avg_score -0.9 time_steps 245168 learning_steps 12258
+-- SAVING MODELS --
+Episode 330 score -108.9 avg_score -0.4 time_steps 245351 learning_steps 12267
+Episode 331 score -85.8 avg_score -0.7 time_steps 245519 learning_steps 12275
+-- SAVING MODELS --
+Episode 332 score -61.1 avg_score 0.6 time_steps 245667 learning_steps 12283
+-- SAVING MODELS --
+Episode 333 score -95.2 avg_score 1.9 time_steps 245893 learning_steps 12294
+-- SAVING MODELS --
+Episode 334 score 212.7 avg_score 5.2 time_steps 246416 learning_steps 12320
+-- SAVING MODELS --
+Episode 335 score -17.3 avg_score 6.4 time_steps 246853 learning_steps 12342
+Episode 336 score -65.2 avg_score 4.9 time_steps 247151 learning_steps 12357
+Episode 337 score -93.1 avg_score 5.4 time_steps 247504 learning_steps 12375
+-- SAVING MODELS --
+Episode 338 score 223.8 avg_score 9.0 time_steps 248080 learning_steps 12404
+-- SAVING MODELS --
+Episode 339 score -105.1 avg_score 9.2 time_steps 248467 learning_steps 12423
+-- SAVING MODELS --
+Episode 340 score -97.6 avg_score 9.8 time_steps 249145 learning_steps 12457
+-- SAVING MODELS --
+Episode 341 score -59.4 avg_score 10.3 time_steps 249548 learning_steps 12477
+-- SAVING MODELS --
+Episode 342 score 182.0 avg_score 13.4 time_steps 250252 learning_steps 12512
+-- SAVING MODELS --
+Episode 343 score -155.8 avg_score 14.3 time_steps 250868 learning_steps 12543
+-- SAVING MODELS --
+Episode 344 score 229.1 avg_score 14.9 time_steps 251492 learning_steps 12574
+-- SAVING MODELS --
+Episode 345 score 168.1 avg_score 17.4 time_steps 252163 learning_steps 12608
+Episode 346 score -108.7 avg_score 15.5 time_steps 252459 learning_steps 12622
+Episode 347 score 132.0 avg_score 16.7 time_steps 253254 learning_steps 12662
+Episode 348 score -84.2 avg_score 15.6 time_steps 253417 learning_steps 12670
+Episode 349 score 54.2 avg_score 16.7 time_steps 254479 learning_steps 12723
+Episode 350 score -107.6 avg_score 14.7 time_steps 255331 learning_steps 12766
+Episode 351 score 121.9 avg_score 17.1 time_steps 256291 learning_steps 12814
+-- SAVING MODELS --
+Episode 352 score 69.4 avg_score 17.9 time_steps 257081 learning_steps 12854
+-- SAVING MODELS --
+Episode 353 score 117.1 avg_score 20.2 time_steps 258200 learning_steps 12910
+-- SAVING MODELS --
+Episode 354 score -56.0 avg_score 20.5 time_steps 258798 learning_steps 12939
+-- SAVING MODELS --
+Episode 355 score 129.2 avg_score 23.0 time_steps 259617 learning_steps 12980
+-- SAVING MODELS --
+Episode 356 score 166.6 avg_score 27.4 time_steps 260317 learning_steps 13015
+-- SAVING MODELS --
+Episode 357 score 121.8 avg_score 29.6 time_steps 261301 learning_steps 13065
+-- SAVING MODELS --
+Episode 358 score 178.6 avg_score 32.9 time_steps 262042 learning_steps 13102
+Time exceeded   Episode 359 score -188.1 avg_score 32.2 time_steps 263778 learning_steps 13188
+Episode 360 score -119.3 avg_score 32.1 time_steps 264399 learning_steps 13219
+-- SAVING MODELS --
+Episode 361 score 161.0 avg_score 35.6 time_steps 265287 learning_steps 13264
+-- SAVING MODELS --
+Episode 362 score 150.4 avg_score 38.1 time_steps 266079 learning_steps 13303
+-- SAVING MODELS --
+Episode 363 score 187.8 avg_score 38.4 time_steps 266794 learning_steps 13339
+Time exceeded   Episode 364 score -8.3 avg_score 37.0 time_steps 268340 learning_steps 13417
+-- SAVING MODELS --
+Episode 365 score 93.8 avg_score 39.1 time_steps 269338 learning_steps 13466
+Time exceeded   Episode 366 score 23.6 avg_score 37.5 time_steps 270960 learning_steps 13548
+-- SAVING MODELS --
+Episode 367 score 180.1 avg_score 40.1 time_steps 272457 learning_steps 13622
+-- SAVING MODELS --
+Episode 368 score 233.6 avg_score 43.4 time_steps 272991 learning_steps 13649
+Episode 369 score -151.6 avg_score 40.7 time_steps 273594 learning_steps 13679
+Episode 370 score 170.7 avg_score 43.2 time_steps 274205 learning_steps 13710
+Episode 371 score 41.9 avg_score 41.9 time_steps 275260 learning_steps 13763
+-- SAVING MODELS --
+Episode 372 score 208.7 avg_score 43.7 time_steps 275757 learning_steps 13787
+-- SAVING MODELS --
+Episode 373 score 121.3 avg_score 44.0 time_steps 276334 learning_steps 13816
+-- SAVING MODELS --
+Episode 374 score 175.5 avg_score 44.1 time_steps 276905 learning_steps 13845
+Episode 375 score 156.4 avg_score 44.0 time_steps 277584 learning_steps 13879
+Episode 376 score -125.2 avg_score 41.1 time_steps 278265 learning_steps 13913
+Episode 377 score 178.4 avg_score 40.7 time_steps 279213 learning_steps 13960
+Episode 378 score -80.6 avg_score 38.9 time_steps 279829 learning_steps 13991
+Episode 379 score -147.7 avg_score 38.1 time_steps 280327 learning_steps 14016
+Episode 380 score -206.0 avg_score 33.8 time_steps 280912 learning_steps 14045
+Episode 381 score -98.5 avg_score 30.7 time_steps 281224 learning_steps 14061
+Episode 382 score -120.3 avg_score 27.1 time_steps 281735 learning_steps 14086
+Episode 383 score -104.6 avg_score 26.5 time_steps 282502 learning_steps 14125
+Episode 384 score -157.5 avg_score 24.5 time_steps 283142 learning_steps 14157
+Episode 385 score -159.8 avg_score 23.7 time_steps 283797 learning_steps 14189
+Episode 386 score -119.3 avg_score 20.2 time_steps 284096 learning_steps 14204
+Episode 387 score 229.6 avg_score 20.1 time_steps 284608 learning_steps 14230
+Episode 388 score -151.2 avg_score 19.4 time_steps 284970 learning_steps 14248
+Episode 389 score 199.7 avg_score 22.0 time_steps 285521 learning_steps 14276
+Episode 390 score -109.0 avg_score 21.7 time_steps 285919 learning_steps 14295
+Episode 391 score -81.9 avg_score 18.8 time_steps 286291 learning_steps 14314
+Episode 392 score 213.1 avg_score 18.6 time_steps 286795 learning_steps 14339
+Episode 393 score -117.0 avg_score 19.0 time_steps 287180 learning_steps 14359
+Episode 394 score 184.0 avg_score 21.6 time_steps 287620 learning_steps 14381
+Episode 395 score -105.9 avg_score 18.8 time_steps 287949 learning_steps 14397
+Episode 396 score -83.9 avg_score 19.4 time_steps 288179 learning_steps 14408
+Episode 397 score -75.1 avg_score 17.3 time_steps 288337 learning_steps 14416
+Episode 398 score -50.8 avg_score 17.6 time_steps 288629 learning_steps 14431
+Episode 399 score 198.3 avg_score 20.5 time_steps 289043 learning_steps 14452
+Episode 400 score -78.8 avg_score 18.8 time_steps 289300 learning_steps 14465
+Episode 401 score 143.8 avg_score 18.2 time_steps 289916 learning_steps 14495
+Episode 402 score 105.7 avg_score 18.0 time_steps 290751 learning_steps 14537
+Episode 403 score -93.0 avg_score 16.2 time_steps 291658 learning_steps 14582
+Episode 404 score -57.9 avg_score 18.5 time_steps 291859 learning_steps 14592
+Episode 405 score 253.9 avg_score 20.6 time_steps 292267 learning_steps 14613
+Episode 406 score 132.4 avg_score 23.4 time_steps 292780 learning_steps 14639
+Episode 407 score -102.0 avg_score 21.5 time_steps 292938 learning_steps 14646
+Episode 408 score -83.8 avg_score 20.1 time_steps 293139 learning_steps 14656
+Episode 409 score -69.1 avg_score 18.7 time_steps 293337 learning_steps 14666
+Episode 410 score 244.7 avg_score 20.6 time_steps 294849 learning_steps 14742
+Episode 411 score 75.8 avg_score 22.3 time_steps 295632 learning_steps 14781
+Episode 412 score -105.4 avg_score 22.8 time_steps 295965 learning_steps 14798
+Episode 413 score 228.3 avg_score 23.3 time_steps 296348 learning_steps 14817
+Time exceeded   Episode 414 score 94.5 avg_score 26.1 time_steps 298020 learning_steps 14901
+Episode 415 score -94.0 avg_score 25.7 time_steps 298259 learning_steps 14912
+Episode 416 score -3.6 avg_score 24.0 time_steps 298590 learning_steps 14929
+Episode 417 score -42.2 avg_score 23.5 time_steps 298817 learning_steps 14940
+Episode 418 score 145.6 avg_score 23.6 time_steps 299380 learning_steps 14969
+Episode 419 score -49.1 avg_score 22.5 time_steps 299567 learning_steps 14978
+Episode 420 score 217.0 avg_score 23.6 time_steps 299986 learning_steps 14999
+Episode 421 score -10.1 avg_score 24.4 time_steps 300187 learning_steps 15009
+Episode 422 score -66.2 avg_score 21.9 time_steps 300591 learning_steps 15029
+Episode 423 score -49.7 avg_score 19.0 time_steps 300783 learning_steps 15039
+Episode 424 score -69.2 avg_score 18.9 time_steps 301031 learning_steps 15051
+Episode 425 score 191.3 avg_score 21.5 time_steps 301601 learning_steps 15080
+Time exceeded   Episode 426 score 78.0 avg_score 23.1 time_steps 303267 learning_steps 15163
+Episode 427 score 186.8 avg_score 26.0 time_steps 303857 learning_steps 15192
+Episode 428 score -84.2 avg_score 25.8 time_steps 304188 learning_steps 15209
+Episode 429 score 230.9 avg_score 26.2 time_steps 304656 learning_steps 15232
+Episode 430 score 122.0 avg_score 28.5 time_steps 305862 learning_steps 15293
+Episode 431 score -73.2 avg_score 28.7 time_steps 306365 learning_steps 15318
+Episode 432 score 14.7 avg_score 29.4 time_steps 307653 learning_steps 15382
+Episode 433 score 63.0 avg_score 31.0 time_steps 308621 learning_steps 15431
+Episode 434 score 139.2 avg_score 30.3 time_steps 309228 learning_steps 15461
+Episode 435 score -62.0 avg_score 29.8 time_steps 309658 learning_steps 15482
+Episode 436 score -26.8 avg_score 30.2 time_steps 309988 learning_steps 15499
+Episode 437 score 163.2 avg_score 32.8 time_steps 310616 learning_steps 15530
+Episode 438 score -50.1 avg_score 30.0 time_steps 310862 learning_steps 15543
+Episode 439 score -47.7 avg_score 30.6 time_steps 311089 learning_steps 15554
+Episode 440 score 185.2 avg_score 33.4 time_steps 311634 learning_steps 15581
+Episode 441 score -5.4 avg_score 34.0 time_steps 311965 learning_steps 15598
+Episode 442 score -71.2 avg_score 31.4 time_steps 312148 learning_steps 15607
+Episode 443 score 238.9 avg_score 35.4 time_steps 312892 learning_steps 15644
+Episode 444 score 131.3 avg_score 34.4 time_steps 313398 learning_steps 15669
+Episode 445 score 211.9 avg_score 34.8 time_steps 313989 learning_steps 15699
+Episode 446 score -27.8 avg_score 35.6 time_steps 314358 learning_steps 15717
+Episode 447 score -150.7 avg_score 32.8 time_steps 314733 learning_steps 15736
+Episode 448 score -73.8 avg_score 32.9 time_steps 315005 learning_steps 15750
+Episode 449 score -70.2 avg_score 31.7 time_steps 315231 learning_steps 15761
+Episode 450 score -108.5 avg_score 31.7 time_steps 315629 learning_steps 15781
+Episode 451 score 257.1 avg_score 33.0 time_steps 316080 learning_steps 15804
+Episode 452 score -24.4 avg_score 32.1 time_steps 316465 learning_steps 15823
+Episode 453 score -46.4 avg_score 30.4 time_steps 316815 learning_steps 15840
+Episode 454 score -92.8 avg_score 30.1 time_steps 316947 learning_steps 15847
+Episode 455 score 75.9 avg_score 29.5 time_steps 317566 learning_steps 15878
+Episode 456 score 168.0 avg_score 29.6 time_steps 318004 learning_steps 15900
+Episode 457 score 126.6 avg_score 29.6 time_steps 318525 learning_steps 15926
+Episode 458 score 72.9 avg_score 28.6 time_steps 319290 learning_steps 15964
+Episode 459 score -123.8 avg_score 29.2 time_steps 319848 learning_steps 15992
+Episode 460 score 214.6 avg_score 32.5 time_steps 320446 learning_steps 16022
+Episode 461 score -107.5 avg_score 29.9 time_steps 321105 learning_steps 16055
+Episode 462 score -60.0 avg_score 27.7 time_steps 321378 learning_steps 16068
+Episode 463 score -141.7 avg_score 24.5 time_steps 321923 learning_steps 16096
+Episode 464 score -38.9 avg_score 24.1 time_steps 322605 learning_steps 16130
+Episode 465 score -73.5 avg_score 22.5 time_steps 322806 learning_steps 16140
+Episode 466 score -155.6 avg_score 20.7 time_steps 323481 learning_steps 16174
+Episode 467 score -153.5 avg_score 17.3 time_steps 324005 learning_steps 16200
+Episode 468 score 122.2 avg_score 16.2 time_steps 324800 learning_steps 16240
+Episode 469 score 214.8 avg_score 19.9 time_steps 325396 learning_steps 16269
+Episode 470 score -94.7 avg_score 17.2 time_steps 325590 learning_steps 16279
+Episode 471 score -106.2 avg_score 15.8 time_steps 326035 learning_steps 16301
+Episode 472 score -97.8 avg_score 12.7 time_steps 326264 learning_steps 16313
+Episode 473 score 239.3 avg_score 13.9 time_steps 326852 learning_steps 16342
+Episode 474 score -50.0 avg_score 11.6 time_steps 327411 learning_steps 16370
+Episode 475 score -70.2 avg_score 9.4 time_steps 327547 learning_steps 16377
+Episode 476 score -100.1 avg_score 9.6 time_steps 327760 learning_steps 16388
+Episode 477 score -108.0 avg_score 6.7 time_steps 327892 learning_steps 16394
+Episode 478 score -138.6 avg_score 6.2 time_steps 328233 learning_steps 16411
+Episode 479 score -83.0 avg_score 6.8 time_steps 328536 learning_steps 16426
+Episode 480 score -71.5 avg_score 8.2 time_steps 328702 learning_steps 16435
+Episode 481 score -81.5 avg_score 8.3 time_steps 329091 learning_steps 16454
+Episode 482 score -75.7 avg_score 8.8 time_steps 329295 learning_steps 16464
+Episode 483 score -143.0 avg_score 8.4 time_steps 329677 learning_steps 16483
+Episode 484 score 240.1 avg_score 12.4 time_steps 330155 learning_steps 16507
+Episode 485 score -93.6 avg_score 13.0 time_steps 330599 learning_steps 16529
+Episode 486 score -108.2 avg_score 13.1 time_steps 331096 learning_steps 16554
+Episode 487 score -73.3 avg_score 10.1 time_steps 331593 learning_steps 16579
+Episode 488 score 160.7 avg_score 13.2 time_steps 332306 learning_steps 16615
+Episode 489 score -80.9 avg_score 10.4 time_steps 332508 learning_steps 16625
+Episode 490 score 16.9 avg_score 11.7 time_steps 333789 learning_steps 16689
+Episode 491 score -157.8 avg_score 10.9 time_steps 334862 learning_steps 16743
+Episode 492 score 182.2 avg_score 10.6 time_steps 335585 learning_steps 16779
+Episode 493 score 165.0 avg_score 13.4 time_steps 336126 learning_steps 16806
+Episode 494 score -2.3 avg_score 11.6 time_steps 337454 learning_steps 16872
+Episode 495 score 37.3 avg_score 13.0 time_steps 338870 learning_steps 16943
+Time exceeded   Episode 496 score -107.3 avg_score 12.8 time_steps 340397 learning_steps 17019
+Time exceeded   Episode 497 score 3.8 avg_score 13.6 time_steps 342076 learning_steps 17103
+Episode 498 score 156.6 avg_score 15.6 time_steps 342729 learning_steps 17136
+Episode 499 score -91.0 avg_score 12.7 time_steps 342895 learning_steps 17144
+Episode 500 score -118.2 avg_score 12.3 time_steps 343076 learning_steps 17153
+Episode 501 score 158.9 avg_score 12.5 time_steps 343733 learning_steps 17186
+Episode 502 score -91.6 avg_score 10.5 time_steps 344524 learning_steps 17226
+Episode 503 score -112.2 avg_score 10.3 time_steps 344977 learning_steps 17248
+Episode 504 score 168.3 avg_score 12.6 time_steps 345879 learning_steps 17293
+Episode 505 score 150.8 avg_score 11.6 time_steps 346632 learning_steps 17331
+Episode 506 score -108.8 avg_score 9.1 time_steps 347068 learning_steps 17353
+Episode 507 score 120.7 avg_score 11.4 time_steps 347914 learning_steps 17395
+Episode 508 score -79.1 avg_score 11.4 time_steps 348162 learning_steps 17408
+Episode 509 score -133.4 avg_score 10.8 time_steps 348785 learning_steps 17439
+Episode 510 score -59.1 avg_score 7.7 time_steps 349302 learning_steps 17465
+Episode 511 score -64.2 avg_score 6.3 time_steps 349470 learning_steps 17473
+Episode 512 score -100.9 avg_score 6.4 time_steps 349909 learning_steps 17495
+Episode 513 score -114.3 avg_score 3.0 time_steps 350078 learning_steps 17503
+Episode 514 score -65.9 avg_score 1.4 time_steps 350429 learning_steps 17521
+Episode 515 score -154.6 avg_score 0.7 time_steps 350823 learning_steps 17541
+Episode 516 score 149.1 avg_score 2.3 time_steps 351316 learning_steps 17565
+Episode 517 score 189.3 avg_score 4.6 time_steps 351716 learning_steps 17585
+Episode 518 score -84.8 avg_score 2.3 time_steps 352099 learning_steps 17604
+Episode 519 score -54.8 avg_score 2.2 time_steps 352544 learning_steps 17627
+Episode 520 score -89.4 avg_score -0.8 time_steps 353011 learning_steps 17650
+Episode 521 score -111.9 avg_score -1.9 time_steps 353482 learning_steps 17674
+Episode 522 score -87.7 avg_score -2.1 time_steps 353677 learning_steps 17683
+Episode 523 score 179.6 avg_score 0.2 time_steps 354166 learning_steps 17708
+Episode 524 score -108.5 avg_score -0.2 time_steps 354519 learning_steps 17725
+Episode 525 score -91.2 avg_score -3.0 time_steps 354675 learning_steps 17733
+Episode 526 score 184.6 avg_score -1.9 time_steps 355155 learning_steps 17757
+Episode 527 score -105.6 avg_score -4.9 time_steps 355570 learning_steps 17778
+Episode 528 score -83.8 avg_score -4.8 time_steps 355786 learning_steps 17789
+Episode 529 score -88.0 avg_score -8.0 time_steps 356140 learning_steps 17807
+Episode 530 score -109.5 avg_score -10.4 time_steps 356306 learning_steps 17815
+Episode 531 score -113.7 avg_score -10.8 time_steps 356656 learning_steps 17832
+Episode 532 score 235.2 avg_score -8.6 time_steps 357067 learning_steps 17853
+Episode 533 score -52.5 avg_score -9.7 time_steps 357469 learning_steps 17873
+Episode 534 score 193.2 avg_score -9.2 time_steps 357922 learning_steps 17896
+Episode 535 score -99.5 avg_score -9.5 time_steps 358294 learning_steps 17914
+Episode 536 score -94.1 avg_score -10.2 time_steps 358520 learning_steps 17926
+Episode 537 score -140.7 avg_score -13.3 time_steps 358881 learning_steps 17944
+Episode 538 score -68.1 avg_score -13.4 time_steps 359143 learning_steps 17957
+Episode 539 score -31.3 avg_score -13.3 time_steps 359473 learning_steps 17973
+Episode 540 score -97.8 avg_score -16.1 time_steps 359768 learning_steps 17988
+Episode 541 score -68.2 avg_score -16.7 time_steps 359928 learning_steps 17996
+Episode 542 score -64.9 avg_score -16.7 time_steps 360235 learning_steps 18011
+Episode 543 score -78.9 avg_score -19.8 time_steps 360504 learning_steps 18025
+Episode 544 score 235.7 avg_score -18.8 time_steps 360901 learning_steps 18045
+Episode 545 score -113.7 avg_score -22.1 time_steps 361415 learning_steps 18070
+Episode 546 score 195.5 avg_score -19.8 time_steps 361863 learning_steps 18093
+Episode 547 score -49.6 avg_score -18.8 time_steps 362193 learning_steps 18109
+Episode 548 score -123.4 avg_score -19.3 time_steps 362655 learning_steps 18132
+Episode 549 score -84.4 avg_score -19.4 time_steps 362929 learning_steps 18146
+Episode 550 score -70.8 avg_score -19.1 time_steps 363259 learning_steps 18162
+Episode 551 score 216.0 avg_score -19.5 time_steps 363860 learning_steps 18193
+Episode 552 score -104.5 avg_score -20.3 time_steps 363998 learning_steps 18199
+Episode 553 score 245.7 avg_score -17.4 time_steps 364387 learning_steps 18219
+Episode 554 score 213.6 avg_score -14.3 time_steps 364766 learning_steps 18238
+Episode 555 score 239.9 avg_score -12.7 time_steps 365145 learning_steps 18257
+Episode 556 score -84.1 avg_score -15.2 time_steps 365379 learning_steps 18268
+Episode 557 score -63.3 avg_score -17.1 time_steps 365587 learning_steps 18279
+Episode 558 score -148.4 avg_score -19.3 time_steps 365912 learning_steps 18295
+Episode 559 score -34.6 avg_score -18.4 time_steps 366099 learning_steps 18304
+Episode 560 score -116.5 avg_score -21.7 time_steps 366442 learning_steps 18322
+Episode 561 score 209.8 avg_score -18.5 time_steps 366819 learning_steps 18340
+Episode 562 score 6.6 avg_score -17.9 time_steps 366980 learning_steps 18349
+Episode 563 score 156.9 avg_score -14.9 time_steps 367429 learning_steps 18371
+Episode 564 score -34.6 avg_score -14.8 time_steps 367682 learning_steps 18384
+Episode 565 score 156.1 avg_score -12.5 time_steps 368039 learning_steps 18401
+Episode 566 score -58.4 avg_score -11.6 time_steps 368307 learning_steps 18415
+Episode 567 score 151.1 avg_score -8.5 time_steps 368604 learning_steps 18430
+Episode 568 score 192.7 avg_score -7.8 time_steps 368940 learning_steps 18447
+Episode 569 score -5.0 avg_score -10.0 time_steps 369156 learning_steps 18457
+Episode 570 score -65.7 avg_score -9.7 time_steps 369348 learning_steps 18467
+Episode 571 score -10.9 avg_score -8.8 time_steps 369550 learning_steps 18477
+Episode 572 score 186.6 avg_score -5.9 time_steps 369940 learning_steps 18497
+Episode 573 score 205.8 avg_score -6.3 time_steps 370245 learning_steps 18512
+Episode 574 score 195.8 avg_score -3.8 time_steps 370571 learning_steps 18528
+Episode 575 score 219.0 avg_score -0.9 time_steps 370878 learning_steps 18543
+Episode 576 score -63.0 avg_score -0.5 time_steps 371076 learning_steps 18553
+Episode 577 score -21.0 avg_score 0.3 time_steps 371329 learning_steps 18566
+Episode 578 score 214.0 avg_score 3.8 time_steps 371638 learning_steps 18581
+Episode 579 score -80.2 avg_score 3.9 time_steps 371779 learning_steps 18588
+Episode 580 score 214.0 avg_score 6.7 time_steps 372073 learning_steps 18603
+Episode 581 score -92.1 avg_score 6.6 time_steps 372316 learning_steps 18615
+Episode 582 score -72.3 avg_score 6.7 time_steps 372460 learning_steps 18623
+Episode 583 score 243.4 avg_score 10.5 time_steps 372768 learning_steps 18638
+Episode 584 score -34.3 avg_score 7.8 time_steps 372973 learning_steps 18648
+Episode 585 score -71.2 avg_score 8.0 time_steps 373219 learning_steps 18660
+Episode 586 score 183.7 avg_score 10.9 time_steps 373546 learning_steps 18677
+Episode 587 score 251.4 avg_score 14.2 time_steps 373868 learning_steps 18693
+Episode 588 score -42.7 avg_score 12.1 time_steps 373991 learning_steps 18699
+Episode 589 score -12.3 avg_score 12.8 time_steps 374198 learning_steps 18709
+Episode 590 score -20.9 avg_score 12.4 time_steps 374396 learning_steps 18719
+Episode 591 score -25.6 avg_score 13.8 time_steps 374570 learning_steps 18728
+Episode 592 score -58.7 avg_score 11.4 time_steps 374804 learning_steps 18740
+Episode 593 score -59.0 avg_score 9.1 time_steps 374952 learning_steps 18747
+Episode 594 score -67.5 avg_score 8.5 time_steps 375191 learning_steps 18759
+Episode 595 score -95.5 avg_score 7.1 time_steps 375456 learning_steps 18772
+Episode 596 score -59.6 avg_score 7.6 time_steps 375711 learning_steps 18785
+Episode 597 score -136.2 avg_score 6.2 time_steps 376014 learning_steps 18800
+Episode 598 score 228.0 avg_score 6.9 time_steps 376305 learning_steps 18815
+Episode 599 score -4.6 avg_score 7.8 time_steps 376511 learning_steps 18825
+Episode 600 score -2.0 avg_score 9.0 time_steps 376735 learning_steps 18836
+Episode 601 score -27.9 avg_score 7.1 time_steps 376908 learning_steps 18845
+Episode 602 score 225.9 avg_score 10.3 time_steps 377216 learning_steps 18860
+Episode 603 score -8.0 avg_score 11.3 time_steps 377385 learning_steps 18869
+Episode 604 score -76.5 avg_score 8.9 time_steps 377582 learning_steps 18879
+Episode 605 score 242.3 avg_score 9.8 time_steps 377890 learning_steps 18894
+Episode 606 score 245.1 avg_score 13.3 time_steps 378197 learning_steps 18909
+Episode 607 score -72.3 avg_score 11.4 time_steps 378349 learning_steps 18917
+Episode 608 score -30.6 avg_score 11.9 time_steps 378585 learning_steps 18929
+Episode 609 score -95.4 avg_score 12.2 time_steps 378823 learning_steps 18941
+Episode 610 score 133.9 avg_score 14.2 time_steps 379223 learning_steps 18961
+Episode 611 score 195.2 avg_score 16.8 time_steps 379540 learning_steps 18977
+Episode 612 score 241.2 avg_score 20.2 time_steps 379826 learning_steps 18991
+Episode 613 score -74.9 avg_score 20.6 time_steps 380076 learning_steps 19003
+Episode 614 score -56.6 avg_score 20.7 time_steps 380277 learning_steps 19013
+Episode 615 score -38.4 avg_score 21.8 time_steps 380552 learning_steps 19027
+Episode 616 score -83.8 avg_score 19.5 time_steps 380885 learning_steps 19044
+Episode 617 score 225.9 avg_score 19.9 time_steps 381196 learning_steps 19059
+Episode 618 score -24.3 avg_score 20.5 time_steps 381478 learning_steps 19073
+Episode 619 score -10.0 avg_score 20.9 time_steps 381651 learning_steps 19082
+Episode 620 score -34.4 avg_score 21.5 time_steps 381788 learning_steps 19089
+Episode 621 score 263.0 avg_score 25.2 time_steps 382104 learning_steps 19105
+Episode 622 score 227.5 avg_score 28.4 time_steps 382428 learning_steps 19121
+Episode 623 score 20.4 avg_score 26.8 time_steps 382636 learning_steps 19131
+Episode 624 score 219.4 avg_score 30.1 time_steps 383050 learning_steps 19152
+Episode 625 score 160.2 avg_score 32.6 time_steps 383514 learning_steps 19175
+Episode 626 score -61.3 avg_score 30.1 time_steps 383689 learning_steps 19184
+Episode 627 score 211.0 avg_score 33.3 time_steps 383984 learning_steps 19199
+Episode 628 score 179.6 avg_score 35.9 time_steps 384305 learning_steps 19215
+Episode 629 score -45.2 avg_score 36.3 time_steps 384496 learning_steps 19224
+Episode 630 score 19.2 avg_score 37.6 time_steps 384691 learning_steps 19234
+Episode 631 score -12.1 avg_score 38.7 time_steps 384874 learning_steps 19243
+Episode 632 score 17.6 avg_score 36.5 time_steps 385070 learning_steps 19253
+Episode 633 score -134.4 avg_score 35.7 time_steps 385239 learning_steps 19261
+Episode 634 score -124.1 avg_score 32.5 time_steps 385391 learning_steps 19269
+Episode 635 score -98.0 avg_score 32.5 time_steps 385509 learning_steps 19275
+Episode 636 score -113.9 avg_score 32.3 time_steps 385682 learning_steps 19284
+Episode 637 score 185.7 avg_score 35.6 time_steps 385964 learning_steps 19298
+Episode 638 score -76.6 avg_score 35.5 time_steps 386216 learning_steps 19310
+Episode 639 score 2.3 avg_score 35.8 time_steps 386426 learning_steps 19321
+Episode 640 score -2.2 avg_score 36.8 time_steps 386628 learning_steps 19331
+Episode 641 score -57.1 avg_score 36.9 time_steps 386867 learning_steps 19343
+Episode 642 score -112.4 avg_score 36.4 time_steps 387189 learning_steps 19359
+Episode 643 score -107.2 avg_score 36.1 time_steps 387407 learning_steps 19370
+Episode 644 score -36.1 avg_score 33.4 time_steps 387615 learning_steps 19380
+Episode 645 score 21.6 avg_score 34.8 time_steps 387800 learning_steps 19390
+Episode 646 score 142.6 avg_score 34.2 time_steps 388091 learning_steps 19404
+Episode 647 score -7.2 avg_score 34.7 time_steps 388324 learning_steps 19416
+Episode 648 score 3.2 avg_score 35.9 time_steps 388543 learning_steps 19427
+Episode 649 score -107.0 avg_score 35.7 time_steps 388841 learning_steps 19442
+Episode 650 score 16.8 avg_score 36.6 time_steps 389085 learning_steps 19454
+Episode 651 score -73.3 avg_score 33.7 time_steps 389392 learning_steps 19469
+Episode 652 score -108.2 avg_score 33.6 time_steps 389691 learning_steps 19484
+Episode 653 score 194.6 avg_score 33.1 time_steps 390100 learning_steps 19505
+Episode 654 score 176.5 avg_score 32.8 time_steps 390574 learning_steps 19528
+Episode 655 score -126.4 avg_score 29.1 time_steps 390968 learning_steps 19548
+Episode 656 score -69.3 avg_score 29.2 time_steps 391346 learning_steps 19567
+Episode 657 score 29.0 avg_score 30.2 time_steps 391649 learning_steps 19582
+Episode 658 score 126.5 avg_score 32.9 time_steps 392263 learning_steps 19613
+Episode 659 score 151.4 avg_score 34.8 time_steps 392882 learning_steps 19644
+Episode 660 score 217.1 avg_score 38.1 time_steps 393959 learning_steps 19697
+Episode 661 score 224.3 avg_score 38.3 time_steps 394397 learning_steps 19719
+Episode 662 score 223.6 avg_score 40.4 time_steps 394913 learning_steps 19745
+Episode 663 score -111.0 avg_score 37.7 time_steps 395353 learning_steps 19767
+Episode 664 score 232.6 avg_score 40.4 time_steps 395755 learning_steps 19787
+Episode 665 score -79.0 avg_score 38.1 time_steps 396233 learning_steps 19811
+Episode 666 score -82.6 avg_score 37.8 time_steps 396633 learning_steps 19831
+Episode 667 score 233.0 avg_score 38.6 time_steps 397015 learning_steps 19850
+Episode 668 score -46.3 avg_score 36.3 time_steps 397214 learning_steps 19860
+Episode 669 score -54.1 avg_score 35.8 time_steps 397424 learning_steps 19871
+Episode 670 score -18.4 avg_score 36.2 time_steps 397668 learning_steps 19883
+Episode 671 score -20.0 avg_score 36.1 time_steps 397906 learning_steps 19895
+Episode 672 score 2.6 avg_score 34.3 time_steps 398175 learning_steps 19908
+Episode 673 score -42.2 avg_score 31.8 time_steps 398368 learning_steps 19918
+Episode 674 score 210.4 avg_score 32.0 time_steps 398776 learning_steps 19938
+Episode 675 score 229.2 avg_score 32.1 time_steps 399208 learning_steps 19960
+Episode 676 score -27.3 avg_score 32.4 time_steps 399555 learning_steps 19977
+Episode 677 score -85.0 avg_score 31.8 time_steps 399803 learning_steps 19990
+Episode 678 score -38.6 avg_score 29.3 time_steps 399956 learning_steps 19997
+Episode 679 score -16.4 avg_score 29.9 time_steps 400141 learning_steps 20007
+Episode 680 score -10.1 avg_score 27.7 time_steps 400315 learning_steps 20015
+Episode 681 score -18.8 avg_score 28.4 time_steps 400559 learning_steps 20027
+Episode 682 score -28.7 avg_score 28.8 time_steps 400810 learning_steps 20040
+Episode 683 score -16.1 avg_score 26.2 time_steps 401043 learning_steps 20052
+Episode 684 score 188.9 avg_score 28.5 time_steps 401486 learning_steps 20074
+Episode 685 score 238.3 avg_score 31.6 time_steps 401840 learning_steps 20092
+Episode 686 score 214.9 avg_score 31.9 time_steps 402181 learning_steps 20109
+Episode 687 score 189.3 avg_score 31.3 time_steps 402560 learning_steps 20128
+Episode 688 score 216.2 avg_score 33.8 time_steps 402916 learning_steps 20145
+Episode 689 score -7.7 avg_score 33.9 time_steps 403141 learning_steps 20157
+Episode 690 score -44.1 avg_score 33.7 time_steps 403360 learning_steps 20168
+Episode 691 score -46.4 avg_score 33.4 time_steps 403545 learning_steps 20177
+Episode 692 score -94.1 avg_score 33.1 time_steps 403855 learning_steps 20192
+Episode 693 score -29.2 avg_score 33.4 time_steps 404149 learning_steps 20207
+Episode 694 score -93.6 avg_score 33.1 time_steps 404563 learning_steps 20228
+Episode 695 score -51.6 avg_score 33.6 time_steps 404870 learning_steps 20243
+Episode 696 score -28.6 avg_score 33.9 time_steps 405123 learning_steps 20256
+Episode 697 score 214.7 avg_score 37.4 time_steps 405457 learning_steps 20272
+Episode 698 score 148.3 avg_score 36.6 time_steps 405948 learning_steps 20297
+Episode 699 score 139.3 avg_score 38.0 time_steps 406652 learning_steps 20332
+Episode 700 score -50.6 avg_score 37.5 time_steps 406956 learning_steps 20347
+Episode 701 score -70.5 avg_score 37.1 time_steps 407152 learning_steps 20357
+Episode 702 score -76.5 avg_score 34.1 time_steps 407351 learning_steps 20367
+Episode 703 score -92.7 avg_score 33.2 time_steps 407549 learning_steps 20377
+Episode 704 score -127.0 avg_score 32.7 time_steps 407865 learning_steps 20393
+Episode 705 score -100.4 avg_score 29.3 time_steps 408248 learning_steps 20412
+Episode 706 score -82.4 avg_score 26.0 time_steps 408639 learning_steps 20431
+Episode 707 score 180.4 avg_score 28.6 time_steps 409281 learning_steps 20464
+Time exceeded   Episode 708 score 27.6 avg_score 29.1 time_steps 411060 learning_steps 20553
+Episode 709 score 172.4 avg_score 31.8 time_steps 411907 learning_steps 20595
+Episode 710 score 198.0 avg_score 32.5 time_steps 412418 learning_steps 20620
+Time exceeded   Episode 711 score 28.5 avg_score 30.8 time_steps 414200 learning_steps 20710
+Episode 712 score 109.9 avg_score 29.5 time_steps 415803 learning_steps 20790
+Episode 713 score 223.0 avg_score 32.5 time_steps 416382 learning_steps 20819
+Episode 714 score 168.7 avg_score 34.7 time_steps 417137 learning_steps 20856
+Episode 715 score -124.3 avg_score 33.9 time_steps 417494 learning_steps 20874
+Time exceeded   Episode 716 score 37.9 avg_score 35.1 time_steps 419020 learning_steps 20951
+Episode 717 score 179.2 avg_score 34.6 time_steps 419668 learning_steps 20983
+Episode 718 score -80.1 avg_score 34.1 time_steps 419860 learning_steps 20993
+Episode 719 score -65.7 avg_score 33.5 time_steps 420146 learning_steps 21007
+Episode 720 score 215.3 avg_score 36.0 time_steps 420732 learning_steps 21036
+Episode 721 score -39.3 avg_score 33.0 time_steps 421026 learning_steps 21051
+Episode 722 score 234.2 avg_score 33.0 time_steps 421648 learning_steps 21082
+Episode 723 score -68.5 avg_score 32.1 time_steps 421867 learning_steps 21093
+Episode 724 score -41.9 avg_score 29.5 time_steps 422161 learning_steps 21108
+Episode 725 score 212.4 avg_score 30.1 time_steps 422684 learning_steps 21134
+Episode 726 score 147.1 avg_score 32.1 time_steps 424176 learning_steps 21208
+Episode 727 score -101.0 avg_score 29.0 time_steps 424644 learning_steps 21232
+Episode 728 score -41.9 avg_score 26.8 time_steps 424958 learning_steps 21247
+Episode 729 score -54.1 avg_score 26.7 time_steps 425306 learning_steps 21265
+Episode 730 score 210.4 avg_score 28.6 time_steps 425889 learning_steps 21294
+Episode 731 score -107.4 avg_score 27.7 time_steps 426710 learning_steps 21335
+Episode 732 score -25.2 avg_score 27.2 time_steps 427016 learning_steps 21350
+Episode 733 score 74.2 avg_score 29.3 time_steps 427900 learning_steps 21395
+Time exceeded   Episode 734 score 21.7 avg_score 30.8 time_steps 429340 learning_steps 21467
+Episode 735 score 96.7 avg_score 32.7 time_steps 430381 learning_steps 21519
+Episode 736 score 158.0 avg_score 35.5 time_steps 431613 learning_steps 21580
+Episode 737 score 112.3 avg_score 34.7 time_steps 432656 learning_steps 21632
+Episode 738 score -64.4 avg_score 34.8 time_steps 432885 learning_steps 21644
+Episode 739 score 176.7 avg_score 36.6 time_steps 433565 learning_steps 21678
+Episode 740 score 183.3 avg_score 38.4 time_steps 434160 learning_steps 21708
+Episode 741 score -68.0 avg_score 38.3 time_steps 434344 learning_steps 21717
+Episode 742 score 168.1 avg_score 41.1 time_steps 435517 learning_steps 21775
+Episode 743 score -76.4 avg_score 41.4 time_steps 435849 learning_steps 21792
+Episode 744 score 194.2 avg_score 43.8 time_steps 436389 learning_steps 21819
+Episode 745 score -98.2 avg_score 42.6 time_steps 436880 learning_steps 21844
+Episode 746 score -134.6 avg_score 39.8 time_steps 437260 learning_steps 21863
+Episode 747 score 155.5 avg_score 41.4 time_steps 438696 learning_steps 21934
+Episode 748 score 112.3 avg_score 42.5 time_steps 439160 learning_steps 21958
+Episode 749 score -15.8 avg_score 43.4 time_steps 439484 learning_steps 21974
+Episode 750 score -92.6 avg_score 42.3 time_steps 439763 learning_steps 21988
+-- SAVING MODELS --
+Episode 751 score 262.5 avg_score 45.7 time_steps 440225 learning_steps 22011
+-- SAVING MODELS --
+Episode 752 score -92.8 avg_score 45.8 time_steps 440457 learning_steps 22022
+Episode 753 score -78.2 avg_score 43.1 time_steps 440852 learning_steps 22042
+Episode 754 score -49.2 avg_score 40.8 time_steps 441153 learning_steps 22057
+Episode 755 score -101.8 avg_score 41.1 time_steps 441349 learning_steps 22067
+Episode 756 score -89.3 avg_score 40.9 time_steps 441641 learning_steps 22082
+Episode 757 score -179.1 avg_score 38.8 time_steps 442214 learning_steps 22110
+Episode 758 score -80.2 avg_score 36.7 time_steps 442374 learning_steps 22118
+Episode 759 score -87.4 avg_score 34.4 time_steps 442715 learning_steps 22135
+Episode 760 score 129.8 avg_score 33.5 time_steps 443242 learning_steps 22162
+Episode 761 score -33.7 avg_score 30.9 time_steps 443673 learning_steps 22183
+Episode 762 score 179.9 avg_score 30.5 time_steps 444154 learning_steps 22207
+Episode 763 score 235.9 avg_score 33.9 time_steps 444592 learning_steps 22229
+Episode 764 score -83.0 avg_score 30.8 time_steps 444999 learning_steps 22249
+Episode 765 score 213.6 avg_score 33.7 time_steps 445555 learning_steps 22277
+Episode 766 score 192.2 avg_score 36.5 time_steps 446161 learning_steps 22308
+Time exceeded   Episode 767 score 24.0 avg_score 34.4 time_steps 447867 learning_steps 22393
+Episode 768 score -136.8 avg_score 33.5 time_steps 448466 learning_steps 22423
+Episode 769 score 195.2 avg_score 36.0 time_steps 449487 learning_steps 22474
+Episode 770 score 171.2 avg_score 37.8 time_steps 449999 learning_steps 22499
+Episode 771 score -93.9 avg_score 37.1 time_steps 450410 learning_steps 22520
+Episode 772 score -91.8 avg_score 36.2 time_steps 450645 learning_steps 22532
+Episode 773 score 232.3 avg_score 38.9 time_steps 451793 learning_steps 22589
+Episode 774 score -86.4 avg_score 35.9 time_steps 452163 learning_steps 22608
+Episode 775 score -97.9 avg_score 32.7 time_steps 452373 learning_steps 22618
+Episode 776 score 233.2 avg_score 35.3 time_steps 452857 learning_steps 22642
+Time exceeded   Episode 777 score 116.9 avg_score 37.3 time_steps 454640 learning_steps 22732
+Episode 778 score -66.3 avg_score 37.0 time_steps 454967 learning_steps 22748
+Episode 779 score -79.8 avg_score 36.4 time_steps 455380 learning_steps 22769
+Episode 780 score -124.0 avg_score 35.2 time_steps 455858 learning_steps 22792
+Episode 781 score -44.4 avg_score 35.0 time_steps 456217 learning_steps 22810
+Episode 782 score 187.3 avg_score 37.1 time_steps 456783 learning_steps 22839
+Episode 783 score 87.0 avg_score 38.2 time_steps 457387 learning_steps 22869
+Episode 784 score -83.1 avg_score 35.5 time_steps 457851 learning_steps 22892
+Episode 785 score -73.1 avg_score 32.3 time_steps 458100 learning_steps 22905
+Episode 786 score 171.5 avg_score 31.9 time_steps 458592 learning_steps 22929
+Episode 787 score 183.1 avg_score 31.9 time_steps 460209 learning_steps 23010
+Episode 788 score 222.6 avg_score 31.9 time_steps 461773 learning_steps 23088
+Episode 789 score -44.9 avg_score 31.5 time_steps 462064 learning_steps 23103
+Episode 790 score -37.8 avg_score 31.6 time_steps 462309 learning_steps 23115
+Episode 791 score -69.0 avg_score 31.4 time_steps 462481 learning_steps 23124
+Episode 792 score -51.4 avg_score 31.8 time_steps 462673 learning_steps 23133
+Episode 793 score -41.6 avg_score 31.7 time_steps 462842 learning_steps 23142
+Episode 794 score -77.2 avg_score 31.8 time_steps 463185 learning_steps 23159
+Episode 795 score -8.9 avg_score 32.3 time_steps 463370 learning_steps 23168
+Episode 796 score 219.7 avg_score 34.8 time_steps 463709 learning_steps 23185
+Episode 797 score 207.6 avg_score 34.7 time_steps 464074 learning_steps 23203
+Episode 798 score -76.0 avg_score 32.4 time_steps 464385 learning_steps 23219
+Episode 799 score -80.3 avg_score 30.2 time_steps 464620 learning_steps 23231
+Episode 800 score -66.7 avg_score 30.1 time_steps 464870 learning_steps 23243
+Episode 801 score -61.2 avg_score 30.2 time_steps 465122 learning_steps 23256
+Episode 802 score -30.6 avg_score 30.6 time_steps 465450 learning_steps 23272
+Episode 803 score -50.9 avg_score 31.1 time_steps 465706 learning_steps 23285
+Episode 804 score -65.8 avg_score 31.7 time_steps 466054 learning_steps 23302
+Episode 805 score -81.9 avg_score 31.9 time_steps 466282 learning_steps 23314
+Episode 806 score 212.2 avg_score 34.8 time_steps 466686 learning_steps 23334
+Episode 807 score -78.9 avg_score 32.2 time_steps 466890 learning_steps 23344
+Episode 808 score 138.6 avg_score 33.3 time_steps 467320 learning_steps 23366
+Episode 809 score 192.2 avg_score 33.5 time_steps 467701 learning_steps 23385
+Episode 810 score -75.3 avg_score 30.8 time_steps 467948 learning_steps 23397
+Episode 811 score -90.1 avg_score 29.6 time_steps 468230 learning_steps 23411
+Episode 812 score -34.9 avg_score 28.1 time_steps 468563 learning_steps 23428
+Episode 813 score -49.1 avg_score 25.4 time_steps 468750 learning_steps 23437
+Episode 814 score -128.5 avg_score 22.5 time_steps 469195 learning_steps 23459
+Episode 815 score 147.9 avg_score 25.2 time_steps 469610 learning_steps 23480
+Episode 816 score -88.8 avg_score 23.9 time_steps 470044 learning_steps 23502
+Episode 817 score -64.8 avg_score 21.5 time_steps 470240 learning_steps 23512
+Episode 818 score -76.4 avg_score 21.5 time_steps 470390 learning_steps 23519
+Episode 819 score -68.8 avg_score 21.5 time_steps 470571 learning_steps 23528
+Episode 820 score -110.7 avg_score 18.2 time_steps 470723 learning_steps 23536
+Episode 821 score -97.6 avg_score 17.6 time_steps 470933 learning_steps 23546
+Episode 822 score 219.9 avg_score 17.5 time_steps 471355 learning_steps 23567
+Episode 823 score -113.6 avg_score 17.0 time_steps 471574 learning_steps 23578
+Episode 824 score 148.1 avg_score 18.9 time_steps 472060 learning_steps 23603
+Episode 825 score 200.5 avg_score 18.8 time_steps 473045 learning_steps 23652
+Episode 826 score -100.8 avg_score 16.3 time_steps 473224 learning_steps 23661
+Episode 827 score -41.9 avg_score 16.9 time_steps 473439 learning_steps 23671
+Episode 828 score 113.0 avg_score 18.5 time_steps 474010 learning_steps 23700
+Episode 829 score 186.2 avg_score 20.9 time_steps 475429 learning_steps 23771
+Episode 830 score -110.4 avg_score 17.7 time_steps 475591 learning_steps 23779
+Episode 831 score -60.7 avg_score 18.1 time_steps 475890 learning_steps 23794
+Episode 832 score -79.1 avg_score 17.6 time_steps 476032 learning_steps 23801
+Episode 833 score 117.5 avg_score 18.0 time_steps 476674 learning_steps 23833
+Episode 834 score -76.7 avg_score 17.1 time_steps 476904 learning_steps 23845
+Episode 835 score 165.2 avg_score 17.7 time_steps 478357 learning_steps 23917
+Episode 836 score 151.8 avg_score 17.7 time_steps 479715 learning_steps 23985
+Episode 837 score -9.2 avg_score 16.5 time_steps 480001 learning_steps 24000
+Episode 838 score 134.2 avg_score 18.4 time_steps 480427 learning_steps 24021
+Episode 839 score 181.4 avg_score 18.5 time_steps 480868 learning_steps 24043
+Episode 840 score 120.2 avg_score 17.9 time_steps 481239 learning_steps 24061
+Episode 841 score -55.5 avg_score 18.0 time_steps 481444 learning_steps 24072
+Episode 842 score -36.4 avg_score 15.9 time_steps 481854 learning_steps 24092
+Episode 843 score 223.2 avg_score 18.9 time_steps 482223 learning_steps 24111
+Episode 844 score -62.2 avg_score 16.4 time_steps 482480 learning_steps 24124
+Episode 845 score -109.0 avg_score 16.3 time_steps 482923 learning_steps 24146
+Episode 846 score -12.8 avg_score 17.5 time_steps 483157 learning_steps 24157
+Episode 847 score 218.9 avg_score 18.1 time_steps 483800 learning_steps 24190
+Episode 848 score -83.9 avg_score 16.2 time_steps 484284 learning_steps 24214
+Episode 849 score -73.5 avg_score 15.6 time_steps 484569 learning_steps 24228
+Episode 850 score 182.9 avg_score 18.3 time_steps 485187 learning_steps 24259
+Episode 851 score -54.3 avg_score 15.2 time_steps 485440 learning_steps 24272
+Episode 852 score 233.0 avg_score 18.4 time_steps 485850 learning_steps 24292
+Episode 853 score -74.0 avg_score 18.5 time_steps 486054 learning_steps 24302
+Episode 854 score 185.5 avg_score 20.8 time_steps 486503 learning_steps 24325
+Episode 855 score 155.9 avg_score 23.4 time_steps 487023 learning_steps 24351
+Episode 856 score 199.7 avg_score 26.3 time_steps 487554 learning_steps 24377
+Episode 857 score -76.8 avg_score 27.3 time_steps 487781 learning_steps 24389
+Episode 858 score 242.0 avg_score 30.5 time_steps 488418 learning_steps 24420
+Time exceeded   Episode 859 score 44.4 avg_score 31.8 time_steps 490120 learning_steps 24506
+Episode 860 score 196.4 avg_score 32.5 time_steps 490470 learning_steps 24523
+Episode 861 score 252.4 avg_score 35.4 time_steps 490897 learning_steps 24544
+Episode 862 score 146.4 avg_score 35.0 time_steps 491375 learning_steps 24568
+Episode 863 score -7.6 avg_score 32.6 time_steps 491814 learning_steps 24590
+Episode 864 score 204.0 avg_score 35.5 time_steps 492181 learning_steps 24609
+Episode 865 score 207.4 avg_score 35.4 time_steps 492504 learning_steps 24625
+Episode 866 score 175.7 avg_score 35.2 time_steps 493200 learning_steps 24660
+Episode 867 score 196.8 avg_score 37.0 time_steps 493921 learning_steps 24696
+Episode 868 score 90.5 avg_score 39.2 time_steps 495024 learning_steps 24751
+Episode 869 score 88.7 avg_score 38.2 time_steps 496316 learning_steps 24815
+Time exceeded   Episode 870 score -107.8 avg_score 35.4 time_steps 497760 learning_steps 24888
+Episode 871 score -104.2 avg_score 35.3 time_steps 498548 learning_steps 24927
+Episode 872 score -86.3 avg_score 35.3 time_steps 498945 learning_steps 24947
+Episode 873 score -190.6 avg_score 31.1 time_steps 499260 learning_steps 24963
+Episode 874 score -80.5 avg_score 31.2 time_steps 499569 learning_steps 24978
+Episode 875 score -93.3 avg_score 31.2 time_steps 499803 learning_steps 24990
+Episode 876 score -72.6 avg_score 28.2 time_steps 499982 learning_steps 24999
+Episode 877 score 83.6 avg_score 27.8 time_steps 500893 learning_steps 25044
+Time exceeded   Episode 878 score -139.1 avg_score 27.1 time_steps 502520 learning_steps 25126
+Episode 879 score -91.2 avg_score 27.0 time_steps 502678 learning_steps 25133
+Episode 880 score -138.5 avg_score 26.8 time_steps 503102 learning_steps 25155
+Episode 881 score 117.1 avg_score 28.5 time_steps 503671 learning_steps 25183
+Episode 882 score 158.8 avg_score 28.2 time_steps 504591 learning_steps 25229
+Episode 883 score -152.1 avg_score 25.8 time_steps 504896 learning_steps 25244
+Episode 884 score 138.1 avg_score 28.0 time_steps 505832 learning_steps 25291
+Episode 885 score 195.5 avg_score 30.7 time_steps 506335 learning_steps 25316
+Time exceeded   Episode 886 score 28.3 avg_score 29.2 time_steps 508000 learning_steps 25400
+Episode 887 score 57.9 avg_score 28.0 time_steps 508941 learning_steps 25447
+Episode 888 score 181.8 avg_score 27.6 time_steps 509357 learning_steps 25467
+Episode 889 score 202.8 avg_score 30.1 time_steps 509723 learning_steps 25486
+Episode 890 score -38.5 avg_score 30.1 time_steps 510078 learning_steps 25503
+Episode 891 score -59.5 avg_score 30.2 time_steps 510289 learning_steps 25514
+Episode 892 score -64.1 avg_score 30.0 time_steps 510490 learning_steps 25524
+Episode 893 score -43.2 avg_score 30.0 time_steps 510933 learning_steps 25546
+Episode 894 score 100.8 avg_score 31.8 time_steps 511587 learning_steps 25579
+Episode 895 score -61.1 avg_score 31.3 time_steps 511800 learning_steps 25590
+Episode 896 score 245.0 avg_score 31.5 time_steps 512121 learning_steps 25606
+Episode 897 score 229.3 avg_score 31.7 time_steps 512450 learning_steps 25622
+Episode 898 score 193.4 avg_score 34.4 time_steps 512773 learning_steps 25638
+Episode 899 score 178.1 avg_score 37.0 time_steps 513221 learning_steps 25661
+Episode 900 score -53.6 avg_score 37.1 time_steps 513374 learning_steps 25668
+Episode 901 score 175.2 avg_score 39.5 time_steps 514107 learning_steps 25705
+Episode 902 score 234.2 avg_score 42.2 time_steps 515008 learning_steps 25750
+Episode 903 score 185.7 avg_score 44.5 time_steps 516520 learning_steps 25826
+Episode 904 score -33.8 avg_score 44.8 time_steps 516947 learning_steps 25847
+-- SAVING MODELS --
+Episode 905 score 238.7 avg_score 48.0 time_steps 517434 learning_steps 25871
+Episode 906 score 185.4 avg_score 47.8 time_steps 517811 learning_steps 25890
+-- SAVING MODELS --
+Episode 907 score 164.7 avg_score 50.2 time_steps 518099 learning_steps 25904
+Episode 908 score -71.0 avg_score 48.1 time_steps 518265 learning_steps 25913
+Time exceeded   Episode 909 score 52.2 avg_score 46.7 time_steps 519940 learning_steps 25997
+Episode 910 score 250.7 avg_score 50.0 time_steps 520248 learning_steps 26012
+-- SAVING MODELS --
+Episode 911 score 163.2 avg_score 52.5 time_steps 521762 learning_steps 26088
+-- SAVING MODELS --
+Episode 912 score -31.4 avg_score 52.5 time_steps 521910 learning_steps 26095
+-- SAVING MODELS --
+Episode 913 score 176.5 avg_score 54.8 time_steps 522187 learning_steps 26109
+-- SAVING MODELS --
+Episode 914 score -80.0 avg_score 55.3 time_steps 522549 learning_steps 26127
+-- SAVING MODELS --
+Episode 915 score 203.9 avg_score 55.8 time_steps 523572 learning_steps 26178
+-- SAVING MODELS --
+Episode 916 score -7.0 avg_score 56.7 time_steps 523717 learning_steps 26185
+-- SAVING MODELS --
+Episode 917 score 159.3 avg_score 58.9 time_steps 524222 learning_steps 26211
+Episode 918 score -122.2 avg_score 58.4 time_steps 524856 learning_steps 26242
+-- SAVING MODELS --
+Episode 919 score 258.1 avg_score 61.7 time_steps 525158 learning_steps 26257
+-- SAVING MODELS --
+Episode 920 score 150.4 avg_score 64.3 time_steps 525809 learning_steps 26290
+-- SAVING MODELS --
+Episode 921 score -1.7 avg_score 65.3 time_steps 526028 learning_steps 26301
+Episode 922 score -33.9 avg_score 62.7 time_steps 526195 learning_steps 26309
+-- SAVING MODELS --
+Episode 923 score 193.6 avg_score 65.8 time_steps 526669 learning_steps 26333
+Episode 924 score -45.3 avg_score 63.9 time_steps 527204 learning_steps 26360
+Episode 925 score 16.0 avg_score 62.0 time_steps 527335 learning_steps 26366
+Episode 926 score 184.8 avg_score 64.9 time_steps 529059 learning_steps 26452
+Episode 927 score -2.2 avg_score 65.3 time_steps 529249 learning_steps 26462
+Episode 928 score -24.0 avg_score 63.9 time_steps 529417 learning_steps 26470
+Episode 929 score 144.3 avg_score 63.5 time_steps 529943 learning_steps 26497
+-- SAVING MODELS --
+Episode 930 score 238.9 avg_score 67.0 time_steps 530485 learning_steps 26524
+-- SAVING MODELS --
+Episode 931 score -58.6 avg_score 67.0 time_steps 531074 learning_steps 26553
+-- SAVING MODELS --
+Episode 932 score -57.8 avg_score 67.2 time_steps 531179 learning_steps 26558
+-- SAVING MODELS --
+Episode 933 score 193.8 avg_score 68.0 time_steps 531710 learning_steps 26585
+Episode 934 score -155.8 avg_score 67.2 time_steps 531883 learning_steps 26594
+Episode 935 score -50.9 avg_score 65.0 time_steps 532080 learning_steps 26604
+Episode 936 score 164.4 avg_score 65.2 time_steps 532534 learning_steps 26626
+Episode 937 score 217.5 avg_score 67.4 time_steps 533210 learning_steps 26660
+-- SAVING MODELS --
+Episode 938 score 210.4 avg_score 68.2 time_steps 533798 learning_steps 26689
+-- SAVING MODELS --
+Episode 939 score 199.1 avg_score 68.4 time_steps 534139 learning_steps 26706
+-- SAVING MODELS --
+Episode 940 score 216.6 avg_score 69.3 time_steps 534529 learning_steps 26726
+Episode 941 score -85.0 avg_score 69.0 time_steps 535088 learning_steps 26754
+-- SAVING MODELS --
+Episode 942 score 206.0 avg_score 71.5 time_steps 535568 learning_steps 26778
+-- SAVING MODELS --
+Episode 943 score 246.1 avg_score 71.7 time_steps 535919 learning_steps 26795
+-- SAVING MODELS --
+Episode 944 score 181.6 avg_score 74.1 time_steps 536562 learning_steps 26828
+-- SAVING MODELS --
+Episode 945 score -68.9 avg_score 74.5 time_steps 536766 learning_steps 26838
+Episode 946 score -115.3 avg_score 73.5 time_steps 537581 learning_steps 26879
+Episode 947 score 229.3 avg_score 73.6 time_steps 538242 learning_steps 26912
+Episode 948 score -75.4 avg_score 73.7 time_steps 538403 learning_steps 26920
+-- SAVING MODELS --
+Episode 949 score 221.0 avg_score 76.6 time_steps 538900 learning_steps 26945
+-- SAVING MODELS --
+Episode 950 score 212.3 avg_score 76.9 time_steps 539195 learning_steps 26959
+-- SAVING MODELS --
+Episode 951 score 209.2 avg_score 79.6 time_steps 539928 learning_steps 26996
+Episode 952 score 189.6 avg_score 79.1 time_steps 540403 learning_steps 27020
+Episode 953 score -59.8 avg_score 79.3 time_steps 540555 learning_steps 27027
+Episode 954 score 212.3 avg_score 79.5 time_steps 541398 learning_steps 27069
+Time exceeded   Episode 955 score 100.6 avg_score 79.0 time_steps 543000 learning_steps 27150
+Episode 956 score 200.5 avg_score 79.0 time_steps 543588 learning_steps 27179
+Episode 957 score -64.1 avg_score 79.1 time_steps 543747 learning_steps 27187
+Episode 958 score 230.2 avg_score 79.0 time_steps 544281 learning_steps 27214
+-- SAVING MODELS --
+Episode 959 score 181.1 avg_score 80.4 time_steps 544655 learning_steps 27232
+Episode 960 score 162.4 avg_score 80.0 time_steps 544953 learning_steps 27247
+Episode 961 score -94.7 avg_score 76.6 time_steps 545141 learning_steps 27257
+Time exceeded   Episode 962 score 68.2 avg_score 75.8 time_steps 546860 learning_steps 27343
+Episode 963 score 238.5 avg_score 78.2 time_steps 547274 learning_steps 27363
+Episode 964 score -81.0 avg_score 75.4 time_steps 547459 learning_steps 27372
+Episode 965 score 235.5 avg_score 75.7 time_steps 547930 learning_steps 27396
+Episode 966 score -120.6 avg_score 72.7 time_steps 548085 learning_steps 27404
+Episode 967 score -33.0 avg_score 70.4 time_steps 548248 learning_steps 27412
+Episode 968 score -73.2 avg_score 68.8 time_steps 548411 learning_steps 27420
+Episode 969 score 241.9 avg_score 70.3 time_steps 548926 learning_steps 27446
+Episode 970 score -30.6 avg_score 71.1 time_steps 549041 learning_steps 27452
+Episode 971 score 228.1 avg_score 74.4 time_steps 549470 learning_steps 27473
+Episode 972 score 161.6 avg_score 76.9 time_steps 550054 learning_steps 27502
+Episode 973 score -11.8 avg_score 78.7 time_steps 550245 learning_steps 27512
+Episode 974 score -52.9 avg_score 79.0 time_steps 550433 learning_steps 27521
+Episode 975 score -73.7 avg_score 79.2 time_steps 550566 learning_steps 27528
+-- SAVING MODELS --
+Episode 976 score 183.3 avg_score 81.7 time_steps 550879 learning_steps 27543
+Episode 977 score -95.9 avg_score 79.9 time_steps 551090 learning_steps 27554
+Episode 978 score -71.5 avg_score 80.6 time_steps 551266 learning_steps 27563
+-- SAVING MODELS --
+Episode 979 score 169.3 avg_score 83.2 time_steps 551821 learning_steps 27591
+-- SAVING MODELS --
+Episode 980 score 240.7 avg_score 87.0 time_steps 552104 learning_steps 27605
+Episode 981 score -91.7 avg_score 84.9 time_steps 552277 learning_steps 27613
+Episode 982 score -83.1 avg_score 82.5 time_steps 552675 learning_steps 27633
+Episode 983 score -58.9 avg_score 83.4 time_steps 552833 learning_steps 27641
+Episode 984 score 191.8 avg_score 84.0 time_steps 553088 learning_steps 27654
+Episode 985 score -37.3 avg_score 81.6 time_steps 553255 learning_steps 27662
+Episode 986 score -105.4 avg_score 80.3 time_steps 553684 learning_steps 27684
+Episode 987 score 189.5 avg_score 81.6 time_steps 554033 learning_steps 27701
+Time exceeded   Episode 988 score 48.5 avg_score 80.3 time_steps 555560 learning_steps 27778
+Episode 989 score -20.9 avg_score 78.0 time_steps 555694 learning_steps 27784
+Episode 990 score -25.8 avg_score 78.2 time_steps 555850 learning_steps 27792
+Episode 991 score 219.5 avg_score 80.9 time_steps 556137 learning_steps 27806
+Episode 992 score -56.4 avg_score 81.0 time_steps 556303 learning_steps 27815
+Episode 993 score 154.3 avg_score 83.0 time_steps 556770 learning_steps 27838
+Episode 994 score -37.5 avg_score 81.6 time_steps 556931 learning_steps 27846
+Episode 995 score 242.2 avg_score 84.7 time_steps 557171 learning_steps 27858
+Episode 996 score 18.7 avg_score 82.4 time_steps 557392 learning_steps 27869
+Episode 997 score -14.4 avg_score 80.0 time_steps 557571 learning_steps 27878
+Episode 998 score -41.0 avg_score 77.6 time_steps 558081 learning_steps 27904
+Episode 999 score -50.4 avg_score 75.3 time_steps 558603 learning_steps 27930
+Episode 1000 score -35.2 avg_score 75.5 time_steps 558775 learning_steps 27938
+Episode 1001 score 243.7 avg_score 76.2 time_steps 559031 learning_steps 27951
+Episode 1002 score -87.3 avg_score 73.0 time_steps 559192 learning_steps 27959
+Episode 1003 score 136.7 avg_score 72.5 time_steps 559862 learning_steps 27993
+Episode 1004 score 258.5 avg_score 75.4 time_steps 560271 learning_steps 28013
+Episode 1005 score 222.2 avg_score 75.2 time_steps 560562 learning_steps 28028
+Episode 1006 score 106.2 avg_score 74.5 time_steps 561379 learning_steps 28068
+Episode 1007 score 12.7 avg_score 72.9 time_steps 561516 learning_steps 28075
+Episode 1008 score 138.6 avg_score 75.0 time_steps 562114 learning_steps 28105
+Episode 1009 score 246.3 avg_score 77.0 time_steps 562378 learning_steps 28118
+Episode 1010 score 5.8 avg_score 74.5 time_steps 562555 learning_steps 28127
+Episode 1011 score 184.8 avg_score 74.7 time_steps 563244 learning_steps 28162
+Episode 1012 score -43.1 avg_score 74.6 time_steps 563414 learning_steps 28170
+Episode 1013 score 218.6 avg_score 75.0 time_steps 563954 learning_steps 28197
+Episode 1014 score -4.6 avg_score 75.8 time_steps 564147 learning_steps 28207
+Episode 1015 score -46.0 avg_score 73.3 time_steps 564404 learning_steps 28220
+Episode 1016 score 189.0 avg_score 75.3 time_steps 564755 learning_steps 28237
+Episode 1017 score 260.8 avg_score 76.3 time_steps 565036 learning_steps 28251
+Episode 1018 score -12.2 avg_score 77.4 time_steps 565159 learning_steps 28257
+Episode 1019 score -77.1 avg_score 74.0 time_steps 565323 learning_steps 28266
+Episode 1020 score -32.5 avg_score 72.2 time_steps 565671 learning_steps 28283
+Episode 1021 score 246.4 avg_score 74.7 time_steps 565935 learning_steps 28296
+Episode 1022 score -83.8 avg_score 74.2 time_steps 566075 learning_steps 28303
+Episode 1023 score 237.2 avg_score 74.6 time_steps 566363 learning_steps 28318
+Episode 1024 score -24.4 avg_score 74.8 time_steps 566516 learning_steps 28325
+Episode 1025 score 178.1 avg_score 76.4 time_steps 568276 learning_steps 28413
+Episode 1026 score 30.2 avg_score 74.9 time_steps 568487 learning_steps 28424
+Episode 1027 score 236.6 avg_score 77.3 time_steps 568774 learning_steps 28438
+Episode 1028 score 148.4 avg_score 79.0 time_steps 569944 learning_steps 28497
+Episode 1029 score 183.4 avg_score 79.4 time_steps 570255 learning_steps 28512
+Episode 1030 score 122.3 avg_score 78.2 time_steps 570949 learning_steps 28547
+Episode 1031 score -34.8 avg_score 78.5 time_steps 571181 learning_steps 28559
+Episode 1032 score 201.9 avg_score 81.1 time_steps 571723 learning_steps 28586
+Episode 1033 score 224.3 avg_score 81.4 time_steps 571992 learning_steps 28599
+Episode 1034 score 248.3 avg_score 85.4 time_steps 572280 learning_steps 28614
+-- SAVING MODELS --
+Episode 1035 score 173.6 avg_score 87.7 time_steps 572707 learning_steps 28635
+-- SAVING MODELS --
+Episode 1036 score 229.2 avg_score 88.3 time_steps 572992 learning_steps 28649
+Episode 1037 score -41.9 avg_score 85.7 time_steps 573153 learning_steps 28657
+Episode 1038 score 238.3 avg_score 86.0 time_steps 573418 learning_steps 28670
+Episode 1039 score 16.3 avg_score 84.2 time_steps 573584 learning_steps 28679
+Episode 1040 score 217.6 avg_score 84.2 time_steps 573897 learning_steps 28694
+Episode 1041 score -26.7 avg_score 84.8 time_steps 574040 learning_steps 28702
+Episode 1042 score 244.8 avg_score 85.1 time_steps 574315 learning_steps 28715
+Episode 1043 score 230.0 avg_score 85.0 time_steps 574657 learning_steps 28732
+Time exceeded   Episode 1044 score 122.7 avg_score 84.4 time_steps 576360 learning_steps 28818
+Episode 1045 score 40.1 avg_score 85.5 time_steps 576539 learning_steps 28826
+-- SAVING MODELS --
+Episode 1046 score 220.8 avg_score 88.8 time_steps 576794 learning_steps 28839
+Episode 1047 score -6.7 avg_score 86.5 time_steps 576952 learning_steps 28847
+Episode 1048 score -50.3 avg_score 86.7 time_steps 577210 learning_steps 28860
+Episode 1049 score 1.4 avg_score 84.5 time_steps 577396 learning_steps 28869
+Episode 1050 score -56.9 avg_score 81.8 time_steps 577533 learning_steps 28876
+Episode 1051 score 10.5 avg_score 79.9 time_steps 577777 learning_steps 28888
+Episode 1052 score -11.6 avg_score 77.8 time_steps 578157 learning_steps 28907
+Episode 1053 score 227.3 avg_score 80.7 time_steps 578421 learning_steps 28921
+Episode 1054 score 211.2 avg_score 80.7 time_steps 578745 learning_steps 28937
+Episode 1055 score 234.8 avg_score 82.1 time_steps 579125 learning_steps 28956
+Episode 1056 score 235.3 avg_score 82.4 time_steps 579390 learning_steps 28969
+Episode 1057 score 252.2 avg_score 85.6 time_steps 579735 learning_steps 28986
+Episode 1058 score -46.0 avg_score 82.8 time_steps 580003 learning_steps 29000
+Episode 1059 score 263.2 avg_score 83.6 time_steps 580300 learning_steps 29015
+Episode 1060 score -78.0 avg_score 81.2 time_steps 580677 learning_steps 29033
+Episode 1061 score 234.2 avg_score 84.5 time_steps 580943 learning_steps 29047
+Episode 1062 score -20.5 avg_score 83.6 time_steps 581159 learning_steps 29057
+Episode 1063 score -25.1 avg_score 81.0 time_steps 581277 learning_steps 29063
+Episode 1064 score 240.8 avg_score 84.2 time_steps 581528 learning_steps 29076
+Episode 1065 score -96.5 avg_score 80.9 time_steps 581696 learning_steps 29084
+Episode 1066 score 213.3 avg_score 84.2 time_steps 581972 learning_steps 29098
+Episode 1067 score -31.6 avg_score 84.2 time_steps 582379 learning_steps 29118
+Episode 1068 score -34.5 avg_score 84.6 time_steps 582684 learning_steps 29134
+Episode 1069 score 24.3 avg_score 82.4 time_steps 582908 learning_steps 29145
+Episode 1070 score -34.9 avg_score 82.4 time_steps 583149 learning_steps 29157
+Episode 1071 score -39.8 avg_score 79.7 time_steps 583320 learning_steps 29166
+Episode 1072 score 225.4 avg_score 80.4 time_steps 583579 learning_steps 29178
+Episode 1073 score 212.8 avg_score 82.6 time_steps 583860 learning_steps 29193
+Episode 1074 score -48.0 avg_score 82.7 time_steps 584007 learning_steps 29200
+Episode 1075 score -90.2 avg_score 82.5 time_steps 584178 learning_steps 29208
+Episode 1076 score 214.4 avg_score 82.8 time_steps 584565 learning_steps 29228
+Episode 1077 score 193.7 avg_score 85.7 time_steps 585513 learning_steps 29275
+Episode 1078 score 15.8 avg_score 86.6 time_steps 585713 learning_steps 29285
+Episode 1079 score 236.6 avg_score 87.2 time_steps 585970 learning_steps 29298
+Episode 1080 score -50.4 avg_score 84.3 time_steps 586175 learning_steps 29308
+Episode 1081 score 231.3 avg_score 87.6 time_steps 586478 learning_steps 29323
+Episode 1082 score -29.3 avg_score 88.1 time_steps 586685 learning_steps 29334
+Episode 1083 score -76.8 avg_score 87.9 time_steps 586826 learning_steps 29341
+Episode 1084 score 218.8 avg_score 88.2 time_steps 587131 learning_steps 29356
+-- SAVING MODELS --
+Episode 1085 score 35.5 avg_score 88.9 time_steps 587365 learning_steps 29368
+-- SAVING MODELS --
+Episode 1086 score 200.0 avg_score 92.0 time_steps 587665 learning_steps 29383
+Episode 1087 score -8.3 avg_score 90.0 time_steps 587879 learning_steps 29393
+Episode 1088 score -27.4 avg_score 89.2 time_steps 588062 learning_steps 29403
+Episode 1089 score -16.2 avg_score 89.3 time_steps 588276 learning_steps 29413
+Episode 1090 score 218.6 avg_score 91.7 time_steps 588572 learning_steps 29428
+Episode 1091 score 243.7 avg_score 92.0 time_steps 588852 learning_steps 29442
+-- SAVING MODELS --
+Episode 1092 score 210.4 avg_score 94.6 time_steps 589118 learning_steps 29455
+-- SAVING MODELS --
+Episode 1093 score 208.0 avg_score 95.2 time_steps 589487 learning_steps 29474
+-- SAVING MODELS --
+Episode 1094 score 201.6 avg_score 97.6 time_steps 589785 learning_steps 29489
+Episode 1095 score -24.7 avg_score 94.9 time_steps 590034 learning_steps 29501
+Episode 1096 score -2.0 avg_score 94.7 time_steps 590203 learning_steps 29510
+Episode 1097 score -15.6 avg_score 94.7 time_steps 590390 learning_steps 29519
+Episode 1098 score 245.8 avg_score 97.5 time_steps 590662 learning_steps 29533
+-- SAVING MODELS --
+Episode 1099 score -40.8 avg_score 97.6 time_steps 590871 learning_steps 29543
+-- SAVING MODELS --
+Episode 1100 score 166.6 avg_score 99.7 time_steps 591122 learning_steps 29556
+Episode 1101 score -41.6 avg_score 96.8 time_steps 591260 learning_steps 29563
+Episode 1102 score -30.9 avg_score 97.4 time_steps 591499 learning_steps 29574
+Episode 1103 score -55.7 avg_score 95.4 time_steps 591625 learning_steps 29581
+Episode 1104 score 204.6 avg_score 94.9 time_steps 592585 learning_steps 29629
+Episode 1105 score 193.0 avg_score 94.6 time_steps 592987 learning_steps 29649
+Episode 1106 score 166.7 avg_score 95.2 time_steps 593243 learning_steps 29662
+Episode 1107 score -23.4 avg_score 94.9 time_steps 593456 learning_steps 29672
+Episode 1108 score -2.1 avg_score 93.4 time_steps 593648 learning_steps 29682
+Episode 1109 score 252.5 avg_score 93.5 time_steps 593996 learning_steps 29699
+Episode 1110 score -77.5 avg_score 92.7 time_steps 594142 learning_steps 29707
+Episode 1111 score -87.2 avg_score 90.0 time_steps 594277 learning_steps 29713
+Episode 1112 score 38.3 avg_score 90.8 time_steps 594453 learning_steps 29722
+Episode 1113 score 205.1 avg_score 90.6 time_steps 594767 learning_steps 29738
+Episode 1114 score -78.1 avg_score 89.9 time_steps 594921 learning_steps 29746
+Episode 1115 score -41.6 avg_score 89.9 time_steps 595074 learning_steps 29753
+Episode 1116 score -33.1 avg_score 87.7 time_steps 595223 learning_steps 29761
+Episode 1117 score -22.5 avg_score 84.9 time_steps 595408 learning_steps 29770
+Episode 1118 score -27.1 avg_score 84.7 time_steps 595552 learning_steps 29777
+Episode 1119 score 24.3 avg_score 85.8 time_steps 595719 learning_steps 29785
+Episode 1120 score -55.9 avg_score 85.5 time_steps 595870 learning_steps 29793
+Episode 1121 score 234.8 avg_score 85.4 time_steps 596108 learning_steps 29805
+Episode 1122 score 240.3 avg_score 88.7 time_steps 596342 learning_steps 29817
+Episode 1123 score -7.6 avg_score 86.2 time_steps 596460 learning_steps 29823
+Episode 1124 score -23.4 avg_score 86.2 time_steps 596661 learning_steps 29833
+Episode 1125 score -42.8 avg_score 84.0 time_steps 596796 learning_steps 29839
+Episode 1126 score -28.0 avg_score 83.4 time_steps 596948 learning_steps 29847
+Episode 1127 score 290.3 avg_score 84.0 time_steps 597159 learning_steps 29857
+Episode 1128 score 14.7 avg_score 82.6 time_steps 597303 learning_steps 29865
+Episode 1129 score -24.5 avg_score 80.5 time_steps 597483 learning_steps 29874
+Episode 1130 score 25.8 avg_score 79.6 time_steps 597661 learning_steps 29883
+Episode 1131 score 0.9 avg_score 79.9 time_steps 597820 learning_steps 29891
+Episode 1132 score -54.2 avg_score 77.4 time_steps 598027 learning_steps 29901
+Episode 1133 score -16.0 avg_score 75.0 time_steps 598187 learning_steps 29909
+Episode 1134 score 8.3 avg_score 72.6 time_steps 598402 learning_steps 29920
+Episode 1135 score -67.4 avg_score 70.2 time_steps 598586 learning_steps 29929
+Episode 1136 score -24.8 avg_score 67.6 time_steps 598681 learning_steps 29934
+Episode 1137 score 33.1 avg_score 68.4 time_steps 598845 learning_steps 29942
+Episode 1138 score -57.0 avg_score 65.4 time_steps 599010 learning_steps 29950
+Episode 1139 score 218.3 avg_score 67.4 time_steps 599270 learning_steps 29963
+Episode 1140 score 1.4 avg_score 65.3 time_steps 599461 learning_steps 29973
+Episode 1141 score -16.8 avg_score 65.4 time_steps 599604 learning_steps 29980
+Episode 1142 score -18.0 avg_score 62.7 time_steps 599742 learning_steps 29987
+Episode 1143 score -44.8 avg_score 60.0 time_steps 599896 learning_steps 29994
+Episode 1144 score 12.0 avg_score 58.9 time_steps 600059 learning_steps 30002
+Episode 1145 score 232.5 avg_score 60.8 time_steps 600322 learning_steps 30016
+Episode 1146 score 228.8 avg_score 60.9 time_steps 600551 learning_steps 30027
+Episode 1147 score -26.3 avg_score 60.7 time_steps 600689 learning_steps 30034
+Episode 1148 score 17.3 avg_score 61.4 time_steps 600843 learning_steps 30042
+Episode 1149 score -60.8 avg_score 60.8 time_steps 600976 learning_steps 30048
+Episode 1150 score -31.5 avg_score 61.0 time_steps 601096 learning_steps 30054
+Episode 1151 score 231.3 avg_score 63.2 time_steps 601328 learning_steps 30066
+Episode 1152 score 43.3 avg_score 63.8 time_steps 601472 learning_steps 30073
+Episode 1153 score -24.5 avg_score 61.2 time_steps 601616 learning_steps 30080
+Episode 1154 score -24.5 avg_score 58.9 time_steps 601762 learning_steps 30088
+Episode 1155 score 234.3 avg_score 58.9 time_steps 602040 learning_steps 30102
+Episode 1156 score -26.0 avg_score 56.3 time_steps 602168 learning_steps 30108
+Episode 1157 score 35.1 avg_score 54.1 time_steps 602351 learning_steps 30117
+Episode 1158 score 36.6 avg_score 54.9 time_steps 602543 learning_steps 30127
+Episode 1159 score 20.2 avg_score 52.5 time_steps 602739 learning_steps 30136
+Episode 1160 score 40.6 avg_score 53.7 time_steps 602895 learning_steps 30144
+Episode 1161 score -18.2 avg_score 51.2 time_steps 603085 learning_steps 30154
+Episode 1162 score 212.2 avg_score 53.5 time_steps 603789 learning_steps 30189
+Episode 1163 score -21.3 avg_score 53.5 time_steps 603915 learning_steps 30195
+Episode 1164 score -17.6 avg_score 50.9 time_steps 604081 learning_steps 30204
+Episode 1165 score 231.1 avg_score 54.2 time_steps 604327 learning_steps 30216
+Episode 1166 score 192.6 avg_score 54.0 time_steps 604720 learning_steps 30236
+Episode 1167 score -46.1 avg_score 53.9 time_steps 604853 learning_steps 30242
+Episode 1168 score -71.4 avg_score 53.5 time_steps 605013 learning_steps 30250
+Episode 1169 score 244.2 avg_score 55.7 time_steps 605358 learning_steps 30267
+Episode 1170 score -40.9 avg_score 55.6 time_steps 605579 learning_steps 30278
+Episode 1171 score 185.7 avg_score 57.9 time_steps 605852 learning_steps 30292
+Time exceeded   Episode 1172 score 85.1 avg_score 56.5 time_steps 607590 learning_steps 30379
+Episode 1173 score -37.9 avg_score 54.0 time_steps 607755 learning_steps 30387
+Episode 1174 score 240.1 avg_score 56.9 time_steps 608061 learning_steps 30403
+Episode 1175 score 226.5 avg_score 60.0 time_steps 608492 learning_steps 30424
+Episode 1176 score -56.0 avg_score 57.3 time_steps 608677 learning_steps 30433
+Episode 1177 score 182.6 avg_score 57.2 time_steps 609024 learning_steps 30451
+Episode 1178 score -10.2 avg_score 57.0 time_steps 609369 learning_steps 30468
+Episode 1179 score -46.1 avg_score 54.1 time_steps 609552 learning_steps 30477
+Episode 1180 score 240.7 avg_score 57.0 time_steps 610036 learning_steps 30501
+Episode 1181 score -62.4 avg_score 54.1 time_steps 610197 learning_steps 30509
+Episode 1182 score 254.1 avg_score 56.9 time_steps 610589 learning_steps 30529
+Episode 1183 score 218.5 avg_score 59.9 time_steps 610925 learning_steps 30546
+Episode 1184 score 216.1 avg_score 59.9 time_steps 611254 learning_steps 30562
+Episode 1185 score 238.9 avg_score 61.9 time_steps 611708 learning_steps 30585
+Episode 1186 score 188.7 avg_score 61.8 time_steps 612010 learning_steps 30600
+Episode 1187 score -4.7 avg_score 61.8 time_steps 612209 learning_steps 30610
+Episode 1188 score 240.6 avg_score 64.5 time_steps 612537 learning_steps 30626
+Episode 1189 score 210.5 avg_score 66.8 time_steps 612863 learning_steps 30643
+Episode 1190 score 253.6 avg_score 67.1 time_steps 613930 learning_steps 30696
+Episode 1191 score 202.4 avg_score 66.7 time_steps 614217 learning_steps 30710
+Episode 1192 score -18.3 avg_score 64.4 time_steps 614405 learning_steps 30720
+Episode 1193 score -66.0 avg_score 61.7 time_steps 614579 learning_steps 30728
+Episode 1194 score -19.4 avg_score 59.5 time_steps 614759 learning_steps 30737
+Episode 1195 score -6.3 avg_score 59.6 time_steps 614970 learning_steps 30748
+Episode 1196 score -146.6 avg_score 58.2 time_steps 615261 learning_steps 30763
+Episode 1197 score 197.6 avg_score 60.3 time_steps 615870 learning_steps 30793
+Episode 1198 score 208.3 avg_score 60.0 time_steps 616521 learning_steps 30826
+Episode 1199 score 216.3 avg_score 62.5 time_steps 616826 learning_steps 30841
+Episode 1200 score 228.0 avg_score 63.1 time_steps 617123 learning_steps 30856
+Episode 1201 score 213.4 avg_score 65.7 time_steps 617610 learning_steps 30880
+Episode 1202 score 181.7 avg_score 67.8 time_steps 618208 learning_steps 30910
+Episode 1203 score 234.2 avg_score 70.7 time_steps 618497 learning_steps 30924
+Episode 1204 score 206.8 avg_score 70.7 time_steps 618860 learning_steps 30943
+Episode 1205 score 207.0 avg_score 70.9 time_steps 619422 learning_steps 30971
+Episode 1206 score 184.8 avg_score 71.1 time_steps 620109 learning_steps 31005
+Episode 1207 score 203.0 avg_score 73.3 time_steps 620699 learning_steps 31034
+Episode 1208 score 210.1 avg_score 75.4 time_steps 621252 learning_steps 31062
+Episode 1209 score 229.1 avg_score 75.2 time_steps 621496 learning_steps 31074
+Episode 1210 score 212.9 avg_score 78.1 time_steps 621756 learning_steps 31087
+Episode 1211 score -35.1 avg_score 78.6 time_steps 622354 learning_steps 31117
+Episode 1212 score 250.7 avg_score 80.8 time_steps 622563 learning_steps 31128
+Episode 1213 score 224.8 avg_score 81.0 time_steps 623135 learning_steps 31156
+Episode 1214 score 170.7 avg_score 83.4 time_steps 623781 learning_steps 31189
+Episode 1215 score 247.6 avg_score 86.3 time_steps 624056 learning_steps 31202
+Episode 1216 score -87.2 avg_score 85.8 time_steps 624542 learning_steps 31227
+Episode 1217 score 239.3 avg_score 88.4 time_steps 624780 learning_steps 31239
+Episode 1218 score 228.7 avg_score 91.0 time_steps 625030 learning_steps 31251
+Episode 1219 score -64.0 avg_score 90.1 time_steps 625283 learning_steps 31264
+Episode 1220 score 51.6 avg_score 91.2 time_steps 626723 learning_steps 31336
+Episode 1221 score -27.5 avg_score 88.5 time_steps 626886 learning_steps 31344
+Episode 1222 score -19.6 avg_score 85.9 time_steps 627035 learning_steps 31351
+Episode 1223 score 208.5 avg_score 88.1 time_steps 627464 learning_steps 31373
+Episode 1224 score 255.2 avg_score 90.9 time_steps 627677 learning_steps 31383
+Episode 1225 score 269.7 avg_score 94.0 time_steps 627928 learning_steps 31396
+Episode 1226 score -41.6 avg_score 93.9 time_steps 628166 learning_steps 31408
+Episode 1227 score 145.6 avg_score 92.4 time_steps 628698 learning_steps 31434
+Episode 1228 score 265.9 avg_score 94.9 time_steps 628902 learning_steps 31445
+Episode 1229 score 176.1 avg_score 96.9 time_steps 629223 learning_steps 31461
+Episode 1230 score -88.3 avg_score 95.8 time_steps 629647 learning_steps 31482
+Episode 1231 score -20.8 avg_score 95.6 time_steps 630000 learning_steps 31500
+Episode 1232 score 266.3 avg_score 98.8 time_steps 630265 learning_steps 31513
+Episode 1233 score -17.5 avg_score 98.8 time_steps 630570 learning_steps 31528
+Episode 1234 score -32.3 avg_score 98.4 time_steps 630778 learning_steps 31538
+-- SAVING MODELS --
+Episode 1235 score 237.9 avg_score 101.4 time_steps 631010 learning_steps 31550
+-- SAVING MODELS --
+Episode 1236 score 212.9 avg_score 103.8 time_steps 631503 learning_steps 31575
+-- SAVING MODELS --
+Episode 1237 score 231.7 avg_score 105.8 time_steps 631758 learning_steps 31587
+-- SAVING MODELS --
+Episode 1238 score 17.3 avg_score 106.5 time_steps 631982 learning_steps 31599
+-- SAVING MODELS --
+Episode 1239 score 270.0 avg_score 107.0 time_steps 632290 learning_steps 31614
+-- SAVING MODELS --
+Episode 1240 score 169.0 avg_score 108.7 time_steps 632737 learning_steps 31636
+-- SAVING MODELS --
+Episode 1241 score 158.7 avg_score 110.5 time_steps 633290 learning_steps 31664
+-- SAVING MODELS --
+Episode 1242 score 255.8 avg_score 113.2 time_steps 633504 learning_steps 31675
+-- SAVING MODELS --
+Episode 1243 score 260.5 avg_score 116.3 time_steps 633719 learning_steps 31685
+-- SAVING MODELS --
+Episode 1244 score 254.8 avg_score 118.7 time_steps 633949 learning_steps 31697
+Episode 1245 score 210.1 avg_score 118.5 time_steps 635255 learning_steps 31762
+Episode 1246 score 234.9 avg_score 118.5 time_steps 635456 learning_steps 31772
+-- SAVING MODELS --
+Episode 1247 score 120.2 avg_score 120.0 time_steps 636436 learning_steps 31821
+-- SAVING MODELS --
+Episode 1248 score 135.5 avg_score 121.2 time_steps 636936 learning_steps 31846
+Episode 1249 score -99.1 avg_score 120.8 time_steps 637507 learning_steps 31875
+-- SAVING MODELS --
+Episode 1250 score 214.7 avg_score 123.3 time_steps 637714 learning_steps 31885
+Episode 1251 score 2.4 avg_score 121.0 time_steps 637834 learning_steps 31891
+Episode 1252 score 226.0 avg_score 122.8 time_steps 638028 learning_steps 31901
+Episode 1253 score 12.4 avg_score 123.2 time_steps 638169 learning_steps 31908
+-- SAVING MODELS --
+Episode 1254 score 271.0 avg_score 126.1 time_steps 638381 learning_steps 31919
+-- SAVING MODELS --
+Episode 1255 score 262.8 avg_score 126.4 time_steps 638590 learning_steps 31929
+-- SAVING MODELS --
+Episode 1256 score 254.6 avg_score 129.2 time_steps 638829 learning_steps 31941
+-- SAVING MODELS --
+Episode 1257 score 41.4 avg_score 129.3 time_steps 639001 learning_steps 31950
+-- SAVING MODELS --
+Episode 1258 score 176.3 avg_score 130.7 time_steps 639284 learning_steps 31964
+-- SAVING MODELS --
+Episode 1259 score 243.8 avg_score 132.9 time_steps 639504 learning_steps 31975
+-- SAVING MODELS --
+Episode 1260 score 243.1 avg_score 134.9 time_steps 639700 learning_steps 31985
+-- SAVING MODELS --
+Episode 1261 score 170.1 avg_score 136.8 time_steps 640077 learning_steps 32003
+Episode 1262 score 5.9 avg_score 134.8 time_steps 640279 learning_steps 32013
+-- SAVING MODELS --
+Episode 1263 score 228.0 avg_score 137.2 time_steps 640518 learning_steps 32025
+Episode 1264 score -22.2 avg_score 137.2 time_steps 640688 learning_steps 32034
+Episode 1265 score -15.1 avg_score 134.7 time_steps 640787 learning_steps 32039
+Episode 1266 score -0.2 avg_score 132.8 time_steps 640909 learning_steps 32045
+Episode 1267 score 20.8 avg_score 133.5 time_steps 641051 learning_steps 32052
+Episode 1268 score -130.3 avg_score 132.9 time_steps 641623 learning_steps 32081
+Episode 1269 score 245.7 avg_score 132.9 time_steps 642094 learning_steps 32104
+Episode 1270 score 237.8 avg_score 135.7 time_steps 642295 learning_steps 32114
+Episode 1271 score -12.7 avg_score 133.7 time_steps 642437 learning_steps 32121
+Episode 1272 score 193.1 avg_score 134.8 time_steps 642801 learning_steps 32140
+Episode 1273 score 11.8 avg_score 135.3 time_steps 642952 learning_steps 32147
+Episode 1274 score 25.2 avg_score 133.1 time_steps 643094 learning_steps 32154
+Episode 1275 score -35.7 avg_score 130.5 time_steps 643267 learning_steps 32163
+Episode 1276 score 232.0 avg_score 133.4 time_steps 643459 learning_steps 32172
+Episode 1277 score 266.8 avg_score 134.2 time_steps 643692 learning_steps 32184
+Episode 1278 score 266.7 avg_score 137.0 time_steps 643888 learning_steps 32194
+-- SAVING MODELS --
+Episode 1279 score 27.6 avg_score 137.7 time_steps 644026 learning_steps 32201
+Episode 1280 score 206.7 avg_score 137.4 time_steps 644289 learning_steps 32214
+-- SAVING MODELS --
+Episode 1281 score 238.5 avg_score 140.4 time_steps 644609 learning_steps 32230
+Episode 1282 score -5.2 avg_score 137.8 time_steps 644763 learning_steps 32238
+Episode 1283 score 275.7 avg_score 138.4 time_steps 644993 learning_steps 32249
+Episode 1284 score -52.3 avg_score 135.7 time_steps 645181 learning_steps 32259
+Episode 1285 score 216.6 avg_score 135.5 time_steps 645962 learning_steps 32298
+Episode 1286 score 196.2 avg_score 135.6 time_steps 646257 learning_steps 32312
+Episode 1287 score 2.1 avg_score 135.6 time_steps 646423 learning_steps 32321
+Episode 1288 score 252.1 avg_score 135.7 time_steps 647560 learning_steps 32378
+Episode 1289 score 160.2 avg_score 135.2 time_steps 647972 learning_steps 32398
+Episode 1290 score 191.3 avg_score 134.6 time_steps 648342 learning_steps 32417
+Episode 1291 score -40.2 avg_score 132.2 time_steps 648592 learning_steps 32429
+Episode 1292 score 263.2 avg_score 135.0 time_steps 650012 learning_steps 32500
+Episode 1293 score 130.4 avg_score 137.0 time_steps 650612 learning_steps 32530
+Episode 1294 score 241.3 avg_score 139.6 time_steps 650820 learning_steps 32541
+Episode 1295 score -9.1 avg_score 139.5 time_steps 650965 learning_steps 32548
+-- SAVING MODELS --
+Episode 1296 score 152.0 avg_score 142.5 time_steps 651301 learning_steps 32565
+Episode 1297 score -9.5 avg_score 140.5 time_steps 651451 learning_steps 32572
+Episode 1298 score 158.0 avg_score 140.0 time_steps 651917 learning_steps 32595
+Time exceeded   Episode 1299 score 116.8 avg_score 139.0 time_steps 653706 learning_steps 32685
+Episode 1300 score 222.9 avg_score 138.9 time_steps 653990 learning_steps 32699
+Episode 1301 score 243.6 avg_score 139.2 time_steps 655483 learning_steps 32774
+Episode 1302 score 242.4 avg_score 139.8 time_steps 655723 learning_steps 32786
+Episode 1303 score 12.7 avg_score 137.6 time_steps 655915 learning_steps 32795
+Episode 1304 score 152.5 avg_score 137.1 time_steps 656198 learning_steps 32809
+Episode 1305 score -52.1 avg_score 134.5 time_steps 656348 learning_steps 32817
+Episode 1306 score -45.3 avg_score 132.2 time_steps 656549 learning_steps 32827
+Episode 1307 score -9.5 avg_score 130.0 time_steps 656812 learning_steps 32840
+Episode 1308 score 161.6 avg_score 129.6 time_steps 657473 learning_steps 32873
+Episode 1309 score 186.5 avg_score 129.1 time_steps 657741 learning_steps 32887
+Episode 1310 score 246.8 avg_score 129.5 time_steps 658106 learning_steps 32905
+Episode 1311 score 257.7 avg_score 132.4 time_steps 658340 learning_steps 32917
+Episode 1312 score 221.1 avg_score 132.1 time_steps 658907 learning_steps 32945
+Episode 1313 score 204.8 avg_score 131.9 time_steps 659196 learning_steps 32959
+Episode 1314 score 254.3 avg_score 132.7 time_steps 659457 learning_steps 32972
+Episode 1315 score 236.6 avg_score 132.6 time_steps 659721 learning_steps 32986
+Episode 1316 score 6.3 avg_score 133.6 time_steps 659894 learning_steps 32994
+Time exceeded   Episode 1317 score 122.3 avg_score 132.4 time_steps 661826 learning_steps 33091
+Episode 1318 score -28.2 avg_score 129.8 time_steps 662055 learning_steps 33102
+Episode 1319 score -18.9 avg_score 130.3 time_steps 662354 learning_steps 33117
+Episode 1320 score 192.9 avg_score 131.7 time_steps 662832 learning_steps 33141
+Episode 1321 score -21.8 avg_score 131.7 time_steps 663047 learning_steps 33152
+Episode 1322 score 230.2 avg_score 134.2 time_steps 663323 learning_steps 33166
+Episode 1323 score 216.4 avg_score 134.3 time_steps 663681 learning_steps 33184
+Episode 1324 score 217.8 avg_score 134.0 time_steps 664189 learning_steps 33209
+Episode 1325 score 11.8 avg_score 131.4 time_steps 664363 learning_steps 33218
+Episode 1326 score 253.7 avg_score 134.3 time_steps 664602 learning_steps 33230
+Episode 1327 score 213.8 avg_score 135.0 time_steps 664904 learning_steps 33245
+Episode 1328 score -190.3 avg_score 130.4 time_steps 665489 learning_steps 33274
+Episode 1329 score 241.8 avg_score 131.1 time_steps 665748 learning_steps 33287
+Episode 1330 score 0.2 avg_score 132.0 time_steps 665986 learning_steps 33299
+Episode 1331 score -48.1 avg_score 131.7 time_steps 666230 learning_steps 33311
+Episode 1332 score 245.6 avg_score 131.5 time_steps 666464 learning_steps 33323
+Episode 1333 score 25.5 avg_score 131.9 time_steps 666628 learning_steps 33331
+Episode 1334 score -24.9 avg_score 132.0 time_steps 666806 learning_steps 33340
+Episode 1335 score 213.3 avg_score 131.8 time_steps 667083 learning_steps 33354
+Episode 1336 score 182.8 avg_score 131.5 time_steps 667397 learning_steps 33369
+Episode 1337 score 224.1 avg_score 131.4 time_steps 667675 learning_steps 33383
+Episode 1338 score 194.2 avg_score 133.2 time_steps 667966 learning_steps 33398
+Episode 1339 score -38.8 avg_score 130.1 time_steps 668148 learning_steps 33407
+Episode 1340 score 236.2 avg_score 130.7 time_steps 668449 learning_steps 33422
+Episode 1341 score 232.9 avg_score 131.5 time_steps 668704 learning_steps 33435
+Episode 1342 score 239.3 avg_score 131.3 time_steps 668968 learning_steps 33448
+Episode 1343 score 217.6 avg_score 130.9 time_steps 670637 learning_steps 33531
+Episode 1344 score 177.0 avg_score 130.1 time_steps 671099 learning_steps 33554
+Episode 1345 score 221.7 avg_score 130.2 time_steps 671339 learning_steps 33566
+Episode 1346 score 221.5 avg_score 130.1 time_steps 671628 learning_steps 33581
+Episode 1347 score 20.2 avg_score 129.1 time_steps 671787 learning_steps 33589
+Episode 1348 score 261.6 avg_score 130.4 time_steps 672031 learning_steps 33601
+Episode 1349 score 264.0 avg_score 134.0 time_steps 672356 learning_steps 33617
+Episode 1350 score 253.1 avg_score 134.4 time_steps 672596 learning_steps 33629
+Episode 1351 score 39.9 avg_score 134.7 time_steps 672771 learning_steps 33638
+Episode 1352 score 233.9 avg_score 134.8 time_steps 673008 learning_steps 33650
+Episode 1353 score 207.8 avg_score 136.8 time_steps 673299 learning_steps 33664
+Episode 1354 score 244.4 avg_score 136.5 time_steps 673519 learning_steps 33675
+Episode 1355 score 21.9 avg_score 134.1 time_steps 673696 learning_steps 33684
+Episode 1356 score 250.7 avg_score 134.1 time_steps 673910 learning_steps 33695
+Episode 1357 score -44.6 avg_score 133.2 time_steps 674073 learning_steps 33703
+Episode 1358 score -39.1 avg_score 131.1 time_steps 674191 learning_steps 33709
+Episode 1359 score 263.2 avg_score 131.2 time_steps 674402 learning_steps 33720
+Episode 1360 score 263.0 avg_score 131.4 time_steps 674633 learning_steps 33731
+Episode 1361 score -6.2 avg_score 129.7 time_steps 674783 learning_steps 33739
+Episode 1362 score 1.3 avg_score 129.6 time_steps 674922 learning_steps 33746
+Episode 1363 score 234.7 avg_score 129.7 time_steps 675144 learning_steps 33757
+Episode 1364 score -40.3 avg_score 129.5 time_steps 675284 learning_steps 33764
+Episode 1365 score 241.1 avg_score 132.1 time_steps 675552 learning_steps 33777
+Episode 1366 score 219.5 avg_score 134.3 time_steps 675787 learning_steps 33789
+Episode 1367 score 241.9 avg_score 136.5 time_steps 676004 learning_steps 33800
+Episode 1368 score -22.2 avg_score 137.6 time_steps 676110 learning_steps 33805
+Episode 1369 score -39.2 avg_score 134.7 time_steps 676244 learning_steps 33812
+Episode 1370 score 30.4 avg_score 132.7 time_steps 676385 learning_steps 33819
+Episode 1371 score 220.4 avg_score 135.0 time_steps 676663 learning_steps 33833
+Episode 1372 score 22.8 avg_score 133.3 time_steps 676788 learning_steps 33839
+Episode 1373 score 205.8 avg_score 135.2 time_steps 677196 learning_steps 33859
+Episode 1374 score 34.2 avg_score 135.3 time_steps 677346 learning_steps 33867
+Episode 1375 score 254.6 avg_score 138.2 time_steps 677546 learning_steps 33877
+Episode 1376 score 23.1 avg_score 136.1 time_steps 677713 learning_steps 33885
+Episode 1377 score -8.9 avg_score 133.4 time_steps 677880 learning_steps 33894
+Episode 1378 score -17.4 avg_score 130.5 time_steps 678008 learning_steps 33900
+Episode 1379 score -29.8 avg_score 130.0 time_steps 678149 learning_steps 33907
+Episode 1380 score 270.2 avg_score 130.6 time_steps 678347 learning_steps 33917
+Episode 1381 score 257.0 avg_score 130.8 time_steps 678578 learning_steps 33928
+Episode 1382 score -44.6 avg_score 130.4 time_steps 678712 learning_steps 33935
+Episode 1383 score -7.7 avg_score 127.5 time_steps 678880 learning_steps 33944
+Episode 1384 score 222.7 avg_score 130.3 time_steps 679288 learning_steps 33964
+Episode 1385 score 242.5 avg_score 130.6 time_steps 679833 learning_steps 33991
+Episode 1386 score -82.4 avg_score 127.8 time_steps 680040 learning_steps 34002
+Episode 1387 score 223.7 avg_score 130.0 time_steps 680348 learning_steps 34017
+Episode 1388 score -13.7 avg_score 127.3 time_steps 680516 learning_steps 34025
+Episode 1389 score 0.7 avg_score 125.7 time_steps 680666 learning_steps 34033
+Episode 1390 score -62.0 avg_score 123.2 time_steps 680940 learning_steps 34047
+Episode 1391 score 258.2 avg_score 126.2 time_steps 681165 learning_steps 34058
+Episode 1392 score 195.2 avg_score 125.5 time_steps 681918 learning_steps 34095
+Episode 1393 score 206.2 avg_score 126.3 time_steps 682260 learning_steps 34113
+Episode 1394 score 235.6 avg_score 126.2 time_steps 682486 learning_steps 34124
+Episode 1395 score 220.3 avg_score 128.5 time_steps 682737 learning_steps 34136
+Episode 1396 score -12.0 avg_score 126.9 time_steps 682872 learning_steps 34143
+Episode 1397 score -54.2 avg_score 126.4 time_steps 683331 learning_steps 34166
+Episode 1398 score 242.2 avg_score 127.3 time_steps 683588 learning_steps 34179
+Episode 1399 score 202.9 avg_score 128.1 time_steps 684023 learning_steps 34201
+Episode 1400 score -52.7 avg_score 125.4 time_steps 684218 learning_steps 34210
+Episode 1401 score 240.3 avg_score 125.3 time_steps 684427 learning_steps 34221
+Episode 1402 score 209.1 avg_score 125.0 time_steps 684793 learning_steps 34239
+Episode 1403 score 264.3 avg_score 127.5 time_steps 685004 learning_steps 34250
+Episode 1404 score 215.0 avg_score 128.1 time_steps 685394 learning_steps 34269
+Episode 1405 score -20.4 avg_score 128.4 time_steps 685568 learning_steps 34278
+Episode 1406 score 237.7 avg_score 131.3 time_steps 686020 learning_steps 34301
+Episode 1407 score 252.2 avg_score 133.9 time_steps 686276 learning_steps 34313
+Episode 1408 score 131.2 avg_score 133.6 time_steps 686804 learning_steps 34340
+Episode 1409 score 193.2 avg_score 133.7 time_steps 688219 learning_steps 34410
+Episode 1410 score 109.2 avg_score 132.3 time_steps 689000 learning_steps 34450
+Episode 1411 score 265.5 avg_score 132.4 time_steps 689260 learning_steps 34463
+Episode 1412 score 223.9 avg_score 132.4 time_steps 689521 learning_steps 34476
+Episode 1413 score 216.4 avg_score 132.5 time_steps 689725 learning_steps 34486
+Episode 1414 score -108.2 avg_score 128.9 time_steps 690457 learning_steps 34522
+Episode 1415 score -35.6 avg_score 126.2 time_steps 690639 learning_steps 34531
+Episode 1416 score 237.8 avg_score 128.5 time_steps 690842 learning_steps 34542
+Episode 1417 score -11.6 avg_score 127.1 time_steps 690960 learning_steps 34548
+Episode 1418 score 255.3 avg_score 130.0 time_steps 691226 learning_steps 34561
+Episode 1419 score -0.7 avg_score 130.2 time_steps 691374 learning_steps 34568
+Episode 1420 score 45.5 avg_score 128.7 time_steps 691553 learning_steps 34577
+Episode 1421 score 252.2 avg_score 131.4 time_steps 691768 learning_steps 34588
+Episode 1422 score 190.3 avg_score 131.0 time_steps 692118 learning_steps 34605
+Episode 1423 score -36.4 avg_score 128.5 time_steps 692300 learning_steps 34615
+Episode 1424 score 12.5 avg_score 126.4 time_steps 692488 learning_steps 34624
+Episode 1425 score -12.2 avg_score 126.2 time_steps 692620 learning_steps 34631
+Episode 1426 score -9.3 avg_score 123.6 time_steps 692764 learning_steps 34638
+Time exceeded   Episode 1427 score 83.3 avg_score 122.3 time_steps 694656 learning_steps 34732
+Episode 1428 score -52.0 avg_score 123.6 time_steps 694817 learning_steps 34740
+Episode 1429 score 210.1 avg_score 123.3 time_steps 695105 learning_steps 34755
+Episode 1430 score 18.8 avg_score 123.5 time_steps 695262 learning_steps 34763
+Episode 1431 score 217.2 avg_score 126.2 time_steps 696682 learning_steps 34834
+Episode 1432 score 224.9 avg_score 126.0 time_steps 696951 learning_steps 34847
+Episode 1433 score 210.7 avg_score 127.8 time_steps 697337 learning_steps 34866
+Episode 1434 score 120.8 avg_score 129.3 time_steps 698075 learning_steps 34903
+Episode 1435 score -10.3 avg_score 127.0 time_steps 698265 learning_steps 34913
+Time exceeded   Episode 1436 score 96.2 avg_score 126.2 time_steps 699980 learning_steps 34999
+Episode 1437 score 240.9 avg_score 126.3 time_steps 700195 learning_steps 35009
+Episode 1438 score -29.9 avg_score 124.1 time_steps 700378 learning_steps 35018
+Episode 1439 score 211.0 avg_score 126.6 time_steps 701841 learning_steps 35092
+Episode 1440 score 268.7 avg_score 126.9 time_steps 702082 learning_steps 35104
+Episode 1441 score 234.5 avg_score 126.9 time_steps 702360 learning_steps 35118
+Episode 1442 score 238.9 avg_score 126.9 time_steps 702571 learning_steps 35128
+Episode 1443 score 264.6 avg_score 127.4 time_steps 702766 learning_steps 35138
+Episode 1444 score -24.3 avg_score 125.4 time_steps 702962 learning_steps 35148
+Episode 1445 score -19.3 avg_score 123.0 time_steps 703058 learning_steps 35152
+Episode 1446 score 242.6 avg_score 123.2 time_steps 703314 learning_steps 35165
+Episode 1447 score -46.6 avg_score 122.5 time_steps 703594 learning_steps 35179
+Episode 1448 score -15.1 avg_score 119.8 time_steps 703784 learning_steps 35189
+Episode 1449 score -20.2 avg_score 116.9 time_steps 703926 learning_steps 35196
+Episode 1450 score 212.4 avg_score 116.5 time_steps 704701 learning_steps 35235
+Episode 1451 score 254.8 avg_score 118.7 time_steps 704891 learning_steps 35244
+Episode 1452 score 34.9 avg_score 116.7 time_steps 705021 learning_steps 35251
+Episode 1453 score 240.6 avg_score 117.0 time_steps 705278 learning_steps 35263
+Episode 1454 score -0.8 avg_score 114.5 time_steps 705395 learning_steps 35269
+Episode 1455 score 205.4 avg_score 116.4 time_steps 705661 learning_steps 35283
+Episode 1456 score 251.7 avg_score 116.4 time_steps 705875 learning_steps 35293
+Episode 1457 score 222.5 avg_score 119.1 time_steps 707358 learning_steps 35367
+Episode 1458 score 197.0 avg_score 121.4 time_steps 707654 learning_steps 35382
+Episode 1459 score 247.6 avg_score 121.3 time_steps 707886 learning_steps 35394
+Episode 1460 score 239.0 avg_score 121.0 time_steps 708097 learning_steps 35404
+Episode 1461 score -5.8 avg_score 121.0 time_steps 708220 learning_steps 35411
+Episode 1462 score 281.1 avg_score 123.8 time_steps 708475 learning_steps 35423
+Time exceeded   Episode 1463 score 92.8 avg_score 122.4 time_steps 710080 learning_steps 35504
+Episode 1464 score 212.7 avg_score 124.9 time_steps 710298 learning_steps 35514
+Episode 1465 score -0.9 avg_score 122.5 time_steps 710459 learning_steps 35522
+Episode 1466 score -13.1 avg_score 120.2 time_steps 710606 learning_steps 35530
+Time exceeded   Episode 1467 score 131.7 avg_score 119.1 time_steps 711964 learning_steps 35598
+Episode 1468 score 189.5 avg_score 121.2 time_steps 712210 learning_steps 35610
+Episode 1469 score -61.2 avg_score 121.0 time_steps 712596 learning_steps 35629
+Episode 1470 score 18.5 avg_score 120.9 time_steps 712816 learning_steps 35640
+Episode 1471 score -49.7 avg_score 118.2 time_steps 713031 learning_steps 35651
+Episode 1472 score 216.1 avg_score 120.1 time_steps 713268 learning_steps 35663
+Episode 1473 score 191.3 avg_score 120.0 time_steps 713519 learning_steps 35675
+Episode 1474 score 238.6 avg_score 122.0 time_steps 713852 learning_steps 35692
+Episode 1475 score 216.1 avg_score 121.6 time_steps 714049 learning_steps 35702
+Episode 1476 score 219.6 avg_score 123.6 time_steps 714392 learning_steps 35719
+Episode 1477 score 257.7 avg_score 126.2 time_steps 714655 learning_steps 35732
+Episode 1478 score 224.5 avg_score 128.7 time_steps 715027 learning_steps 35751
+Episode 1479 score 266.1 avg_score 131.6 time_steps 715291 learning_steps 35764
+Episode 1480 score 192.7 avg_score 130.8 time_steps 715523 learning_steps 35776
+Episode 1481 score 226.8 avg_score 130.5 time_steps 715781 learning_steps 35789
+Episode 1482 score 186.3 avg_score 132.9 time_steps 716087 learning_steps 35804
+Episode 1483 score 8.6 avg_score 133.0 time_steps 716199 learning_steps 35809
+Episode 1484 score -12.5 avg_score 130.7 time_steps 716349 learning_steps 35817
+Episode 1485 score 187.0 avg_score 130.1 time_steps 716553 learning_steps 35827
+Episode 1486 score -16.8 avg_score 130.8 time_steps 716699 learning_steps 35834
+Episode 1487 score 243.7 avg_score 131.0 time_steps 716879 learning_steps 35843
+Episode 1488 score -37.7 avg_score 130.7 time_steps 717020 learning_steps 35851
+Episode 1489 score -56.7 avg_score 130.1 time_steps 717170 learning_steps 35858
+Episode 1490 score 7.4 avg_score 130.8 time_steps 717368 learning_steps 35868
+Episode 1491 score 125.5 avg_score 129.5 time_steps 717779 learning_steps 35888
+Episode 1492 score -46.9 avg_score 127.1 time_steps 717982 learning_steps 35899
+Episode 1493 score -73.0 avg_score 124.3 time_steps 718242 learning_steps 35912
+Episode 1494 score -21.4 avg_score 121.7 time_steps 718396 learning_steps 35919
+Episode 1495 score 217.2 avg_score 121.7 time_steps 718612 learning_steps 35930
+Episode 1496 score 225.8 avg_score 124.1 time_steps 718984 learning_steps 35949
+Episode 1497 score -50.4 avg_score 124.1 time_steps 719219 learning_steps 35960
+Time exceeded   Episode 1498 score 89.2 avg_score 122.6 time_steps 720860 learning_steps 36043
+Episode 1499 score 225.5 avg_score 122.8 time_steps 721130 learning_steps 36056

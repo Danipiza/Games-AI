@@ -214,7 +214,7 @@ def extract_avg_score(input_filename, output_filename, avg_name):
                 
                 # Ensure there are enough parts in the line
                 if len(parts)>=idx:   
-                    print(parts)                 
+                    """print(parts) """                
                     avg_scores.append(float(parts[idx+aux]))
                                             
         
@@ -240,7 +240,7 @@ if __name__=='__main__':
     
     """extract_avg_score('ppo_results.txt', 'ppo_scores.txt', 'avg_score')"""
 
-    episodes=500
+    episodes=1500
     names=['simple_dqn','dqn', 'ppo']
     input_files=['avg_scores_{}_means.txt'.format(x) for x in names]    
     colors=['red','blue', 'green']

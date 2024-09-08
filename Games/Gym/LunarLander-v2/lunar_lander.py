@@ -298,7 +298,7 @@ def ppo_exec(env):
     critic_path=None
     #critic_path='models/critic_pytorch_{}_ppo'.format(idx)
 
-    idx=2
+    idx=3
     if agent_path==None or critic_path==None:
         print("ACTUAL INDEX FOR STORING A MODEL {}\n".format(idx))
 
