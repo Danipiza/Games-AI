@@ -177,14 +177,15 @@ def training(n_games, env, agent, algorithm):
     
 
     start_time=time.time()
-        
+    scores=[]
+    
     for i in range(n_games):
         ep_time=time.time()
 
         score=0     # episode score
         done=False  # termination condition
         observation, _ = env.reset()  
-        scores=[]
+        
 
         while not done:
             curr_time=time.time()-ep_time

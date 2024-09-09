@@ -77,7 +77,7 @@ def search(fc_dim,eps_dec,lr):
     curr_time=0
     
     n_games=500
-    
+    avg_scores=[]
 
     start_time=time.time()
         
@@ -114,7 +114,7 @@ def search(fc_dim,eps_dec,lr):
 
         # the mean of the last 100 games, to see if the agent is learning
         avg_score=np.mean(scores[-100:])
-
+        avg_scores.append(avg_score)
         print('episode ', i, 'score %.2f' % score,
               'average score %.2f' % avg_score,
               'epsilon %.2f' % agent.epsilon)

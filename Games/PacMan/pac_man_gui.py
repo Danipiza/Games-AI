@@ -200,7 +200,8 @@ class Pacman:
         ep_time=0  
         curr_time=0 """   
 
-
+        scores=[]
+        
         start_time=time.time()            
         for i in range(n_games):
             """ep_time=time.time()"""
@@ -208,7 +209,7 @@ class Pacman:
             score=0     # episode score
             done=False  # termination condition
             observation = self.reset()                  
-            scores=[]
+            
             
             while not done:
                 """curr_time=time.time()-ep_time

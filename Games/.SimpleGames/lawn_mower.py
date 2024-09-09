@@ -114,7 +114,7 @@ def training(n_games, env, agent, algorithm):
     
 
     start_time=time.time()
-        
+    scores=[]   
     for i in range(n_games):
         ep_time=time.time()
 
@@ -125,7 +125,7 @@ def training(n_games, env, agent, algorithm):
         # agent position
         observation.append(env.x)
         observation.append(env.y)
-        scores=[]
+        
         
         while not done:
             curr_time=time.time()-ep_time
