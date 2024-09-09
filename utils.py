@@ -1,4 +1,8 @@
+import os
 import matplotlib.pyplot as plt
+import numpy as np
+import tkinter as tk
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 # ------------------------------------------------------------------------------------ 
 # -- PLOTS --------------------------------------------------------------------------- 
@@ -231,18 +235,96 @@ def flatten_matrix(matrix):
     return [x for row in matrix for x in row]
 
 
+def read_last_val(output_file='output.txt'):
+    last_floats = []
+    
+    # Get all .txt files in the current directory
+    txt_files = [f for f in os.listdir('.') if f.endswith('.txt')]
+    
+    # Iterate over all the .txt files
+    for file_name in txt_files:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+            if lines:  # Check if the file is not empty
+                # Split the last line into words and try to get the last float
+                try:
+                    last_line = lines[-1].strip().split()
+                    last_float = float(last_line[-1])
+                    last_floats.append(last_float)
+                except (ValueError, IndexError):
+                    print(f"Could not extract float from file: {file_name}")
+    
+    # Store the extracted floats in a new file
+    with open(output_file, 'w') as output:
+        for value in last_floats:
+            output.write(f"{value}\n")
+    
+    print(f"Stored last floats from {len(txt_files)} files in {output_file}.")
+
+
+def plot3D():
+
+    root = tk.Tk()
+    root.title("3x3 Histograms GUI")
+    
+    # Read data from the file (72 float values)
+    file_name = "output.txt"  # Change this to your file's path
+    
+    with open(file_name, 'r') as file:
+        data = [float(line.strip()) for line in file.readlines()]
+
+    fig, axs = plt.subplots(3, 3, figsize=(10, 10))
+    
+    # Calculate Y axis bounds (min, max) for all histograms
+    y_min = np.min(data)-10
+    y_max = np.max(data)+10
+    
+
+    lr_vals=['1e-3', '2.5e-3', '5e-3', 
+             '1e-4', '2.5e-4', '5e-4', 
+             '1e-5', '2.5e-5', '5e-5']
+    colors = ['#ff0000', '#ec008c', '#0000ff', 
+              '#ff8000', '#000000', '#00adef', 
+              '#248714', '#33FF96']
+    
+    # Create histograms for each subplot
+    for i, ax in enumerate(axs.flat):
+        start_idx = i * 8
+        end_idx = start_idx + 8
+        # Adjust bar positions by shrinking the spacing between them
+        bar_positions = np.arange(8)  # Position each bar closer together
+        ax.bar(bar_positions, data[start_idx:end_idx], color=colors, width=0.5)  # Slightly wider bars
+        ax.set_ylim([y_min, y_max])  # Set the same Y axis bounds
+        ax.set_xticks(bar_positions)  # Keep the bar positions aligned
+        ax.set_title(f'LR = {lr_vals[i]}')
+    
+    # Display the figure in the Tkinter window
+    canvas = FigureCanvasTkAgg(fig, master=root)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+
+    # Run the Tkinter main loop
+    root.mainloop()
+
 # ------------------------------------------------------------------------------------ 
 # -- MAIN ---------------------------------------------------------------------------- 
 
 if __name__=='__main__': 
-    #execute_mean()
+    """execute_mean()"""
 
+    """for i in range(9):
+        for j in range(8):
+            name='scores_{}_{}'.format(i,j)                
+            calculate_mean(name+'.txt',name+'_mean.txt',100)"""
     
-    """extract_avg_score('ppo_results.txt', 'ppo_scores.txt', 'avg_score')"""
+    """read_last_val()"""
+    plot3D()
 
-    episodes=1500
+    """episodes=1500
     names=['simple_dqn','dqn', 'ppo']
     input_files=['avg_scores_{}_means.txt'.format(x) for x in names]    
     colors=['red','blue', 'green']
 
-    print_2Dplot(episodes, input_files, names, colors)
+    print_2Dplot(episodes, input_files, names, colors)"""
+
