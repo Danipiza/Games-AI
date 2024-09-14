@@ -1,0 +1,232 @@
+root@DESKTOP-QUMTRDM:/mnt/c/Users/Usuario/Desktop/GITHUB/Games-AI/AI_Models/pytorch# python3 p1.py
+/usr/local/lib/python3.9/dist-packages/gym/utils/passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+.... saving models ....
+episode  0 score -121.6 avg_score -121.6
+episode  1 score -123.2 avg_score -122.4
+.... saving models ....
+episode  2 score -116.1 avg_score -120.3
+        episode  3 score -360.9 avg_score -180.4
+episode  4 score -99.7 avg_score -164.3
+episode  5 score -118.9 avg_score -156.7
+episode  6 score -121.5 avg_score -151.7
+episode  7 score -103.7 avg_score -145.7
+episode  8 score -107.7 avg_score -141.5
+episode  9 score -110.5 avg_score -138.4
+episode  10 score -105.2 avg_score -135.4
+episode  11 score -98.4 avg_score -132.3
+episode  12 score -97.9 avg_score -129.6
+episode  13 score -107.5 avg_score -128.1
+episode  14 score -97.8 avg_score -126.0
+episode  15 score -98.7 avg_score -124.3
+episode  16 score -98.0 avg_score -122.8
+episode  17 score -97.8 avg_score -121.4
+episode  18 score -132.5 avg_score -122.0
+episode  19 score -98.5 avg_score -120.8
+episode  20 score -119.8 avg_score -120.8
+.... saving models ....
+episode  21 score -98.2 avg_score -119.7
+.... saving models ....
+episode  22 score -99.6 avg_score -118.9
+.... saving models ....
+episode  23 score -105.6 avg_score -118.3
+.... saving models ....
+episode  24 score -101.5 avg_score -117.6
+.... saving models ....
+episode  25 score -99.1 avg_score -116.9
+.... saving models ....
+episode  26 score -110.8 avg_score -116.7
+.... saving models ....
+episode  27 score -103.5 avg_score -116.2
+.... saving models ....
+episode  28 score -100.7 avg_score -115.7
+.... saving models ....
+episode  29 score -111.9 avg_score -115.6
+.... saving models ....
+episode  30 score -98.9 avg_score -115.0
+.... saving models ....
+episode  31 score -107.0 avg_score -114.8
+.... saving models ....
+episode  32 score -103.3 avg_score -114.4
+.... saving models ....
+episode  33 score -97.9 avg_score -113.9
+.... saving models ....
+episode  34 score -103.2 avg_score -113.6
+.... saving models ....
+episode  35 score -98.9 avg_score -113.2
+.... saving models ....
+episode  36 score -101.3 avg_score -112.9
+.... saving models ....
+episode  37 score -103.3 avg_score -112.6
+.... saving models ....
+episode  38 score -100.1 avg_score -112.3
+.... saving models ....
+episode  39 score -100.3 avg_score -112.0
+.... saving models ....
+episode  40 score -105.7 avg_score -111.9
+episode  41 score -122.1 avg_score -112.1
+episode  42 score -103.1 avg_score -111.9
+.... saving models ....
+episode  43 score -99.2 avg_score -111.6
+.... saving models ....
+episode  44 score -105.2 avg_score -111.5
+.... saving models ....
+episode  45 score -104.7 avg_score -111.3
+episode  46 score -121.7 avg_score -111.5
+episode  47 score -103.9 avg_score -111.4
+.... saving models ....
+episode  48 score -100.5 avg_score -111.2
+episode  49 score -120.8 avg_score -111.4
+episode  50 score -102.8 avg_score -111.2
+episode  51 score -123.5 avg_score -111.4
+episode  52 score -119.3 avg_score -111.6
+episode  53 score -118.6 avg_score -111.7
+episode  54 score -126.1 avg_score -112.0
+episode  55 score -132.2 avg_score -112.3
+episode  56 score -121.8 avg_score -112.5
+episode  57 score -122.1 avg_score -112.7
+episode  58 score -120.0 avg_score -112.8
+episode  59 score -125.8 avg_score -113.0
+episode  60 score -127.9 avg_score -113.2
+episode  61 score -114.4 avg_score -113.3
+episode  62 score -122.6 avg_score -113.4
+episode  63 score -130.7 avg_score -113.7
+episode  64 score -120.5 avg_score -113.8
+episode  65 score -126.1 avg_score -114.0
+episode  66 score -120.8 avg_score -114.1
+episode  67 score -123.4 avg_score -114.2
+episode  68 score -114.8 avg_score -114.2
+episode  69 score -118.5 avg_score -114.3
+episode  70 score -125.0 avg_score -114.4
+episode  71 score -127.1 avg_score -114.6
+episode  72 score -130.3 avg_score -114.8
+episode  73 score -116.5 avg_score -114.8
+episode  74 score -130.5 avg_score -115.1
+episode  75 score -119.5 avg_score -115.1
+episode  76 score -125.8 avg_score -115.3
+episode  77 score -120.1 avg_score -115.3
+episode  78 score -127.8 avg_score -115.5
+episode  79 score -120.2 avg_score -115.5
+episode  80 score -126.0 avg_score -115.7
+episode  81 score -121.3 avg_score -115.7
+episode  82 score -116.1 avg_score -115.7
+episode  83 score -115.7 avg_score -115.7
+episode  84 score -116.5 avg_score -115.7
+episode  85 score -123.6 avg_score -115.8
+episode  86 score -119.1 avg_score -115.9
+episode  87 score -105.1 avg_score -115.7
+episode  88 score -118.2 avg_score -115.8
+episode  89 score -124.3 avg_score -115.9
+episode  90 score -119.8 avg_score -115.9
+episode  91 score -115.7 avg_score -115.9
+episode  92 score -122.4 avg_score -116.0
+episode  93 score -121.0 avg_score -116.0
+episode  94 score -130.8 avg_score -116.2
+episode  95 score -127.1 avg_score -116.3
+episode  96 score -102.7 avg_score -116.2
+episode  97 score -118.3 avg_score -116.2
+episode  98 score -101.0 avg_score -116.0
+episode  99 score -126.0 avg_score -116.1
+episode  100 score -126.3 avg_score -116.2
+episode  101 score -131.9 avg_score -116.3
+episode  102 score -125.6 avg_score -116.4
+episode  103 score -121.4 avg_score -114.0
+episode  104 score -133.0 avg_score -114.3
+episode  105 score -127.8 avg_score -114.4
+episode  106 score -128.8 avg_score -114.5
+episode  107 score -122.5 avg_score -114.6
+episode  108 score -120.6 avg_score -114.8
+episode  109 score -100.1 avg_score -114.7
+episode  110 score -103.6 avg_score -114.7
+episode  111 score -123.8 avg_score -114.9
+episode  112 score -119.5 avg_score -115.1
+episode  113 score -124.7 avg_score -115.3
+episode  114 score -99.4 avg_score -115.3
+episode  115 score -101.9 avg_score -115.3
+episode  116 score -124.7 avg_score -115.6
+episode  117 score -114.6 avg_score -115.8
+episode  118 score -120.0 avg_score -115.7
+episode  119 score -123.6 avg_score -115.9
+episode  120 score -102.0 avg_score -115.7
+episode  121 score -119.9 avg_score -115.9
+episode  122 score -119.8 avg_score -116.2
+episode  123 score -104.9 avg_score -116.1
+episode  124 score -99.7 avg_score -116.1
+episode  125 score -107.7 avg_score -116.2
+episode  126 score -120.3 avg_score -116.3
+episode  127 score -117.3 avg_score -116.4
+episode  128 score -119.6 avg_score -116.6
+episode  129 score -122.3 avg_score -116.7
+episode  130 score -104.1 avg_score -116.8
+episode  131 score -119.6 avg_score -116.9
+episode  132 score -104.6 avg_score -116.9
+episode  133 score -115.4 avg_score -117.1
+episode  134 score -122.9 avg_score -117.3
+episode  135 score -119.3 avg_score -117.5
+episode  136 score -117.2 avg_score -117.7
+episode  137 score -121.9 avg_score -117.9
+episode  138 score -102.4 avg_score -117.9
+episode  139 score -115.7 avg_score -118.0
+episode  140 score -126.5 avg_score -118.2
+episode  141 score -104.2 avg_score -118.1
+episode  142 score -117.2 avg_score -118.2
+episode  143 score -117.0 avg_score -118.4
+episode  144 score -117.9 avg_score -118.5
+episode  145 score -117.6 avg_score -118.6
+episode  146 score -114.8 avg_score -118.6
+episode  147 score -119.3 avg_score -118.7
+episode  148 score -111.2 avg_score -118.8
+episode  149 score -114.1 avg_score -118.8
+episode  150 score -118.4 avg_score -118.9
+episode  151 score -108.7 avg_score -118.8
+episode  152 score -116.7 avg_score -118.7
+episode  153 score -113.0 avg_score -118.7
+episode  154 score -134.7 avg_score -118.8
+episode  155 score -106.6 avg_score -118.5
+episode  156 score -110.0 avg_score -118.4
+episode  157 score -115.9 avg_score -118.3
+episode  158 score -111.1 avg_score -118.2
+episode  159 score -118.3 avg_score -118.2
+episode  160 score -116.0 avg_score -118.0
+episode  161 score -114.6 avg_score -118.1
+episode  162 score -111.8 avg_score -117.9
+episode  163 score -116.7 avg_score -117.8
+episode  164 score -115.7 avg_score -117.8
+episode  165 score -116.6 avg_score -117.7
+episode  166 score -105.5 avg_score -117.5
+episode  167 score -108.8 avg_score -117.4
+episode  168 score -128.9 avg_score -117.5
+episode  169 score -113.4 avg_score -117.5
+episode  170 score -116.7 avg_score -117.4
+episode  171 score -118.4 avg_score -117.3
+episode  172 score -111.9 avg_score -117.1
+episode  173 score -130.7 avg_score -117.2
+episode  174 score -112.2 avg_score -117.1
+episode  175 score -111.6 avg_score -117.0
+episode  176 score -117.4 avg_score -116.9
+episode  177 score -109.0 avg_score -116.8
+episode  178 score -108.9 avg_score -116.6
+episode  179 score -124.9 avg_score -116.6
+episode  180 score -476.7 avg_score -120.1
+episode  181 score -112.9 avg_score -120.1
+episode  182 score -2405.6 avg_score -143.0
+episode  183 score -603.1 avg_score -147.8
+episode  184 score -111.6 avg_score -147.8
+episode  185 score -153.0 avg_score -148.1
+episode  186 score -111.9 avg_score -148.0
+episode  187 score -111.0 avg_score -148.1
+episode  188 score -107.1 avg_score -148.0
+episode  189 score -110.2 avg_score -147.8
+episode  190 score -111.6 avg_score -147.7
+episode  191 score -112.1 avg_score -147.7
+episode  192 score -282.3 avg_score -149.3
+episode  193 score -111.5 avg_score -149.2
+episode  194 score -109.9 avg_score -149.0
+episode  195 score -105.5 avg_score -148.8
+episode  196 score -106.4 avg_score -148.8
+episode  197 score -109.0 avg_score -148.7
+episode  198 score -106.8 avg_score -148.8
+episode  199 score -106.1 avg_score -148.6
+episode  200 score -158.7 avg_score -148.9
+episode  201 score -107.1 avg_score -148.7
+episode  202 score -516.5 avg_score -152.6
