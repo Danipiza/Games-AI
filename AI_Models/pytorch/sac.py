@@ -72,7 +72,11 @@ class ReplayBuffer():
     Store a state in the memory.
     
     Args:
-        state, action, reward, state_, done
+        state (Object) : State.
+        action (int)   : Action taken.              
+        reward (float) : Reward receive.
+        state (Object) : next state.
+        done (boolean) : Termination value.
     """
     def store_transition(self, state, action, reward, state_, done):       
         # first avaible number
@@ -86,8 +90,10 @@ class ReplayBuffer():
         self.terminal_memory[index]  =done
 
     """
-    TODO 
-    Samples 
+    Samples an experience.
+
+    Args:
+        batch_size (int) : Batch size.
     """
     def sample_buffer(self, batch_size):
         max_mem=self.mem_cntr
@@ -107,18 +113,17 @@ class ReplayBuffer():
 
 """
 TODO 
-change beta => lr? or alpha
 
 Args:
-    beta (float)    : Learning rate
+    lr (float)      : Learning rate
     input_dims ()   : Observation dimension. Input variables to represent a state. 
     n_actions (int) : Number of actions.    
     fc1_dims (int)  : Size of the first Fully Connected layer.
     fc2_dims (int)  : Size of the second Fully Connected layer.
 """
 class CriticNetwork(nn.Module):
-    def __init__(self, beta, input_dims, n_actions, fc1_dims=256, fc2_dims=256,
-            name='critic', chkpt_dir='models/pytorch/sac'):
+    def __init__(self, lr, input_dims, n_actions, fc1_dims, fc2_dims,
+            name='critic', chkpt_dir='models/pytorch/sac', index=0):
         super(CriticNetwork, self).__init__()
 
         self.input_dims =input_dims
@@ -128,7 +133,7 @@ class CriticNetwork(nn.Module):
 
         self.name           =name
         self.checkpoint_dir =chkpt_dir               
-        self.checkpoint_file=os.path.join(self.checkpoint_dir, name+'_sac')
+        self.checkpoint_file=os.path.join(self.checkpoint_dir, str(index)+'_'+name+'_sac')
 
 
         """
@@ -146,7 +151,7 @@ class CriticNetwork(nn.Module):
 
 
         # backpropagation, gradient descent and learning stability.
-        self.optimizer = optim.Adam(self.parameters(), lr=beta)
+        self.optimizer = optim.Adam(self.parameters(), lr=lr)
 
         # used to specify the device (CPU or GPU) on which tensors and models 
         #   will be allocated and computations will be performed.
@@ -172,8 +177,8 @@ class CriticNetwork(nn.Module):
     def load_checkpoint(self): self.load_state_dict(T.load(self.checkpoint_file))
 
 class ValueNetwork(nn.Module):
-    def __init__(self, beta, input_dims, fc1_dims=256, fc2_dims=256,
-            name='value', chkpt_dir='models/pytorch/sac'):
+    def __init__(self, lr, input_dims, fc1_dims, fc2_dims,
+            name='value', chkpt_dir='models/pytorch/sac', index=0):
         super(ValueNetwork, self).__init__()
 
         self.input_dims =input_dims
@@ -182,7 +187,7 @@ class ValueNetwork(nn.Module):
         
         self.name            =name
         self.checkpoint_dir  =chkpt_dir
-        self.checkpoint_file =os.path.join(self.checkpoint_dir, name+'_sac')
+        self.checkpoint_file=os.path.join(self.checkpoint_dir, str(index)+'_'+name+'_sac')
 
         """ Neural network (simple) outputs a scalar """
         self.fc1 =nn.Linear(*self.input_dims, self.fc1_dims)
@@ -191,7 +196,7 @@ class ValueNetwork(nn.Module):
 
 
         # backpropagation, gradient descent and learning stability.
-        self.optimizer = optim.Adam(self.parameters(), lr=beta)
+        self.optimizer = optim.Adam(self.parameters(), lr=lr)
 
         # used to specify the device (CPU or GPU) on which tensors and models 
         #   will be allocated and computations will be performed.
@@ -216,8 +221,8 @@ class ValueNetwork(nn.Module):
     def load_checkpoint(self): self.load_state_dict(T.load(self.checkpoint_file))
 
 class ActorNetwork(nn.Module):
-    def __init__(self, alpha, input_dims, max_action, fc1_dims=256, 
-            fc2_dims=256, n_actions=2, name='actor', chkpt_dir='models/pytorch/sac'):
+    def __init__(self, lr_actor, input_dims, max_action, fc1_dims, fc2_dims, 
+                 n_actions=2, name='actor', chkpt_dir='models/pytorch/sac',index=0):
         super(ActorNetwork, self).__init__()
         
         self.input_dims =input_dims
@@ -235,7 +240,7 @@ class ActorNetwork(nn.Module):
 
         self.name            =name
         self.checkpoint_dir  =chkpt_dir
-        self.checkpoint_file =os.path.join(self.checkpoint_dir, name+'_sac')
+        self.checkpoint_file=os.path.join(self.checkpoint_dir, str(index)+'_'+name+'_sac')
 
         """
         Neural network
@@ -251,7 +256,7 @@ class ActorNetwork(nn.Module):
 
 
         # backpropagation, gradient descent and learning stability.
-        self.optimizer = optim.Adam(self.parameters(), lr=alpha)
+        self.optimizer = optim.Adam(self.parameters(), lr=lr_actor)
 
         # used to specify the device (CPU or GPU) on which tensors and models 
         #   will be allocated and computations will be performed.
@@ -332,9 +337,10 @@ we are going to do a soft copy, meaning we are going to detune the paremeters so
 reminiscent of ddpg and td3
 """
 class Agent():
-    def __init__(self, alpha=0.0003, beta=0.0003, input_dims=[8],
-            env=None, gamma=0.99, n_actions=2, max_size=1000000, tau=0.005,
-            fc1_dims=256, fc2_dims=256, batch_size=256, reward_scale=2):
+    def __init__(self, lr_actor,lr, fc1_dims, fc2_dims,
+                    max_size, tau, batch_size, reward_scale,
+                    env, n_actions, input_dims, gamma=0.99,
+                    index=0):
         
         self.gamma      =gamma        
         self.tau        =tau
@@ -342,21 +348,21 @@ class Agent():
         self.batch_size =batch_size
         self.n_actions  =n_actions
 
-        self.actor =ActorNetwork(alpha, input_dims, n_actions=n_actions, 
+        self.actor =ActorNetwork(lr_actor, input_dims, n_actions=n_actions, 
                                  fc1_dims=fc1_dims, fc2_dims=fc2_dims,
-                                 max_action=env.action_space.high, name='actor',)
+                                 max_action=env.action_space.high, name='actor',index=index)
 
-        self.critic_1 =CriticNetwork(beta, input_dims, n_actions=n_actions,
+        self.critic_1 =CriticNetwork(lr, input_dims, n_actions=n_actions,
                                      fc1_dims=fc1_dims, fc2_dims=fc2_dims,
-                                     name='critic_1')
-        self.critic_2 =CriticNetwork(beta, input_dims, n_actions=n_actions,
+                                     name='critic_1',index=index)
+        self.critic_2 =CriticNetwork(lr, input_dims, n_actions=n_actions,
                                       fc1_dims=fc1_dims, fc2_dims=fc2_dims,
-                                      name='critic_2')
+                                      name='critic_2',index=index)
         
-        self.value        =ValueNetwork(beta, input_dims, name='value',
-                                        fc1_dims=fc1_dims, fc2_dims=fc2_dims,)
-        self.target_value =ValueNetwork(beta, input_dims, name='target_value',
-                                        fc1_dims=fc1_dims, fc2_dims=fc2_dims,)
+        self.value        =ValueNetwork(lr, input_dims, name='value',
+                                        fc1_dims=fc1_dims, fc2_dims=fc2_dims,index=index)
+        self.target_value =ValueNetwork(lr, input_dims, name='target_value',
+                                        fc1_dims=fc1_dims, fc2_dims=fc2_dims,index=index)
         
         # reward scaling factor
         self.scale=reward_scale

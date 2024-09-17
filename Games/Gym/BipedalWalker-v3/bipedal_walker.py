@@ -6,7 +6,7 @@ import numpy as np
 # import pybullet_envs
 """
 open source 3d rendering and physics engine
-has support for virtua lreality 
+has support for virtual reality 
 built-in  open ai gym complaiant environments
 has a couple built-in agents 
 """
@@ -26,11 +26,15 @@ import sac # type: ignore
 # SAC algorithm is primarily designed for environments with continuous action spaces
 
 if __name__ == '__main__':
-    env=gym.make('BipedalWalker-v3')
+    index=2
+
+    env=gym.make('BipedalWalker-v3')    
     #env=gym.make('InvertedPendulum-v2')
 
-    agent=sac.Agent(input_dims=env.observation_space.shape, env=env, 
-                n_actions=env.action_space.shape[0])
+    agent=sac.Agent(lr_actor=0.0003,lr=0.0003, fc1_dims=256, fc2_dims=256,
+                    max_size=1000000, tau=0.005, batch_size=256, reward_scale=2,
+                    env=env, n_actions=env.action_space.shape[0], input_dims=env.observation_space.shape,
+                    index=index)
     
     n_games=250
 
