@@ -5,12 +5,10 @@
 Este repositorio presenta implementaciones de Inteligencia Artificial que abordan juegos utilizando algoritmos de Aprendizaje por Refuerzo (RL).
 :-----:
 
-<br>
-<br>
-<!-- 
 # INDEX
 1. [DQN](#dqn)
--->
+2. [PPO](#ppo)
+3. [SAC](#sac)
 
 # DQN 
 Este algoritmo es una extensión de Q-learning que utiliza una red neuronal para aproximar la función de valor Q. El objetivo es aprender una política que maximice la recompensa acumulativa a lo largo del tiempo.
@@ -42,11 +40,33 @@ Este algoritmo utiliza dos redes neuronales y una memoria.
 - **Crítico: Red neuronal.** Evalúa el valor de un estado. El resultado es un valor único que estima la recompensa esperada de ese estado.    
 - **Memoria PPO**: Almacenamiento y gestión de los datos necesarios para el entrenamiento.
 
-## From scratch (TODO)
+## Desde cero (TODO)
 <br>
 
 ## [PyTorch](https://github.com/pytorch/pytorch) 
-Here is the [CODE](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/ppo.py)
+Aquí está el [CÓDIGO](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/ppo.py)
+
+<hr>
+
+# SAC 
+El algoritmo Soft Actor-Critic (SAC) es un método popular de aprendizaje por refuerzo (RL) que se clasifica en la categoría de algoritmos actor-crítico fuera de política (off-policy). Fue diseñado para maximizar tanto el retorno esperado como la entropía de la política, lo que fomenta la exploración y previene la convergencia prematura a soluciones subóptimas.
+
+Este algoritmo utiliza tres redes neuronales y una memoria.
+- Red Neuronal **Actor**. Responsable de aprender y mejorar la política, determina las acciones que el agente debe tomar dado un estado.
+- Red Neuronal **Crítico**. Evalúa el valor de un estado. La salida es un valor único que estima la recompensa esperada desde ese estado.
+- Red Neuronal de **Valor**. Las redes Q de referencia (target Q-networks) se utilizan para proporcionar objetivos Q más estables durante el entrenamiento de las redes críticas. Sin estas redes objetivo, el entrenamiento de las redes Q podría volverse inestable debido a que los propios valores Q se utilizan como parte de la función de pérdida.
+
+ **ReplayBuffer**. Se utiliza para almacenar y gestionar los datos necesarios para el entrenamiento.
+
+
+## Desde cero (TODO)
+<br>
+
+## [PyTorch](https://github.com/pytorch/pytorch) 
+Aquí está el [CÓDIGO](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/sac.py)
+
+<hr>
+
 
 ### Estudio de los Algoritmos.
 

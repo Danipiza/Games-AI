@@ -5,12 +5,13 @@
 This repository features implementations of Artificial Intelligence that tackle games using Reinforcement Learning (RL) algorithms.
 :-----:
 
-<br>
-<br>
-<!-- 
+
+
 # INDEX
 1. [DQN](#dqn)
--->
+2. [PPO](#ppo)
+3. [SAC](#sac)
+
 
 # DQN 
 Deep Q-Network (DQN) algorithm is an extension of Q-learning that uses a neural network to approximate the Q-value function. The goal is to learn a policy that maximizes the cumulative reward over time. 
@@ -46,6 +47,26 @@ This algorithm use two neural networks and a memory.
 Here is the [CODE](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/ppo.py)
 
 <hr>
+
+# SAC 
+Soft Actor-Critic (SAC) algorithm is a popular reinforcement learning (RL) method that falls under the category of off-policy actor-critic algorithms. It was designed to maximize both the expected return and the entropy of the policy, which encourages exploration and prevents premature convergence to suboptimal solutions.
+
+This algorithm use Three neural networks and a memory.
+- **Actor Neural Network.** Responsible for learning and improving the policy, determines the actions the agent should take given a state.
+- **Critic Neural Network.** Evaluates the value of a state. The output is a single value that estimates the expected reward from that state.    
+- **ValueNetwork.** The target Q-networks are used to provide more stable target Q-values during the training of the critic networks. Without the target networks, training the Q-networks might become unstable due to the fact that the Q-values themselves are being used as part of the loss function.
+
+ **ReplayBuffer**. To store and manage the data necessary for training.
+
+
+## From scratch (TODO)
+<br>
+
+## [PyTorch](https://github.com/pytorch/pytorch) 
+Here is the [CODE](https://github.com/Danipiza/Games-AI/blob/main/AI_Models/pytorch/sac.py)
+
+<hr>
+
 
 ## Study of the Algorithms.
 
